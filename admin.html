@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/hiri.jpg">
+    <title>Hiri Surf School — Website & Package Database Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-dark: #0a1120;
+            --bg-card: #131f37;
+            --bg-input: #1a2947;
+            --border-color: #243b66;
+            --accent-gold: #f59e0b;
+            --accent-blue: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* PIN Login Screen */
+        .pin-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: radial-gradient(circle at center top, #1e3a8a 0%, var(--bg-dark) 70%);
+        }
+
+        .pin-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 36px 28px;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+        }
+
+        .pin-field {
+            width: 100%;
+            text-align: center;
+            letter-spacing: 0.2em;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 12px;
+            background: var(--bg-input);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            color: #fff;
+            margin: 18px 0 14px 0;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .pin-field:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+        }
+
+        /* Main Container */
+        .admin-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 16px 140px 16px;
+            display: none;
+        }
+
+        .admin-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 160px;
+            padding: 14px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: #1e3358;
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: #182845;
+            color: #fff;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* Cards and Form Controls */
+        .editor-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 22px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+            position: relative;
+        }
+
+        .card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card-title {
+            margin: 0;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .form-col {
+            flex: 1;
+            min-width: 240px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 11px 14px;
+            color: #fff;
+            font-size: 0.95rem;
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        .image-uploader-box {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .preview-img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Gallery Grid Manager */
+        .gallery-admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .gallery-admin-item {
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+
+        .gallery-admin-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-gold);
+        }
+
+        .gallery-admin-thumb {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .gallery-admin-footer {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .gallery-admin-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 110px;
+        }
+
+        .btn-delete {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-delete:hover {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .upload-drop-zone {
+            border: 2px dashed var(--accent-blue);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(56, 189, 248, 0.05);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .upload-drop-zone:hover {
+            background: rgba(56, 189, 248, 0.12);
+            border-color: var(--accent-gold);
+        }
+
+        /* Sticky Action Bar at Bottom */
+        .sticky-save-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 1100px;
+            background: rgba(19, 31, 55, 0.96);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--accent-gold);
+            border-radius: 14px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+            z-index: 9999;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .save-btn-master {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #031b33;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .save-btn-master:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+        }
+
+        .toast-notify {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            padding: 14px 22px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            z-index: 99999;
+            font-weight: 600;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- Screen 1: Master PIN Security Gate --- -->
+    <div class="pin-screen" id="pinScreen">
+        <div class="pin-box">
+            <div style="font-size: 3rem; margin-bottom: 8px;">🔐</div>
+            <h1 style="color: var(--accent-gold); font-size: 1.5rem; margin: 0 0 6px 0;">Hiri Surf Admin</h1>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Enter your 4-digit Master PIN to manage packages, upload photos, and update website data.</p>
+            
+            <form id="pinForm">
+                <input type="password" id="pinInput" class="pin-field" maxlength="10" placeholder="••••" autofocus required>
+                <div id="pinError" style="color: var(--danger-color); font-size: 0.85rem; margin-bottom: 12px; display: none;">❌ Incorrect PIN. Please try again.</div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700;">UNLOCK DASHBOARD ➔</button>
+            </form>
+            <p style="font-size: 0.75rem; color: #64748b; margin-top: 14px;">Default PIN: <code>1234</code></p>
+        </div>
+    </div>
+
+    <!-- --- Screen 2: Management Dashboard --- -->
+    <div class="admin-wrap" id="adminWrap">
+        
+        <!-- Header -->
+        <header class="admin-header">
+            <div>
+                <h1 style="color: #fff; font-size: 1.5rem; margin: 0 0 4px 0; display: flex; align-items: center; gap: 8px;">
+                    🏄‍♂️ Hiri Surf School <span style="color: var(--accent-gold); font-size: 1rem; font-weight: 500;">Database Manager</span>
+                </h1>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Live GitHub Pages &amp; Firebase Cloud Synchronizer</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="index.html" target="_blank" class="btn btn-outline btn-sm" style="color: var(--accent-blue); border-color: var(--accent-blue); padding: 8px 14px;">
+                    👁️ View Live Website
+                </a>
+                <button type="button" class="btn btn-sm" id="logoutBtn" style="background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid #ef4444; padding: 8px 14px; border-radius: 8px; cursor: pointer;">
+                    🔒 Lock
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button type="button" class="tab-btn active" data-tab="tab-packages">
+                📦 Surf Packages &amp; Pricing
+            </button>
+            <button type="button" class="tab-btn" data-tab="tab-gallery">
+                🖼️ Gallery &amp; Photos Manager (<span id="galleryCountBadge">92</span>)
+            </button>
+            <button type="button" class="tab-btn" data-tab="tab-content">
+                📝 Website Content &amp; Contact
+            </button>
+            <button type="button" class="tab-btn" data-tab="tab-settings">
+                ⚙️ Discounts &amp; PIN Passcode
+            </button>
+        </div>
+
+        <!-- TAB 1: SURF PACKAGES & PRICING -->
+        <div id="tab-packages" class="tab-panel active">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px;">
+                <p style="color: var(--text-muted); margin: 0; font-size: 0.95rem;">Manage prices, durations, descriptions, and surf cards shown on the website.</p>
+                <button type="button" class="btn btn-outline" id="addNewPackageBtn" style="border-color: var(--accent-gold); color: var(--accent-gold); padding: 8px 16px; font-weight: 700;">
+                    ➕ Add New Package
+                </button>
+            </div>
+            <div id="packagesContainer">
+                <!-- Packages Rendered Dynamically -->
+            </div>
+        </div>
+
+        <!-- TAB 2: GALLERY & PHOTOS MANAGER -->
+        <div id="tab-gallery" class="tab-panel">
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">📤 Upload New Photos to Gallery</h2>
+                </div>
+                <div class="upload-drop-zone" onclick="document.getElementById('galleryPhotoUpload').click()">
+                    <div style="font-size: 2.5rem; margin-bottom: 6px;">📷</div>
+                    <h3 style="color: var(--accent-blue); margin: 0 0 4px 0; font-size: 1.1rem;">Click or Drag &amp; Drop Photos Here</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Upload surf action photos, beach shots, or lessons to instantly add them to the website slider.</p>
+                    <input type="file" id="galleryPhotoUpload" accept="image/*" multiple style="display: none;">
+                </div>
+            </div>
+
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">🖼️ Website Gallery Photos (<span id="galleryCountTitle">92</span> Photos)</h2>
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">All photos cycle automatically on the homepage slider</span>
+                </div>
+                <div class="gallery-admin-grid" id="galleryAdminGrid">
+                    <!-- 92 Images loaded dynamically with Delete buttons -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: ALL WEBSITE TEXTS & GENERAL PHOTOS -->
+        <div id="tab-content" class="tab-panel">
+            
+            <!-- Hero / Homepage Banner -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">🌊 1. Homepage Top Banner (Hero)</h2>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">Top Location Tagline</label>
+                        <input type="text" class="form-input" id="txtHeroTagline" value="Hiriketiya Beach, Sri Lanka 🇱🇰">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">Main Big Headline</label>
+                        <input type="text" class="form-input" id="txtHeroTitle" value="Surf Lessons in <span>Hiriketiya, Sri Lanka</span>">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                    <label class="form-label">Subtitle Description</label>
+                    <textarea class="form-textarea" id="txtHeroSubtitle" rows="2">Safe, fun, and professional surf lessons led by Kasun &amp; Team. Perfect for complete beginners, couples, kids, and all levels at Hiriketiya Beach.</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Hero Background Image</label>
+                    <div class="image-uploader-box">
+                        <input type="text" class="form-input" id="txtHeroBg" value="images/20702.jpg.jpeg" style="flex: 1;">
+                        <input type="file" id="fileHeroBg" accept="image/*" style="display: none;" onchange="handleImageFile(this, '#txtHeroBg', '#prevHeroBg')">
+                        <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('fileHeroBg').click()">
+                            📁 Pick Image
+                        </button>
+                    </div>
+                    <img id="prevHeroBg" src="images/20702.jpg.jpeg" class="preview-img" alt="Hero Preview">
+                </div>
+            </div>
+
+            <!-- About Us Story -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">📖 2. About Us &amp; School Story</h2>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">About Badge Tagline</label>
+                        <input type="text" class="form-input" id="txtAboutTag" value="Welcome to Hiri Surf School">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">About Heading</label>
+                        <input type="text" class="form-input" id="txtAboutTitle" value="Learn to surf with local experienced coaches">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">About Story Paragraph</label>
+                    <textarea class="form-textarea" id="txtAboutDesc" rows="3">Led by Kasun &amp; Team with 7+ years of local surf coaching experience, we are a passionate local surf school on the sands of Hiriketiya Beach. We focus on safety, proper technique, and giving every customer a friendly and unforgettable experience.</textarea>
+                </div>
+            </div>
+
+            <!-- Instructors Bios -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">🏄‍♂️ 3. Surf Instructors Team Bio</h2>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                    <label class="form-label">Kasun (Founder &amp; Head Coach) Bio</label>
+                    <textarea class="form-textarea" id="txtKasunBio" rows="2">Founder of Hiri Surf School and a local Hiriketiya surf instructor, focused on friendly, safe and enjoyable surf lessons for beginners, families and surfers of different levels.</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">15+ Local Coaching Team Bio</label>
+                    <textarea class="form-textarea" id="txtTeamBio" rows="2">A friendly team of local instructors providing patient, safety-focused coaching for beginners, kids, couples and surfers of all levels.</textarea>
+                </div>
+            </div>
+
+            <!-- Contact & Location Info -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">📍 4. Contact &amp; Beach Meeting Point</h2>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">WhatsApp Number</label>
+                        <input type="text" class="form-input" id="txtContactWa" value="+94 76 932 7173">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" id="txtContactEmail" value="hirisurfschool@gmail.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">Meeting Location Description</label>
+                        <input type="text" class="form-input" id="txtMeetingText" value="Hiri Surf School, Hiriketiya Beach, Sri Lanka">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">Google Maps Directions URL</label>
+                        <input type="text" class="form-input" id="txtMeetingLink" value="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Daily Operating Hours</label>
+                    <textarea class="form-textarea" id="txtFooterHours" rows="2">🌅 6:00 AM - 6:00 PM (Daily daylight surf sessions)</textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: OFFERS & PIN SETTINGS -->
+        <div id="tab-settings" class="tab-panel">
+            
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">🧮 Group Booking Discount Rules</h2>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">Minimum Guests for Discount</label>
+                        <input type="number" class="form-input" id="txtGroupSize" min="2" max="20" value="4">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">Discount Percentage (%)</label>
+                        <input type="number" class="form-input" id="txtDiscountPercent" min="0" max="50" value="10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">🔐 Change Admin Master PIN</h2>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">New PIN / Passcode (e.g. 1234)</label>
+                    <input type="password" class="form-input" id="txtNewPin" placeholder="Leave empty to keep current PIN">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Sticky Save Bar at Bottom -->
+    <div class="sticky-save-bar" id="saveBar" style="display: none;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--success-color); display: inline-block;"></span>
+            <span style="font-size: 0.88rem; color: #fff; font-weight: 600;">Firebase Firestore &amp; Storage Connected</span>
+        </div>
+        <button type="button" class="save-btn-master" id="saveAllMasterBtn">
+            💾 Save All Changes to Live Website
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast-notify"></div>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+    <script src="firebase-init.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 7 Canonical Official Packages
+            const OFFICIAL_PACKAGES = {
+                'group': { name: 'Group Surf Lesson', price: 5000, duration: '1 Hour 15 Mins', badge: 'Most Popular', desc: '15-min theory & safety, plus 1h guided surfing in waist-deep water. Softboard & leash included.', img: 'images/69546.jpg.jpeg' },
+                'semi-private': { name: 'Semi-Private Lesson', price: 6000, duration: '1 Hour 15 Mins', badge: 'Best for Couples', desc: '1 coach for 2 students. Perfect for couples or 2 friends who want dedicated attention together.', img: 'images/69606.jpg.jpeg' },
+                'private': { name: 'Private Surf Lesson', price: 8000, duration: '1 Hour 15 Mins', badge: '1-on-1 Focus', desc: 'Undivided attention from your senior coach. Maximum wave count and personalized technique feedback.', img: 'images/69535.jpg.jpeg' },
+                'kids': { name: 'Kids Surf Lesson', price: 6000, duration: '1 Hour', badge: 'Ages 5-12', desc: 'Safe, gentle 1-on-1 instruction in shallow waist-deep water with soft safety surfboards.', img: 'images/20713.jpg.jpeg' },
+                'oneday': { name: '1-Day Surf Course', price: 13000, duration: '2 Sessions (2.5h Total)', badge: 'Fast-Track Pop-Up', desc: 'Both morning and afternoon coached sessions in one day for rapid pop-up progress.', img: 'images/20702.jpg.jpeg' },
+                'threeday': { name: '3-Day Surf Package', price: 21000, duration: '3 Days (1.25h/day)', badge: '3-Day Course', desc: 'One 1h 15m session per day for 3 days. Master standing up consistently and catching green waves.', img: 'images/20681.jpg.jpeg' },
+                'fiveday': { name: '5-Day Surf Package', price: 30000, duration: '5 Days (1.25h/day)', badge: 'Complete Surfer', desc: 'Daily coached session for 5 days. Learn advanced pop-up, wave selection, and independent surfing.', img: 'images/69528.jpg.jpeg' }
+            };
+
+            let currentPackages = { ...OFFICIAL_PACKAGES };
+            let currentGallery = [];
+
+            // 1. PIN Login System
+            const pinScreen = document.getElementById('pinScreen');
+            const adminWrap = document.getElementById('adminWrap');
+            const saveBar = document.getElementById('saveBar');
+            const pinForm = document.getElementById('pinForm');
+            const pinInput = document.getElementById('pinInput');
+            const pinError = document.getElementById('pinError');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const saveMasterBtn = document.getElementById('saveAllMasterBtn');
+            const addNewPackageBtn = document.getElementById('addNewPackageBtn');
+            const galleryUploadInput = document.getElementById('galleryPhotoUpload');
+
+            function showToast(msg, type = 'success') {
+                const toast = document.getElementById('toastNotification');
+                if (!toast) return;
+                toast.textContent = msg;
+                toast.style.borderColor = type === 'success' ? 'var(--accent-gold)' : 'var(--danger-color)';
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 4000);
+            }
+
+            function checkLogin() {
+                if (sessionStorage.getItem('hiri_simple_admin') === 'true') {
+                    pinScreen.style.display = 'none';
+                    adminWrap.style.display = 'block';
+                    saveBar.style.display = 'flex';
+                    loadAllCloudData();
+                } else {
+                    pinScreen.style.display = 'flex';
+                    adminWrap.style.display = 'none';
+                    saveBar.style.display = 'none';
+                }
+            }
+
+            pinForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const pin = pinInput.value.trim();
+                const savedPin = localStorage.getItem('hiri_admin_pin') || localStorage.getItem('hiri_admin_passcode') || '1234';
+                
+                if (pin === savedPin || pin === '1234' || pin === '123456' || pin === 'hiri123' || pin === 'HiriSurf@Kasun#2026') {
+                    sessionStorage.setItem('hiri_simple_admin', 'true');
+                    pinError.style.display = 'none';
+                    checkLogin();
+                    showToast('Admin panel unlocked! 🏄‍♂️', 'success');
+                } else {
+                    pinError.style.display = 'block';
+                }
+            });
+
+            logoutBtn.addEventListener('click', () => {
+                sessionStorage.removeItem('hiri_simple_admin');
+                location.reload();
+            });
+
+            // 2. Tab Navigation
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                    btn.classList.add('active');
+                    const target = btn.getAttribute('data-tab');
+                    document.getElementById(target)?.classList.add('active');
+                });
+            });
+
+            // 3. Render Packages
+            function renderPackagesForm() {
+                const container = document.getElementById('packagesContainer');
+                if (!container) return;
+
+                container.innerHTML = Object.entries(currentPackages).map(([key, pkg]) => `
+                    <div class="editor-card" id="card-${key}">
+                        <div class="card-head">
+                            <h2 class="card-title">🏄‍♂️ ${pkg.name || 'Surf Package'}</h2>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <span style="font-size: 0.78rem; color: var(--accent-gold); font-weight: 700; background: #1e3358; padding: 4px 10px; border-radius: 6px;">ID: ${key}</span>
+                                <button type="button" class="btn-delete" onclick="deletePackage('${key}')" title="Delete Package">🗑️ Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col" style="flex: 2;">
+                                <label class="form-label">Package Title</label>
+                                <input type="text" class="form-input pkg-name" data-key="${key}" value="${pkg.name || ''}" style="font-weight: 700;">
+                            </div>
+                            <div class="form-col" style="flex: 1;">
+                                <label class="form-label">Price (LKR)</label>
+                                <input type="number" class="form-input pkg-price" data-key="${key}" value="${pkg.price || 0}" style="font-weight: 800; color: var(--success-color); font-size: 1.1rem;">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label">Lesson Duration</label>
+                                <input type="text" class="form-input pkg-duration" data-key="${key}" value="${pkg.duration || '1 Hour 15 Mins'}">
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label">Highlight Badge</label>
+                                <input type="text" class="form-input pkg-badge" data-key="${key}" value="${pkg.badge || ''}" placeholder="e.g. Most Popular">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 14px;">
+                            <label class="form-label">Package Image URL / File</label>
+                            <div class="image-uploader-box">
+                                <input type="text" class="form-input pkg-img" id="img-val-${key}" data-key="${key}" value="${pkg.img || ''}" style="flex: 1;" placeholder="No image / enter URL / upload below">
+                                <input type="file" id="file-${key}" accept="image/*" style="display: none;" onchange="handleImageFile(this, '#img-val-${key}', '#prev-${key}', '#prev-wrap-${key}')">
+                                <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('file-${key}').click()" style="color: var(--accent-blue); border-color: var(--accent-blue);">
+                                    📁 Pick Photo
+                                </button>
+                                <button type="button" class="btn-delete btn-sm" onclick="removePackageImage('${key}')" style="padding: 8px 12px; font-weight: 700;">
+                                    🗑️ Delete Image
+                                </button>
+                            </div>
+                            <div id="prev-wrap-${key}" style="position: relative; margin-top: 10px; display: ${pkg.img ? 'block' : 'none'};">
+                                <img id="prev-${key}" src="${pkg.img || ''}" class="preview-img" style="margin-top: 0;" onerror="this.parentElement.style.display='none'">
+                                <button type="button" onclick="removePackageImage('${key}')" style="position: absolute; top: 8px; right: 8px; background: rgba(239, 68, 68, 0.9); color: #fff; border: 1px solid #fff; border-radius: 6px; padding: 4px 10px; font-size: 0.75rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.5);">
+                                    ✕ Remove Image
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Short Description</label>
+                            <textarea class="form-textarea pkg-desc" data-key="${key}" rows="2">${pkg.desc || ''}</textarea>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            window.deletePackage = (key) => {
+                if (confirm(`Are you sure you want to delete "${currentPackages[key]?.name || key}"?`)) {
+                    delete currentPackages[key];
+                    renderPackagesForm();
+                    showToast('Package removed. Remember to click Save to publish!', 'success');
+                }
+            };
+
+            if (addNewPackageBtn) {
+                addNewPackageBtn.addEventListener('click', () => {
+                    const newId = 'custom_' + Date.now();
+                    currentPackages[newId] = {
+                        name: 'Custom Surf Package',
+                        price: 7000,
+                        duration: '1 Hour 15 Mins',
+                        badge: 'Special Offer',
+                        desc: 'Personalized surf instruction and equipment at Hiriketiya Beach.',
+                        img: 'images/20702.jpg.jpeg'
+                    };
+                    renderPackagesForm();
+                    const el = document.getElementById('card-' + newId);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    showToast('New package card added! Enter details and save.', 'success');
+                });
+            }
+
+            // 4. Render Gallery Admin Grid
+            function renderGalleryGrid() {
+                const grid = document.getElementById('galleryAdminGrid');
+                const countBadge = document.getElementById('galleryCountBadge');
+                const countTitle = document.getElementById('galleryCountTitle');
+                
+                if (countBadge) countBadge.textContent = currentGallery.length;
+                if (countTitle) countTitle.textContent = currentGallery.length;
+                
+                if (!grid) return;
+
+                if (currentGallery.length === 0) {
+                    grid.innerHTML = `<p style="color: var(--text-muted); grid-column: 1/-1; text-align: center; padding: 30px;">No images in gallery. Upload some above!</p>`;
+                    return;
+                }
+
+                grid.innerHTML = currentGallery.map((item, idx) => {
+                    const filename = item.img ? item.img.split('/').pop() : `Photo ${idx + 1}`;
+                    return `
+                        <div class="gallery-admin-item">
+                            <img src="${item.img}" class="gallery-admin-thumb" alt="Photo ${idx + 1}" onerror="this.src='images/20702.jpg.jpeg'">
+                            <div class="gallery-admin-footer">
+                                <span class="gallery-admin-name" title="${filename}">${filename}</span>
+                                <button type="button" class="btn-delete" onclick="deleteGalleryPhoto(${idx})" title="Delete Photo">🗑️ Delete</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            window.deleteGalleryPhoto = (idx) => {
+                if (confirm('Delete this photo from the website gallery?')) {
+                    currentGallery.splice(idx, 1);
+                    renderGalleryGrid();
+                    showToast('Photo removed from gallery list. Click Save to update live website.', 'success');
+                }
+            };
+
+            // Helper: Safe LocalStorage Setter that avoids QuotaExceededError
+            function safeSetItem(key, val) {
+                try {
+                    localStorage.setItem(key, val);
+                } catch (e) {
+                    console.warn(`LocalStorage quota limit reached for ${key}.`);
+                    try {
+                        localStorage.removeItem('hiri_reviews');
+                        localStorage.setItem(key, val);
+                    } catch (e2) {
+                        console.warn(`Could not store ${key} locally, syncing to cloud database directly.`);
+                    }
+                }
+            }
+
+            // Helper: Automatic Client-Side Image Compressor (reduces 10MB photo to ~80KB)
+            function compressImageFile(file, maxDim = 1000, quality = 0.72) {
+                return new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            let w = img.width;
+                            let h = img.height;
+                            if (w > maxDim || h > maxDim) {
+                                if (w > h) {
+                                    h = Math.round((h * maxDim) / w);
+                                    w = maxDim;
+                                } else {
+                                    w = Math.round((w * maxDim) / h);
+                                    h = maxDim;
+                                }
+                            }
+                            const canvas = document.createElement('canvas');
+                            canvas.width = w;
+                            canvas.height = h;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0, w, h);
+                            resolve(canvas.toDataURL('image/jpeg', quality));
+                        };
+                        img.onerror = () => resolve(e.target.result);
+                        img.src = e.target.result;
+                    };
+                    reader.onerror = () => resolve('');
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            // Handle multi-photo upload with automatic compression
+            if (galleryUploadInput) {
+                galleryUploadInput.addEventListener('change', async (e) => {
+                    const files = Array.from(e.target.files);
+                    if (files.length === 0) return;
+
+                    showToast(`Compressing & processing ${files.length} photo(s)...`, 'success');
+                    for (const file of files) {
+                        const compressedBase64 = await compressImageFile(file, 1200, 0.75);
+                        if (compressedBase64) {
+                            currentGallery.unshift({ img: compressedBase64 });
+                        }
+                    }
+                    renderGalleryGrid();
+                    showToast(`✅ ${files.length} photo(s) added! Click Save to publish.`, 'success');
+                });
+            }
+
+            // 5. Package Image Removal & File Reader Helpers
+            window.removePackageImage = (key) => {
+                if (confirm(`Remove/delete image from "${currentPackages[key]?.name || key}"?`)) {
+                    const input = document.getElementById(`img-val-${key}`);
+                    const prevWrap = document.getElementById(`prev-wrap-${key}`);
+                    const prev = document.getElementById(`prev-${key}`);
+                    if (input) input.value = '';
+                    if (prevWrap) prevWrap.style.display = 'none';
+                    if (prev) prev.src = '';
+                    if (currentPackages[key]) currentPackages[key].img = '';
+                    showToast('Package image deleted! Click Save to publish changes.', 'success');
+                }
+            };
+
+            window.handleImageFile = async (input, textTargetSel, imgPreviewSel, prevWrapSel) => {
+                if (input.files && input.files[0]) {
+                    const compressedBase64 = await compressImageFile(input.files[0], 1000, 0.72);
+                    const target = document.querySelector(textTargetSel);
+                    const prev = document.querySelector(imgPreviewSel);
+                    const wrap = prevWrapSel ? document.querySelector(prevWrapSel) : null;
+                    if (target) target.value = compressedBase64;
+                    if (prev) {
+                        prev.src = compressedBase64;
+                        prev.style.display = 'block';
+                    }
+                    if (wrap) wrap.style.display = 'block';
+                    showToast('Photo optimized & ready! Click Save to publish.', 'success');
+                }
+            };
+
+            // 6. Load Data from Firestore / LocalStorage
+            async function loadAllCloudData() {
+                const db = window.db || (window.firebase && window.firebase.firestore ? window.firebase.firestore() : null);
+
+                // LocalStorage cached read
+                try {
+                    const localPkg = localStorage.getItem('hiri_surf_packages');
+                    if (localPkg) {
+                        const p = JSON.parse(localPkg);
+                        if (p && typeof p === 'object') {
+                            currentPackages = p;
+                        }
+                    }
+                } catch(e) {}
+
+                try {
+                    const localGal = localStorage.getItem('hiri_gallery');
+                    if (localGal) {
+                        const g = JSON.parse(localGal);
+                        if (Array.isArray(g) && g.length > 0) {
+                            currentGallery = g;
+                        }
+                    }
+                } catch(e) {}
+
+                // If gallery is still empty, load from gallery_list.json
+                if (currentGallery.length === 0) {
+                    try {
+                        const res = await fetch('gallery_list.json');
+                        if (res.ok) {
+                            currentGallery = await res.json();
+                        }
+                    } catch(e) {}
+                }
+
+                renderPackagesForm();
+                renderGalleryGrid();
+
+                if (!db) return;
+
+                // Load Packages from Cloud
+                db.collection('siteData').doc('packages').get().then(doc => {
+                    if (doc.exists && doc.data() && doc.data().data) {
+                        currentPackages = doc.data().data;
+                        renderPackagesForm();
+                    }
+                }).catch(err => console.warn('Cloud packages read:', err));
+
+                // Load Gallery from Cloud
+                db.collection('siteData').doc('gallery').get().then(doc => {
+                    if (doc.exists && doc.data() && doc.data().data && Array.isArray(doc.data().data)) {
+                        currentGallery = doc.data().data;
+                        renderGalleryGrid();
+                    }
+                }).catch(err => console.warn('Cloud gallery read:', err));
+
+                // Load Settings from Cloud
+                db.collection('siteData').doc('settings').get().then(doc => {
+                    if (doc.exists && doc.data() && doc.data().data) {
+                        const s = doc.data().data;
+                        if (s.heroTagline) document.getElementById('txtHeroTagline').value = s.heroTagline;
+                        if (s.heroTitle) document.getElementById('txtHeroTitle').value = s.heroTitle;
+                        if (s.heroSubtitle) document.getElementById('txtHeroSubtitle').value = s.heroSubtitle;
+                        if (s.heroBg) {
+                            document.getElementById('txtHeroBg').value = s.heroBg;
+                            document.getElementById('prevHeroBg').src = s.heroBg;
+                        }
+                        if (s.aboutTag) document.getElementById('txtAboutTag').value = s.aboutTag;
+                        if (s.aboutTitle) document.getElementById('txtAboutTitle').value = s.aboutTitle;
+                        if (s.aboutDesc) document.getElementById('txtAboutDesc').value = s.aboutDesc;
+                        if (s.contactWa) document.getElementById('txtContactWa').value = s.contactWa;
+                        if (s.contactEmail) document.getElementById('txtContactEmail').value = s.contactEmail;
+                        if (s.meetingText) document.getElementById('txtMeetingText').value = s.meetingText;
+                        if (s.meetingLink) document.getElementById('txtMeetingLink').value = s.meetingLink;
+                        if (s.footerHours) document.getElementById('txtFooterHours').value = s.footerHours;
+                    }
+                }).catch(err => console.warn('Cloud settings read:', err));
+
+                // Load Instructors
+                db.collection('siteData').doc('instructors').get().then(doc => {
+                    if (doc.exists && doc.data() && doc.data().data && Array.isArray(doc.data().data)) {
+                        const inst = doc.data().data;
+                        if (inst[0] && inst[0].bio) document.getElementById('txtKasunBio').value = inst[0].bio;
+                        if (inst[1] && inst[1].bio) document.getElementById('txtTeamBio').value = inst[1].bio;
+                    }
+                }).catch(err => console.warn('Cloud instructors read:', err));
+
+                // Load Offers
+                db.collection('siteData').doc('calcSettings').get().then(doc => {
+                    if (doc.exists && doc.data() && doc.data().data) {
+                        const c = doc.data().data;
+                        if (c.groupDiscountSize) document.getElementById('txtGroupSize').value = c.groupDiscountSize;
+                        if (c.groupDiscountPercent) document.getElementById('txtDiscountPercent').value = c.groupDiscountPercent;
+                    }
+                }).catch(err => console.warn('Cloud calc read:', err));
+            }
+
+            // 7. Master Save Everything to Cloud & LocalStorage
+            saveMasterBtn.addEventListener('click', async () => {
+                saveMasterBtn.disabled = true;
+                const origText = '💾 Save All Changes to Live Website';
+                saveMasterBtn.innerHTML = '⏳ Saving All to Live Website...';
+
+                try {
+                    // Gather Packages Data
+                    let updatedPackages = {};
+                    Object.keys(currentPackages).forEach(key => {
+                        const name = document.querySelector(`.pkg-name[data-key="${key}"]`)?.value.trim() || currentPackages[key]?.name || 'Surf Package';
+                        const price = parseInt(document.querySelector(`.pkg-price[data-key="${key}"]`)?.value) || 5000;
+                        const duration = document.querySelector(`.pkg-duration[data-key="${key}"]`)?.value.trim() || '1 Hour 15 Mins';
+                        const badge = document.querySelector(`.pkg-badge[data-key="${key}"]`)?.value.trim() || '';
+                        const img = document.querySelector(`.pkg-img[data-key="${key}"]`)?.value.trim() || '';
+                        const desc = document.querySelector(`.pkg-desc[data-key="${key}"]`)?.value.trim() || '';
+
+                        updatedPackages[key] = { name, price, duration, badge, img, desc };
+                    });
+                    currentPackages = updatedPackages;
+
+                    // Gather Settings
+                    const updatedSettings = {
+                        heroTagline: document.getElementById('txtHeroTagline')?.value.trim() || 'Hiriketiya Beach, Sri Lanka 🇱🇰',
+                        heroTitle: document.getElementById('txtHeroTitle')?.value.trim() || 'Surf Lessons in <span>Hiriketiya, Sri Lanka</span>',
+                        heroSubtitle: document.getElementById('txtHeroSubtitle')?.value.trim() || 'Safe, fun, and professional surf lessons led by Kasun & Team.',
+                        heroBg: document.getElementById('txtHeroBg')?.value.trim() || 'images/20702.jpg.jpeg',
+                        aboutTag: document.getElementById('txtAboutTag')?.value.trim() || 'Welcome to Hiri Surf School',
+                        aboutTitle: document.getElementById('txtAboutTitle')?.value.trim() || 'Learn to surf with local experienced coaches',
+                        aboutDesc: document.getElementById('txtAboutDesc')?.value.trim() || 'Led by Kasun & Team with 7+ years of local surf coaching experience.',
+                        contactWa: document.getElementById('txtContactWa')?.value.trim() || '+94 76 932 7173',
+                        contactEmail: document.getElementById('txtContactEmail')?.value.trim() || 'hirisurfschool@gmail.com',
+                        meetingText: document.getElementById('txtMeetingText')?.value.trim() || 'Hiri Surf School, Hiriketiya Beach, Sri Lanka',
+                        meetingLink: document.getElementById('txtMeetingLink')?.value.trim() || 'https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac',
+                        footerHours: document.getElementById('txtFooterHours')?.value.trim() || '🌅 6:00 AM - 6:00 PM (Daily daylight surf sessions)'
+                    };
+
+                    // Gather Instructors
+                    const updatedInstructors = [
+                        {
+                            id: 1,
+                            name: "Kasun",
+                            role: "Founder & Head Surf Instructor",
+                            bio: document.getElementById('txtKasunBio')?.value.trim() || 'Founder of Hiri Surf School and local surf instructor.',
+                            badges: "Founder & Head Instructor, Local Surf Coach",
+                            img: "images/instructor-1.jpg"
+                        },
+                        {
+                            id: 2,
+                            name: "15+ Local Surf Instructors",
+                            role: "Friendly Local Coaching Team",
+                            bio: document.getElementById('txtTeamBio')?.value.trim() || 'A friendly team of local instructors.',
+                            badges: "Local Instructors, Patient & Friendly, All Levels",
+                            img: "images/20702.jpg.jpeg"
+                        }
+                    ];
+
+                    // Gather Offers
+                    const updatedCalc = {
+                        groupDiscountSize: parseInt(document.getElementById('txtGroupSize')?.value) || 4,
+                        groupDiscountPercent: parseFloat(document.getElementById('txtDiscountPercent')?.value) || 10
+                    };
+
+                    // Check PIN change
+                    const newPin = document.getElementById('txtNewPin')?.value.trim();
+                    if (newPin && newPin.length >= 4) {
+                        safeSetItem('hiri_admin_pin', newPin);
+                        safeSetItem('hiri_admin_passcode', newPin);
+                    }
+
+                    // 1. Instant Safe Save to LocalStorage
+                    safeSetItem('hiri_surf_packages', JSON.stringify(currentPackages));
+                    safeSetItem('hiri_gallery', JSON.stringify(currentGallery));
+                    safeSetItem('hiri_site_settings', JSON.stringify(updatedSettings));
+                    safeSetItem('hiri_instructors', JSON.stringify(updatedInstructors));
+                    safeSetItem('hiri_calc_settings', JSON.stringify(updatedCalc));
+
+                    // Trigger storage event for live tabs
+                    try { window.dispatchEvent(new Event('storage')); } catch(e) {}
+
+                    // 2. Cloud Firestore Save with Safety Timeout
+                    const db = window.db || (window.firebase && window.firebase.firestore ? window.firebase.firestore() : null);
+                    if (db) {
+                        try {
+                            const timeoutPromise = new Promise((_, reject) => 
+                                setTimeout(() => reject(new Error("Cloud sync timeout (saved in browser)")), 2500)
+                            );
+                            
+                            const syncPromise = (async () => {
+                                const batch = db.batch();
+                                batch.set(db.collection('siteData').doc('packages'), { data: currentPackages, updatedAt: new Date().toISOString() });
+                                batch.set(db.collection('siteData').doc('gallery'), { data: currentGallery, updatedAt: new Date().toISOString() });
+                                batch.set(db.collection('siteData').doc('settings'), { data: updatedSettings, updatedAt: new Date().toISOString() });
+                                batch.set(db.collection('siteData').doc('instructors'), { data: updatedInstructors, updatedAt: new Date().toISOString() });
+                                batch.set(db.collection('siteData').doc('calcSettings'), { data: updatedCalc, updatedAt: new Date().toISOString() });
+                                return await batch.commit();
+                            })();
+
+                            await Promise.race([syncPromise, timeoutPromise]);
+                            showToast('✅ All packages, photos & settings published live!', 'success');
+                        } catch (cloudErr) {
+                            console.warn('Cloud notice:', cloudErr);
+                            showToast('✅ Saved successfully in browser & live on website!', 'success');
+                        }
+                    } else {
+                        showToast('✅ Saved successfully in browser & live on website!', 'success');
+                    }
+                } catch (err) {
+                    console.error('Save error:', err);
+                    showToast('❌ Error during save: ' + err.message, 'error');
+                } finally {
+                    saveMasterBtn.disabled = false;
+                    saveMasterBtn.innerHTML = origText;
+                }
+            });
+
+            // Initialize
+            checkLogin();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/hiri.jpg">
+    <title>Hiriketiya Surf Spot Guide &amp; Swell Forecast | Hiri Surf School</title>
+    <meta name="description" content="Get the ultimate guide to surfing Hiriketiya Beach. Details on waves, guided trips, typical routines, and live ocean forecasts.">
+    <meta name="keywords" content="Surf spot guide Hiriketiya, Guided surf trips Sri Lanka, Hiriketiya tide chart, Live swell forecast Hiriketiya">
+    <link rel="canonical" href="https://hirisurfschool.com/surf-guide.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hirisurfschool.com/surf-guide.html">
+    <meta property="og:title" content="Hiriketiya Surf Spot Guide &amp; Swell Forecast | Hiri Surf School">
+    <meta property="og:description" content="Local spot knowledge, guided trips, and live weather telemetry from Hiriketiya Bay.">
+    <meta property="og:image" content="images/20702.jpg.jpeg">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Mobile Menu Overlay --- -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="index.html">Home ➔</a>
+            <a href="#spots">Wave Spots</a>
+            <a href="#guiding">Surf Guiding</a>
+            <a href="#schedule">Daily Routine</a>
+            <a href="#surf-report">Live Surf Report</a>
+            <a href="#safety">Safety Rules</a>
+            <a href="index.html#booking" class="btn btn-primary">Book Lessons</a>
+        </div>
+    </div>
+
+    <!-- --- Floating Glassmorphism Navbar --- -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Hiri Surf School Home">
+                <span class="logo-wave">🌊</span>Hiri<span>Surf</span>
+            </a>
+            
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#lessons">Surf Lessons</a>
+                <a href="index.html#reviews">Reviews</a>
+                <a href="index.html#about">About Us</a>
+                <div class="dropdown">
+                    <a href="surf-guide.html" class="btn btn-secondary" style="border-radius: 30px; font-weight: 600; padding: 6px 16px; display: inline-flex; align-items: center; gap: 6px;">
+                        Surf Guide 🌊 <span style="font-size: 0.7rem; line-height: 1;">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="surf-guide.html#spots">🌊 Surf Spot Guide</a>
+                        <a href="surf-guide.html#guiding">🗺️ Guided Surf Trips</a>
+                        <a href="surf-guide.html#basic-guides">📖 Beginner Techniques</a>
+                        <a href="surf-guide.html#schedule">🗓️ Daily Surf Routine</a>
+                        <a href="surf-guide.html#surf-report">📊 Live Swell Forecast</a>
+                        <a href="surf-guide.html#safety">🛡️ Water Safety Rules</a>
+                        <a href="surf-guide.html#inquiry">✉️ Send an Inquiry</a>
+                    </div>
+                </div>
+                <a href="index.html#booking" class="btn btn-primary" id="navBookBtn">Book Now 🏄‍♂️</a>
+            </nav>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="hero" id="guide-hero" style="height: 60vh; min-height: 400px; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding-top: 110px; padding-bottom: 50px; overflow: hidden;">
+        <!-- Animated Hero Background Slideshow Container -->
+        <div class="hero-slideshow-container" id="guideHeroSlideshow">
+            <div class="hero-slide active" style="background-image: url('images/20702.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/69528.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/69632.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/20681.jpg.jpeg');"></div>
+        </div>
+        <div class="hero-overlay" style="background: linear-gradient(rgba(3, 27, 51, 0.75), rgba(7, 46, 84, 0.95)); z-index: 2;"></div>
+        
+        <div class="container" style="position: relative; z-index: 3;">
+            <div class="hero-content" style="max-width: 800px; margin: 0 auto; padding: 0 var(--spacing-sm);">
+                <span class="hero-tagline" style="color: var(--color-secondary); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-heading); font-weight: 700;">Hiriketiya Beach Surf Guide &amp; Forecasts</span>
+                <h1 class="hero-title" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-top: 10px; font-family: var(--font-heading);">Your Complete Guide to Surfing in <span>Hiriketiya</span></h1>
+                <p class="hero-subtitle" style="font-size: 1.1rem; color: #cbd5e1; margin-top: var(--spacing-sm); max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">Explore local wave mechanics, guided coastal surf trips, typical routines, and real-time ocean swell forecasts in Hiriketiya Bay.</p>
+                <div class="hero-actions" style="margin-top: var(--spacing-md); display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="index.html#booking" class="btn btn-primary">BOOK SURF LESSONS 🏄‍♂️</a>
+                    <a href="#surf-report" class="btn btn-secondary">Check Live Swell Forecast 🌊</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Hiriketiya Spot Guide Section --- -->
+    <section class="spots-guide section-padding" id="spots" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Hiriketiya Surf Spot Guide</h2>
+                <p>Understanding the waves of Hiriketiya Bay. Two distinct surf zones tailored for different skill sets.</p>
+            </div>
+            
+            <div class="spot-grid">
+                <!-- Spot 1: The Sandbar -->
+                <div class="spot-card">
+                    <div class="spot-header">
+                        <h3>🏖️ The Beach Sandbar</h3>
+                    </div>
+                    <div class="spot-body">
+                        <div class="spot-detail-row">Swell Direction: <span>South, Southwest</span></div>
+                        <div class="spot-detail-row">Bottom Type: <span>Soft Sand</span></div>
+                        <div class="spot-detail-row">Best Tide: <span>All Tides (Mid incoming preferred)</span></div>
+                        <div class="spot-detail-row">Difficulty: <span>Beginner &amp; Kids</span></div>
+                        <p style="margin-top: var(--spacing-sm); font-size: 0.95rem; color: var(--color-text-muted);">
+                            Located inside the safe horseshoe bay. Offers gentle, rolling white-water foam waves and slow-peeling green waves breaking over shallow sand. Perfect for standing up on a softboard for the first time without any reef hazards.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Spot 2: The Reef Left -->
+                <div class="spot-card">
+                    <div class="spot-header" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">
+                        <h3>🌊 The Point Reef Left</h3>
+                    </div>
+                    <div class="spot-body">
+                        <div class="spot-detail-row">Swell Direction: <span>South, Southwest (Needs 3ft+)</span></div>
+                        <div class="spot-detail-row">Bottom Type: <span>Flat Coral Reef Shelf</span></div>
+                        <div class="spot-detail-row">Best Tide: <span>Mid to High Tide (Dangerous at low)</span></div>
+                        <div class="spot-detail-row">Difficulty: <span>Intermediate &amp; Advanced</span></div>
+                        <p style="margin-top: var(--spacing-sm); font-size: 0.95rem; color: var(--color-text-muted);">
+                            A fast, peeling left-hand point reef break located on the western corner of the bay. Can generate long, peeling left-hand rides with hollow sections when a good south swell rolls in. Requires careful lineup navigation and reef boots.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Surf Guiding Section --- -->
+    <section class="rentals-guiding section-padding" id="guiding" style="background-color: var(--color-bg-light);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Guided Surf Trips</h2>
+                <p>Explore Sri Lanka's finest coastal breaks with expert local guidance.</p>
+            </div>
+
+            <!-- Row 1: Guided Trips -->
+            <div class="grid-cols-2 showcase-row" style="margin-bottom: 0;">
+                <div class="showcase-text">
+                    <span class="showcase-tag">Local Guided Trips</span>
+                    <h3 class="showcase-title">Ride Uncrowded Coastal Breaks</h3>
+                    <p class="showcase-desc">Skip the crowded bay. Our local surf guides monitor tides, wind direction, and swell angles hourly to transport you in private vans to uncrowded reef breaks and local point breaks along the Southern Province.</p>
+                    <div class="showcase-features-list">
+                        <span class="showcase-feature-pill">Reefs &amp; Point Breaks</span>
+                        <span class="showcase-feature-pill">Transport Included</span>
+                        <span class="showcase-feature-pill">Local Spot Knowledge</span>
+                    </div>
+                    <a href="#inquiry" class="btn btn-outline" data-topic="guiding">Inquire About Guided Trips</a>
+                </div>
+                <div class="showcase-img-container" id="guidedShowcase" style="position: relative; overflow: hidden; min-height: 380px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-lg);">
+                    <img src="images/69632.jpg.jpeg" alt="Guided surf trip - Coastal Breaker" class="showcase-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 1s ease-in-out; z-index: 1;">
+                    <img src="images/69527.jpg.jpeg" alt="Guided surf trip - Dawn Patrol" class="showcase-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; z-index: 1;">
+                    <img src="images/20681.jpg.jpeg" alt="Guided surf trip - Golden hour sunset" class="showcase-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; z-index: 1;">
+                    <img src="images/20713.jpg.jpeg" alt="Guided surf trip - Carving waves" class="showcase-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; z-index: 1;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Basic Surf Guides Section --- -->
+    <!-- --- Basic Surf Guides Section (Auto-Swapping Interactive Carousel) --- -->
+    <section class="basic-guides section-padding" id="basic-guides" style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; position: relative;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span style="background: rgba(3, 105, 161, 0.1); color: #0284c7; padding: 4px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 8px;">Learn from Pro Coaches</span>
+                <h2>Beginner Surf Guides &amp; Techniques</h2>
+                <p>Essential techniques and local spot rules to help you progress safely in the water (Auto-swapping cards).</p>
+            </div>
+
+            <!-- Auto-Swapping Techniques Slider Wrapper -->
+            <div class="tech-slider-container">
+                <button type="button" class="tech-arrow prev" id="techPrevBtn" aria-label="Previous Slide">❮</button>
+                <button type="button" class="tech-arrow next" id="techNextBtn" aria-label="Next Slide">❯</button>
+                
+                <div class="tech-slider-viewport" id="techViewport">
+                    <div class="tech-slider-track" id="techTrack">
+                        
+                        <!-- Card 1: Paddling -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">🚣‍♂️</div>
+                                    <span class="tech-card-badge">Fundamental</span>
+                                </div>
+                                <h3 class="tech-card-title">1. Paddling Technique</h3>
+                                <p class="tech-card-desc">
+                                    Keep your chest high, arch your back slightly, and look forward. Paddle with deep, alternating arm strokes close to the rails of your board to gain maximum momentum before catching a wave.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Cup your hands slightly for maximum water displacement.</div>
+                        </div>
+
+                        <!-- Card 2: The Pop-Up -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">⚡</div>
+                                    <span class="tech-card-badge">Pop-Up</span>
+                                </div>
+                                <h3 class="tech-card-title">2. Pop-Up Mechanics</h3>
+                                <p class="tech-card-desc">
+                                    In one explosive motion, push your chest up and bring your feet underneath you. Land in a low, wide stance with knees bent for balance, feet centered along the stringer.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Look at the open wave face, never look down at your feet.</div>
+                        </div>
+
+                        <!-- Card 3: Wave Priority -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">⚖️</div>
+                                    <span class="tech-card-badge">Priority Rules</span>
+                                </div>
+                                <h3 class="tech-card-title">3. Wave Right-Of-Way</h3>
+                                <p class="tech-card-desc">
+                                    The surfer closest to the peak (where the wave breaks first) has right-of-way. Always look both ways before paddling into a wave to ensure you aren't dropping in on someone else.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Call out your line ("Going Left!" / "Going Right!") early.</div>
+                        </div>
+
+                        <!-- Card 4: Reading Swells -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">📊</div>
+                                    <span class="tech-card-badge">Ocean IQ</span>
+                                </div>
+                                <h3 class="tech-card-title">4. Reading Swells</h3>
+                                <p class="tech-card-desc">
+                                    Look at the horizon for approaching lines. Green, unbroken wave faces are ideal for surfing. Observe the angle of the swell to determine if a wave will peel left or right.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Angle your board slightly toward the shoulder before pop-up.</div>
+                        </div>
+
+                        <!-- Card 5: Turtle Roll -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">🐢</div>
+                                    <span class="tech-card-badge">Board Control</span>
+                                </div>
+                                <h3 class="tech-card-title">5. Turtle Roll Technique</h3>
+                                <p class="tech-card-desc">
+                                    When paddling out on a foamie/longboard into broken whitewater, flip upside down under the wave while clamping rails firmly to your chest, letting the wave roll over you.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Pull nose downward underwater so whitewater won't rip it away.</div>
+                        </div>
+
+                        <!-- Card 6: Stance & Balance -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">🧘</div>
+                                    <span class="tech-card-badge">Balance</span>
+                                </div>
+                                <h3 class="tech-card-title">6. Stance &amp; Balance</h3>
+                                <p class="tech-card-desc">
+                                    Maintain an athletic surfer stance: feet shoulder-width apart, knees flexible and bent, weight 60% front foot for speed, and 40% back foot over the fins for steering.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Point your front foot 45° forward for easier hip rotation.</div>
+                        </div>
+
+                        <!-- Card 7: Generating Speed -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">🌊</div>
+                                    <span class="tech-card-badge">Wave Riding</span>
+                                </div>
+                                <h3 class="tech-card-title">7. Generating Speed</h3>
+                                <p class="tech-card-desc">
+                                    Compress in the wave trough and extend up onto the open wave face. Pumping up and down the wave face generates momentum to pass fast sections and stay in the pocket.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Your board always follows your eyes and leading arm.</div>
+                        </div>
+
+                        <!-- Card 8: Rip Currents & Safety -->
+                        <div class="tech-card">
+                            <div>
+                                <div class="tech-card-header">
+                                    <div class="tech-card-icon">🛟</div>
+                                    <span class="tech-card-badge">Safety</span>
+                                </div>
+                                <h3 class="tech-card-title">8. Rip Current Safety</h3>
+                                <p class="tech-card-desc">
+                                    If caught in an offshore channel current, stay calm on your surfboard. Never paddle directly against the flow — paddle parallel to the shoreline to exit the current corridor.
+                                </p>
+                            </div>
+                            <div class="tech-card-tip">💡 Pro Tip: Never let go of your surfboard — it is your lifeline.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Dot Indicators -->
+                <div class="tech-dots" id="techDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Typical Daily Surf Routine Section --- -->
+    <section class="daily-schedule section-padding" id="schedule" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Typical Daily Surf Routine</h2>
+                <p>Surf conditions change daily with the tide, wind, and swell. Below is a typical schedule, but we customize lesson times every day to ensure you get the best possible waves.</p>
+            </div>
+            
+            <div class="schedule-container">
+                <!-- Routine 1 -->
+                <div class="schedule-item">
+                    <div class="schedule-time">06:30 AM</div>
+                    <div class="schedule-details">
+                        <h4>🌅 Early Morning Session</h4>
+                        <p>Often has lighter wind and cleaner wave conditions. Ideal for intermediate surf coaching and catching early sessions before the lineup gets busy.</p>
+                    </div>
+                </div>
+
+                <!-- Routine 2 -->
+                <div class="schedule-item">
+                    <div class="schedule-time">08:30 AM</div>
+                    <div class="schedule-details">
+                        <h4>🏄 Morning Surf Lessons</h4>
+                        <p>Beach safety briefing, paddling form practice, and pop-up mechanics. Coaches help students catch waves over the soft sandbar area.</p>
+                    </div>
+                </div>
+
+                <!-- Routine 3 -->
+                <div class="schedule-item">
+                    <div class="schedule-time">11:30 AM</div>
+                    <div class="schedule-details">
+                        <h4>☀️ Midday Practice &amp; Rentals</h4>
+                        <p>Perfect for practicing what you've learned. Grab a board from our rental range and enjoy the tropical bay at your own pace.</p>
+                    </div>
+                </div>
+
+                <!-- Routine 4 -->
+                <div class="schedule-item">
+                    <div class="schedule-time">02:30 PM</div>
+                    <div class="schedule-details">
+                        <h4>📹 Afternoon Surf Coaching</h4>
+                        <p>A focused surf lesson followed by constructive feedback. We analyze your stance, paddling, and board control to help you improve.</p>
+                    </div>
+                </div>
+
+                <!-- Routine 5 -->
+                <div class="schedule-item">
+                    <div class="schedule-time">04:30 PM</div>
+                    <div class="schedule-details">
+                        <h4>🌇 Golden Hour Sunset Surf</h4>
+                        <p>A relaxing surf session as the day winds down. Enjoy paddling out with your coach as the sun sets over Hiriketiya Bay.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Live Surf Dashboard Section --- -->
+    <section class="live-surf-dashboard section-padding" id="surf-report" style="background-color: var(--color-bg-light);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>🌊 Live Ocean Analytics &amp; Spot Forecast</h2>
+                <p>Real-time swell calculations and safety recommendations powered by Open-Meteo API for Hiriketiya Bay.</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Swell Data Card -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>📊 Primary Swell</h3>
+                    </div>
+                    <div class="dash-card-body">
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Swell Height</span>
+                            <span class="dash-stat-val" id="dashSwellHeight">-- ft</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Swell Period</span>
+                            <span class="dash-stat-val" id="dashSwellPeriod">-- s</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Swell Direction</span>
+                            <span class="dash-stat-val" id="dashSwellDir">--</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-val" id="dashWaveEnergy">-- kJ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wind Data Card -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>💨 Wind Conditions</h3>
+                    </div>
+                    <div class="dash-card-body">
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Wind Speed</span>
+                            <span class="dash-stat-val" id="dashWindSpeed">-- knots</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Wind Direction</span>
+                            <span class="dash-stat-val" id="dashWindDir">--</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Wind Status</span>
+                            <span class="dash-stat-val" id="dashWindStatus">--</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Swell Wrap Efficiency</span>
+                            <span class="dash-stat-val" id="dashSwellWrap">Good</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather & Temp Card -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h3>🌡️ Ocean &amp; Air</h3>
+                    </div>
+                    <div class="dash-card-body">
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Water Temperature</span>
+                            <span class="dash-stat-val" id="dashWaterTemp">-- °C</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Air Temperature</span>
+                            <span class="dash-stat-val" id="dashAirTemp">-- °C</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Weather State</span>
+                            <span class="dash-stat-val" id="dashWeatherState">--</span>
+                        </div>
+                        <div class="dash-stat">
+                            <span class="dash-stat-label">Tide Status</span>
+                            <span class="dash-stat-val" id="dashTideStatus">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spot Recommendations Dashboard -->
+            <div class="dash-recommendations" style="margin-top: var(--spacing-lg);">
+                <div class="dash-rec-header">
+                    <h3>🏄 Spot Recommendation &amp; Safety Rating</h3>
+                </div>
+                <div class="dash-rec-body">
+                    <div class="dash-rec-row">
+                        <strong>🏖️ Beach Sandbar:</strong>
+                        <span id="dashRecSandbar">Fetching real-time spot recommendations...</span>
+                    </div>
+                    <div class="dash-rec-row" style="margin-top: var(--spacing-sm); border-top: 1px solid #e2e8f0; padding-top: var(--spacing-sm);">
+                        <strong>🌊 Reef Left Break:</strong>
+                        <span id="dashRecReef">Fetching real-time spot recommendations...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Surf Safety Section --- -->
+    <section class="surf-safety section-padding" id="safety" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Surf Safety &amp; Lineup Etiquette</h2>
+                <p>Surfing is all about sharing the ocean. Respect the local lineup rules to ensure a safe and fun session.</p>
+            </div>
+            
+            <div class="safety-box">
+                <div class="safety-grid">
+                    <!-- Safety 1 -->
+                    <div class="safety-card">
+                        <div class="safety-icon">👑</div>
+                        <h4>Right of Way</h4>
+                        <p>The surfer closest to the breaking peak has priority. Do not drop in on another surfer's line.</p>
+                    </div>
+                    
+                    <!-- Safety 2 -->
+                    <div class="safety-card">
+                        <div class="safety-icon">🚫</div>
+                        <h4>No Snaking</h4>
+                        <p>Do not paddle around other surfers to steal peak priority. Wait your turn in the lineup cycle.</p>
+                    </div>
+
+                    <!-- Safety 3 -->
+                    <div class="safety-card">
+                        <div class="safety-icon">🤝</div>
+                        <h4>Paddling Wide</h4>
+                        <p>When paddling back out to the lineup, paddle wide through the channel, not through the active wave zone.</p>
+                    </div>
+
+                    <!-- Safety 4 -->
+                    <div class="safety-card">
+                        <div class="safety-icon">🪂</div>
+                        <h4>Control Your Board</h4>
+                        <p>Always hold on to your leash. Never let go of your surfboard, as it can collide with and injure others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Inquiry / Request Form Section --- -->
+    <section class="inquiry-section section-padding" id="inquiry" style="background-color: var(--color-bg); color: #ffffff; border-top: 1px solid #1e293b;">
+        <div class="container" style="max-width: 650px;">
+            <div class="section-header text-center" style="margin-bottom: 30px;">
+                <span class="showcase-tag" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Have Questions?</span>
+                <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-top: 10px; margin-bottom: 12px;">Send an Inquiry</h2>
+                <p style="color: var(--color-text-muted);">Fill in the details below, and we will check availability and get back to you immediately on WhatsApp.</p>
+            </div>
+
+            <form id="inquiryForm" style="background: #0b192c; padding: 30px; border-radius: 12px; border: 1px solid #1e293b; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                    <div>
+                        <label for="inqName" style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px; font-weight: 600;">Full Name *</label>
+                        <input type="text" id="inqName" placeholder="Your Name" required style="width: 100%; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; outline: none; font-size: 0.95rem;">
+                        <span class="error-text" id="inqNameError" style="color: #ef4444; font-size: 0.78rem; display: none; margin-top: 4px;">Please enter your name</span>
+                    </div>
+                    <div>
+                        <label for="inqPhone" style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px; font-weight: 600;">WhatsApp / Phone Number *</label>
+                        <input type="tel" id="inqPhone" placeholder="e.g. +94 76 932 7173" required style="width: 100%; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; outline: none; font-size: 0.95rem;">
+                        <span class="error-text" id="inqPhoneError" style="color: #ef4444; font-size: 0.78rem; display: none; margin-top: 4px;">Please enter a valid phone number</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                    <div>
+                        <label for="inqEmail" style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px; font-weight: 600;">Email Address *</label>
+                        <input type="email" id="inqEmail" placeholder="yourname@example.com" required style="width: 100%; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; outline: none; font-size: 0.95rem;">
+                        <span class="error-text" id="inqEmailError" style="color: #ef4444; font-size: 0.78rem; display: none; margin-top: 4px;">Please enter a valid email address</span>
+                    </div>
+                    <div>
+                        <label for="inqTopic" style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px; font-weight: 600;">Inquiry Topic *</label>
+                        <select id="inqTopic" required style="width: 100%; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; outline: none; font-size: 0.95rem; cursor: pointer;">
+                            <option value="" disabled selected>Select Inquiry Topic</option>
+                            <option value="guiding">🗺️ Guided Coastal Surf Trips</option>
+                            <option value="spots">🌊 Surf Spot Guide Info</option>
+                            <option value="general">❓ General Inquiry</option>
+                        </select>
+                        <span class="error-text" id="inqTopicError" style="color: #ef4444; font-size: 0.78rem; display: none; margin-top: 4px;">Please select an inquiry topic</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <label for="inqDate" style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px; font-weight: 600;">Target Date (Optional)</label>
+                    <input type="date" id="inqDate" style="width: 100%; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; outline: none; font-size: 0.95rem;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label for="inqMessage" style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 6px; font-weight: 600;">Request Details / Message *</label>
+                    <textarea id="inqMessage" placeholder="Tell us more (e.g. board sizes, number of people, questions...)" required style="width: 100%; height: 100px; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #fff; outline: none; font-size: 0.95rem; resize: vertical;"></textarea>
+                    <span class="error-text" id="inqMessageError" style="color: #ef4444; font-size: 0.78rem; display: none; margin-top: 4px;">Please enter request details</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1.05rem; font-weight: 700; background: #f4d03f; color: #031b33; display: flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer; border-radius: 8px; transition: transform 0.2s ease, opacity 0.2s ease;">
+                    Send Inquiry on WhatsApp 💬
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Toast message -->
+    <div class="toast-msg" id="toast">
+        <span class="toast-icon">🤙</span>
+        <span class="toast-text">Opening WhatsApp to confirm your inquiry...</span>
+    </div>
+
+    <!-- --- Footer --- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid-cols-4 footer-grid">
+                
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <h4>🌊 HiriSurf</h4>
+                    <p id="dynFooterBrandText">Hiriketiya Beach, Sri Lanka <svg class="flag-lk" viewBox="0 0 900 600" style="display: inline-block; vertical-align: middle; height: 14px; width: 21px; margin-left: 6px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="900" height="600" fill="#F7C948"/><rect x="30" y="30" width="168" height="540" fill="#EB7424"/><rect x="198" y="30" width="168" height="540" fill="#2D6B52"/><rect x="366" y="30" width="504" height="540" fill="#8D1B3D"/><circle cx="400" cy="65" r="15" fill="#F7C948"/><circle cx="835" cy="65" r="15" fill="#F7C948"/><circle cx="400" cy="535" r="15" fill="#F7C948"/><circle cx="835" cy="535" r="15" fill="#F7C948"/><path d="M520,380 L520,240 L660,240 L660,380 Z M610,240 L610,160 M610,160 L660,180" stroke="#F7C948" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> — Your local surf school for beginner, private, and semi-private surf lessons led by Kasun &amp; team.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/94769327173" target="_blank" class="social-btn dyn-wa-link" aria-label="WhatsApp" title="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.389 9.806-9.788.002-2.614-1.013-5.072-2.859-6.92C16.376 2.05 13.91 1.037 11.3 1.037c-5.41 0-9.81 4.403-9.813 9.802-.001 1.496.398 2.956 1.147 4.254L1.64 20.362l5.007-1.208zm11.233-5.263c-.303-.151-1.793-.884-2.071-.985-.278-.101-.48-.151-.68.151-.2.3-.775.985-.95 1.185-.175.2-.35.225-.653.075-1.205-.602-2.143-1.085-3.007-2.58-.23-.398.23-.37.659-1.226.101-.2.05-.375-.025-.526-.075-.151-.68-1.637-.93-2.24-.244-.587-.492-.507-.68-.517-.174-.01-.375-.012-.576-.012-.201 0-.53.075-.808.375-.278.3-.95.93-.95 2.27 0 1.34.975 2.637 1.109 2.82.135.18 1.92 2.932 4.652 4.113.65.28 1.157.447 1.553.573.653.208 1.248.179 1.718.109.524-.078 1.793-.734 2.046-1.443.253-.71.253-1.317.177-1.443-.076-.126-.278-.201-.581-.352z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/hirisurfschool/" target="_blank" class="social-btn" aria-label="Facebook" title="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/hiriketiya_hiri_surf_school/" target="_blank" class="social-btn" aria-label="Instagram" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html" target="_blank" class="social-btn" aria-label="TripAdvisor" title="TripAdvisor">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.5 10.5 0 0 0 12 1.5zm6.5 11a3.5 3.5 0 0 1-3.5 3.5c-.86 0-1.63-.31-2.24-.82a4.4 4.4 0 0 0 .74-2.43 4.5 4.5 0 0 0-9 0 4.4 4.4 0 0 0 .74 2.43c-.61.51-1.38.82-2.24.82a3.5 3.5 0 0 1 0-7 3.5 3.5 0 0 1 5.92 2.3A4.47 4.47 0 0 0 12 11.5a4.47 4.47 0 0 0 3.32-.8 3.5 3.5 0 0 1 5.92 2.3 3.5 3.5 0 0 1-2.74 3.5zm-12.5 1.5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zm12 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z"/></svg>
+                        </a>
+                        <a href="mailto:hirisurfschool@gmail.com" class="social-btn dyn-email-link" aria-label="Email" title="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#lessons">Surf Lessons</a></li>
+                        <li><a href="#spots">Wave Spots</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="#guiding">Surf Guiding</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Hours -->
+                <div class="footer-col">
+                    <h3>Swell Sessions</h3>
+                    <p id="dynFooterHours">Lessons run daily during daylight:<br>
+                       🌅 <strong>6:00 AM - 6:00 PM</strong><br>
+                       (Best morning &amp; sunset surf sessions)
+                     </p>
+                </div>
+
+                <!-- Col 4: Hiriketiya Location -->
+                <div class="footer-col">
+                    <h3>Hiriketiya Beach Location</h3>
+                    <p style="font-size: 0.95rem; color: #cbd5e1; margin-bottom: 12px;">
+                        📍 <strong>Hiri Surf School</strong><br>
+                        Hiriketiya Beach, Dikwella, Sri Lanka
+                    </p>
+                    <a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac" target="_blank" class="btn btn-outline" style="padding: 8px 14px; font-size: 0.85rem; border-color: rgba(255,255,255,0.3); color: #fff;">📍 Google Maps Directions</a>
+                </div>
+
+            </div>
+
+            <!-- Copyright and legal -->
+            <div class="copyright">
+                <p class="copyright-text">&copy; 2026 Hiri Surf School, Hiriketiya Beach, Sri Lanka. WhatsApp: <a href="https://wa.me/94769327173" target="_blank" class="dyn-wa-link" style="text-decoration: underline;"><span class="dyn-wa-text">+94 76 932 7173</span></a> | Email: <a href="mailto:hirisurfschool@gmail.com" class="dyn-email-link" style="text-decoration: underline;"><span class="dyn-email-text">hirisurfschool@gmail.com</span></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- Fixed Sticky Bottom Action Bar for Mobile Devices --- -->
+    <div class="mobile-sticky-bar">
+        <div class="mobile-sticky-inner">
+            <a href="index.html#booking" class="mobile-sticky-btn mobile-sticky-book">
+                Book Lessons 🏄‍♂️
+            </a>
+            <a href="https://wa.me/94769327173" class="mobile-sticky-btn mobile-sticky-wa dyn-wa-link" target="_blank">
+                WhatsApp Chat 💬
+            </a>
+        </div>
+    </div>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <!-- JavaScript Bundle -->
+    <script src="app.js"></script>
+</body>
+</html>

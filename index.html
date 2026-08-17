@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/hiri.jpg">
+    <title>Hiri Surf School | Surf Lessons in Hiriketiya, Sri Lanka</title>
+    <meta name="description" content="Learn to surf in Hiriketiya with Hiri Surf School. Professional surf lessons for beginners, couples, kids and all levels with local instructors. Easy booking and WhatsApp support.">
+    <meta name="keywords" content="Surf school Hiriketiya, Hiriketiya surf lessons, Best surf school Hiriketiya Sri Lanka, Beginner surf lessons Hiriketiya, Private surf coach Hiriketiya, Hiriketiya surfboard rental and lessons, Learn to surf Sri Lanka Dikwella, Kasun surf lessons">
+    <link rel="canonical" href="https://hirisurfschool.com/">
+
+    <!-- DNS Preconnect for faster Firebase & Font loading -->
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://firestore.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.gstatic.com">
+    <link rel="dns-prefetch" href="https://firestore.googleapis.com">
+    
+    <!-- Open Graph / Facebook / WhatsApp Social Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hirisurfschool.com/">
+    <meta property="og:title" content="Hiri Surf School | Top Rated Surf Lessons in Hiriketiya">
+    <meta property="og:description" content="5.0-star certified surf coaching in Hiriketiya Bay, Sri Lanka. Beginner, private &amp; group surf lessons with Kasun &amp; Team.">
+    <meta property="og:image" content="images/20702.jpg.jpeg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hirisurfschool.com/">
+    <meta name="twitter:title" content="Hiri Surf School | Best Surf Lessons in Hiriketiya Sri Lanka">
+    <meta name="twitter:description" content="Learn to surf at Hiriketiya Beach with Hiri Surf School. Professional beginner, private &amp; group lessons, 5.0 Google rating. Book directly on WhatsApp!">
+    <meta name="twitter:image" content="images/20702.jpg.jpeg">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data / LocalBusiness Schema (JSON-LD) for Rich Google Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "SportsActivityLocation"],
+      "name": "Hiri Surf School",
+      "image": "images/20702.jpg.jpeg",
+      "url": "https://hirisurfschool.com/",
+      "telephone": "+94769327173",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hiriketiya Beach",
+        "addressLocality": "Dikwella",
+        "addressRegion": "Southern Province",
+        "postalCode": "81200",
+        "addressCountry": "LK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 5.963430,
+        "longitude": 80.703120
+      },
+      "hasMap": "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "06:00",
+        "closes": "18:00"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "350"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- --- Mobile Menu Overlay --- -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="#home">Home</a>
+            <a href="#lessons">Surf Lessons</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#about">About Us</a>
+            <a href="surf-guide.html" style="color: var(--color-accent-light); font-weight: 700;">Surf Guide 🌊</a>
+            <a href="#booking" class="btn btn-primary">Book Now 🏄‍♂️</a>
+        </div>
+    </div>
+
+    <!-- --- Floating Glassmorphism Navbar --- -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="logo" aria-label="Hiri Surf School Home">
+                <span class="logo-wave">🌊</span>Hiri<span>Surf</span>
+            </a>
+            
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="#home">Home</a>
+                <a href="#lessons">Surf Lessons</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#about">About Us</a>
+                <div class="dropdown">
+                    <a href="surf-guide.html" class="btn btn-secondary" style="border-radius: 30px; font-weight: 600; padding: 6px 16px; display: inline-flex; align-items: center; gap: 6px;">
+                        Surf Guide 🌊 <span style="font-size: 0.7rem; line-height: 1;">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="surf-guide.html#spots">🌊 Surf Spot Guide</a>
+                        <a href="surf-guide.html#guiding">🗺️ Guided Surf Trips</a>
+                        <a href="surf-guide.html#basic-guides">📖 Beginner Techniques</a>
+                        <a href="surf-guide.html#schedule">🗓️ Daily Surf Routine</a>
+                        <a href="surf-guide.html#surf-report">📊 Live Swell Forecast</a>
+                        <a href="surf-guide.html#safety">🛡️ Water Safety Rules</a>
+                        <a href="surf-guide.html#inquiry">✉️ Send an Inquiry</a>
+                    </div>
+                </div>
+                <a href="#booking" class="btn btn-primary" id="navBookBtn">Book Now 🏄‍♂️</a>
+            </nav>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="hero" id="home">
+        <!-- Animated Hero Background Slideshow Container -->
+        <div class="hero-slideshow-container" id="heroSlideshow">
+            <div class="hero-slide active" style="background-image: url('images/20702.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/20681.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/20713.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/hero-bg.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/69527.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/69528.jpg.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('images/69535.jpg.jpeg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tagline" id="dynHeroTagline">Hiriketiya Beach, Sri Lanka <svg class="flag-lk" viewBox="0 0 900 600" style="display: inline-block; vertical-align: middle; height: 14px; width: 21px; margin-left: 6px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="900" height="600" fill="#F7C948"/><rect x="30" y="30" width="168" height="540" fill="#EB7424"/><rect x="198" y="30" width="168" height="540" fill="#2D6B52"/><rect x="366" y="30" width="504" height="540" fill="#8D1B3D"/><circle cx="400" cy="65" r="15" fill="#F7C948"/><circle cx="835" cy="65" r="15" fill="#F7C948"/><circle cx="400" cy="535" r="15" fill="#F7C948"/><circle cx="835" cy="535" r="15" fill="#F7C948"/><path d="M520,380 L520,240 L660,240 L660,380 Z M610,240 L610,160 M610,160 L660,180" stroke="#F7C948" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+                <h1 class="hero-title" id="dynHeroTitle">Surf Lessons in <span>Hiriketiya, Sri Lanka</span></h1>
+                <p class="hero-subtitle" id="dynHeroSubtitle">Safe, fun, and professional surf lessons led by Kasun &amp; Team. Perfect for complete beginners, couples, kids, and all levels at Hiriketiya Beach.</p>
+                <div class="hero-actions">
+                    <a href="#booking" class="btn btn-primary">BOOK YOUR SURF LESSON 🏄‍♂️</a>
+                    <a href="https://wa.me/94769327173" target="_blank" class="btn btn-secondary">Book on WhatsApp 💬</a>
+                </div>
+            </div>
+            
+            <div class="hero-badge-container">
+                <div class="hero-badge">
+                    <div class="hero-badge-number">5.0 ★</div>
+                    <div class="hero-badge-text">Google Reviews (350+) • 5.0 ★ TripAdvisor • 7+ Years Experience</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gentle Smooth Bottom Ocean Wave Layer -->
+        <div class="gentle-bottom-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path class="gentle-wave-1" d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,40 L1200,120 L0,120 Z"></path>
+                <path class="gentle-wave-2" d="M0,30 C200,100 450,10 600,60 C750,110 1000,20 1200,50 L1200,120 L0,120 Z"></path>
+                <path class="gentle-wave-3" d="M0,60 C300,110 550,40 750,80 C950,120 1100,50 1200,70 L1200,120 L0,120 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- --- Quick Reviews Trust Bar --- -->
+    <div class="reviews-bar" id="reviews-bar">
+        <div class="container">
+            <div class="reviews-bar-inner">
+                <div class="reviews-bar-item">
+                    <span class="reviews-bar-icon">⭐</span>
+                    <div class="reviews-bar-text">
+                        <h4>Google Rating: 5.0 ★</h4>
+                        <p>350+ Verified Customer Reviews</p>
+                    </div>
+                </div>
+                <div class="reviews-bar-item">
+                    <span class="reviews-bar-icon">🦉</span>
+                    <div class="reviews-bar-text">
+                        <h4>TripAdvisor Rating: 5.0 ★</h4>
+                        <p>Top-Rated Local Surf School</p>
+                    </div>
+                </div>
+                <div class="reviews-bar-item">
+                    <span class="reviews-bar-icon">🏄‍♂️</span>
+                    <div class="reviews-bar-text">
+                        <h4>7+ Years Local Experience</h4>
+                        <p>Certified ISA Instructors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- Surf Lessons & Packages Section --- -->
+    <section class="packages section-padding" id="lessons">
+
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Surf Lessons &amp; Transparent Prices</h2>
+                <p>Gentle sand-bottom waves and experienced local coaches make Hiriketiya Beach the perfect place to learn.</p>
+            </div>
+            
+            <div class="grid-cols-4 packages-grid" id="packagesGridContainer">
+                <!-- Package 1: Group Lesson -->
+                <article class="package-card">
+                    <div class="package-img-wrapper">
+                        <img src="images/69546.jpg.jpeg" alt="Group Surf Lesson" class="package-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>Group Surf Lesson</span>
+                        </div>
+                        <span class="package-badge">Popular</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Group Surf Lesson</h3>
+                        <div class="package-meta">
+                            <div class="package-meta-item">⏱ 1h 15m</div>
+                            <div class="package-meta-item">🌊 Beginners</div>
+                        </div>
+                        <p class="package-description">Have fun learning to surf together in a friendly, supportive small group environment.</p>
+                        <ul class="package-features">
+                            <li class="package-feature-item">Softboard &amp; leash included</li>
+                            <li class="package-feature-item">Local experienced coaches</li>
+                            <li class="package-feature-item">UV Rashguard included</li>
+                            <li class="package-feature-item">Beach theory &amp; ocean safety</li>
+                        </ul>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="package-price-amount">5,000 LKR</span>
+                                <span class="package-price-suffix">/ guest</span>
+                            </div>
+                            <a href="#booking" class="btn btn-primary package-book-btn" onclick="document.getElementById('surfPackage').value='group'; document.getElementById('surfPackage').dispatchEvent(new Event('change'));">BOOK NOW</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Package 2: Semi-Private Lesson (Highlighted) -->
+                <article class="package-card" style="border: 2px solid var(--color-accent); transform: translateY(-4px);">
+                    <div class="package-img-wrapper">
+                        <img src="images/69606.jpg.jpeg" alt="Semi-Private Surf Lesson" class="package-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>Semi-Private Lesson</span>
+                        </div>
+                        <span class="package-badge" style="background: linear-gradient(135deg, #f4d03f 0%, #ee964b 100%); color: #031b33;">Best for Couples &amp; Friends</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Semi-Private Lesson</h3>
+                        <div class="package-meta">
+                            <div class="package-meta-item">⏱ 1h 15m</div>
+                            <div class="package-meta-item">👥 2 Guests per Coach</div>
+                        </div>
+                        <p class="package-description">Designed specifically for couples or 2 friends who want dedicated coach focus together.</p>
+                        <ul class="package-features">
+                            <li class="package-feature-item">1 Coach for 2 students</li>
+                            <li class="package-feature-item">Shared surf fun together</li>
+                            <li class="package-feature-item">All surf gear included</li>
+                            <li class="package-feature-item">Personalized wave selection</li>
+                        </ul>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="package-price-amount">6,000 LKR</span>
+                                <span class="package-price-suffix">/ guest</span>
+                            </div>
+                            <a href="#booking" class="btn btn-primary package-book-btn" onclick="document.getElementById('surfPackage').value='semi-private'; document.getElementById('surfPackage').dispatchEvent(new Event('change'));">BOOK NOW</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Package 3: Private Lesson -->
+                <article class="package-card">
+                    <div class="package-img-wrapper">
+                        <img src="images/69535.jpg.jpeg" alt="Private Surf Lesson" class="package-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>Private Surf Lesson</span>
+                        </div>
+                        <span class="package-badge">1-on-1 Focus</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Private Surf Lesson</h3>
+                        <div class="package-meta">
+                            <div class="package-meta-item">⏱ 1h 15m</div>
+                            <div class="package-meta-item">🎯 1-on-1 Coaching</div>
+                        </div>
+                        <p class="package-description">Undivided attention from your senior coach. Perfect for complete beginners or fast progress.</p>
+                        <ul class="package-features">
+                            <li class="package-feature-item">Dedicated 1-on-1 coach</li>
+                            <li class="package-feature-item">Maximum wave count</li>
+                            <li class="package-feature-item">Tailored pop-up coaching</li>
+                            <li class="package-feature-item">Immediate technical feedback</li>
+                        </ul>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="package-price-amount">8,000 LKR</span>
+                                <span class="package-price-suffix">/ guest</span>
+                            </div>
+                            <a href="#booking" class="btn btn-primary package-book-btn" onclick="document.getElementById('surfPackage').value='private'; document.getElementById('surfPackage').dispatchEvent(new Event('change'));">BOOK NOW</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Package 4: Kids Surf Lesson -->
+                <article class="package-card">
+                    <div class="package-img-wrapper">
+                        <img src="images/20713.jpg.jpeg" alt="Kids Surf Lesson" class="package-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>Kids Surf Lesson</span>
+                        </div>
+                        <span class="package-badge">Ages 5-12</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Kids Surf Lesson</h3>
+                        <div class="package-meta">
+                            <div class="package-meta-item">⏱ 1 Hour</div>
+                            <div class="package-meta-item">🧒 Ages 5-12</div>
+                        </div>
+                        <p class="package-description">Safe, gentle, 1-on-1 instruction in shallow waist-deep water for young adventurers.</p>
+                        <ul class="package-features">
+                            <li class="package-feature-item">1-on-1 dedicated instructor</li>
+                            <li class="package-feature-item">Soft safety surfboard</li>
+                            <li class="package-feature-item">Waist-deep safe zone</li>
+                            <li class="package-feature-item">Patience &amp; encouragement</li>
+                        </ul>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="package-price-amount">6,000 LKR</span>
+                                <span class="package-price-suffix">/ kid</span>
+                            </div>
+                            <a href="#booking" class="btn btn-primary package-book-btn" onclick="document.getElementById('surfPackage').value='kids'; document.getElementById('surfPackage').dispatchEvent(new Event('change'));">BOOK NOW</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Additional Multi-Day Packages Grid -->
+            <div class="section-header text-center" style="margin-top: var(--spacing-xl); margin-bottom: var(--spacing-lg);">
+                <h3 style="font-size: 1.8rem; color: var(--color-primary);">Multi-Day Surf Courses</h3>
+                <p>Designed to take you from a complete beginner to a confident independent surfer.</p>
+            </div>
+            
+            <div class="grid-cols-3 instructors-grid" id="coursesGridContainer" style="gap: var(--spacing-lg);">
+                <!-- Multi-Day 1: 1-Day Course -->
+                <article class="package-card" style="overflow: hidden; display: flex; flex-direction: column;">
+                    <div class="package-img-wrapper">
+                        <img src="images/20702.jpg.jpeg" alt="1-Day Surf Course" class="package-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>1-Day Surf Course</span>
+                        </div>
+                        <span class="package-badge" style="background: linear-gradient(135deg, #f4d03f 0%, #ee964b 100%); color: #031b33;">Fast-Track Pop-Up</span>
+                    </div>
+                    <div class="package-content" style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+                        <div>
+                            <h3 class="package-title">1-Day Surf Course (Double Session)</h3>
+                            <div class="package-meta" style="margin-bottom: 10px;">
+                                <div class="package-meta-item">⏱ 2 Sessions (2.5h Total)</div>
+                                <div class="package-meta-item">🌊 All Levels</div>
+                            </div>
+                            <p class="package-description" style="margin-bottom: var(--spacing-sm);">Both morning and afternoon sessions (1h 15m each) in one day. Focus on fast-tracking pop-up stability and safety.</p>
+                        </div>
+                        <div class="package-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06);">
+                            <div class="package-price">
+                                <span class="package-price-amount">13,000 LKR</span>
+                                <span class="package-price-suffix">/ course</span>
+                            </div>
+                            <a href="#booking" class="btn btn-primary package-book-btn" onclick="document.getElementById('surfPackage').value='oneday'; document.getElementById('surfPackage').dispatchEvent(new Event('change'));">BOOK COURSE</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Multi-Day 2: 3-Day Course -->
+                <article class="package-card" style="overflow: hidden; display: flex; flex-direction: column;">
+                    <div class="package-img-wrapper">
+                        <img src="images/20681.jpg.jpeg" alt="3-Day Surf Package" class="package-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>3-Day Surf Package</span>
+                        </div>
+                        <span class="package-badge" style="background: linear-gradient(135deg, #f4d03f 0%, #ee964b 100%); color: #031b33;">Popular 3-Day Course</span>
+                    </div>
+                    <div class="package-content" style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+                        <div>
+                            <h3 class="package-title">3-Day Surf Package</h3>
+                            <div class="package-meta" style="margin-bottom: 10px;">
+                                <div class="package-meta-item">⏱ 3 Days (1.25h/day)</div>
+                                <div class="package-meta-item">🌊 All Levels</div>
+                            </div>
+                            <p class="package-description" style="margin-bottom: var(--spacing-sm);">One 1h 15m session per day for 3 days. Focus on standing up consistently, paddling out, and starting turns.</p>
+                        </div>
+                        <div class="package-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06);">
+                            <div class="package-price">
+                                <span class="package-price-amount">21,000 LKR</span>
+                                <span class="package-price-suffix">/ course</span>
+                            </div>
+                            <a href="#booking" class="btn btn-primary package-book-btn" onclick="document.getElementById('surfPackage').value='threeday'; document.getElementById('surfPackage').dispatchEvent(new Event('change'));">BOOK COURSE</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Multi-Day 3: 5-Day Course -->
+                <article class="package-card" style="overflow: hidden; display: flex; flex-direction: column;">
+                    <div class="package-img-wrapper">
+                        <img src="images/69528.jpg.jpeg" alt="5-Day Surf Package" class="package-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>5-Day Surf Package</span>
+                        </div>
+                        <span class="package-badge" style="background: linear-gradient(135deg, #f4d03f 0%, #ee964b 100%); color: #031b33;">Complete Surfer</span>
+                    </div>
+                    <div class="package-content" style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+                        <div>
+                            <h3 class="package-title">5-Day Surf Package</h3>
+                            <div class="package-meta" style="margin-bottom: 10px;">
+                                <div class="package-meta-item">⏱ 5 Days (1.25h/day)</div>
+                                <div class="package-meta-item">🌊 All Levels</div>
+                            </div>
+                            <p class="package-description" style="margin-bottom: var(--spacing-sm);">Daily 1h 15m coached session for 5 days. Learn advanced pop-up, wave selection, paddling mechanics, and beach safety.</p>
+                        </div>
+                        <div class="package-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06);">
+                            <div class="package-price">
+                                <span class="package-price-amount">30,000 LKR</span>
+                                <span class="package-price-suffix">/ course</span>
+                            </div>
+                            <a href="#booking" class="btn btn-primary package-book-btn" onclick="document.getElementById('surfPackage').value='fiveday'; document.getElementById('surfPackage').dispatchEvent(new Event('change'));">BOOK COURSE</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p class="text-center" style="margin-top: var(--spacing-md); color: var(--color-text-muted); font-size: 0.95rem;">
+                🏄‍♂️ <strong>Kids Surf Lessons (Ages 5-12)</strong> available for <strong>6,000 LKR</strong> (1 hour).
+            </p>
+        </div>
+    </section>
+
+    <!-- --- Why Choose Hiri Surf School Section --- -->
+    <section class="why-hiri section-padding" id="why-hiri">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Why Choose Hiri Surf School?</h2>
+                <p>We are dedicated to providing a safe, professional, and authentic local surfing experience at Hiriketiya Beach.</p>
+            </div>
+            
+            <div class="why-hiri-grid">
+                <!-- Point 1 -->
+                <div class="why-hiri-card">
+                    <div class="why-hiri-card-icon">🎓</div>
+                    <h3>Certified ISA Coaches</h3>
+                    <p>Learn from local instructors who are ISA-accredited (International Surfing Association) and trained in ocean rescue and CPR. Professional coaching you can trust.</p>
+                </div>
+                
+                <!-- Point 2 -->
+                <div class="why-hiri-card">
+                    <div class="why-hiri-card-icon">🛡️</div>
+                    <h3>Safety-First Approach</h3>
+                    <p>All beginner lessons are conducted in waist-deep, safe sandy areas of Hiriketiya Bay. Our coaches stay right next to you for maximum support and safety.</p>
+                </div>
+                
+                <!-- Point 3 -->
+                <div class="why-hiri-card">
+                    <div class="why-hiri-card-icon">🏄‍♂️</div>
+                    <h3>Premium Gear Included</h3>
+                    <p>We provide high-quality soft-top safety boards, leashes, and UV protection rashguards for all students at no extra cost. Swap boards as you progress.</p>
+                </div>
+                
+                <!-- Point 4 -->
+                <div class="why-hiri-card">
+                    <div class="why-hiri-card-icon">☀️</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Ocean swell and wind change throughout the day. We monitor the conditions and schedule your sessions to guarantee the best waves for your skill level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- About Us & Instructors Section --- -->
+    <section class="about-instructors section-padding" id="about" style="background-color: var(--color-bg-light);">
+        <div class="container">
+            <!-- Story & Intro -->
+            <div class="about-intro">
+                <div>
+                    <span class="showcase-tag" id="dynAboutTag">Welcome to Hiri Surf School</span>
+                    <h2 class="about-intro-title" id="dynAboutTitle">Conquer waves with local certified guides</h2>
+                    <p class="about-intro-desc" id="dynAboutDesc">Led by <strong>Kasun &amp; Team</strong>, we are a passionate local surf school dedicated to sharing the joy of surfing with visitors from all around the world. At Hiri Surf School, we believe surfing is not only about standing on a board—it is about building confidence, enjoying the ocean, and creating unforgettable memories.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="about-stat-item">
+                        <div class="about-stat-number">7+</div>
+                        <div class="about-stat-label">Years Local Exp</div>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="about-stat-number">5.0 ★</div>
+                        <div class="about-stat-label">Google Rated</div>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="about-stat-number">Local</div>
+                        <div class="about-stat-label">Safety-Focused</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header text-center">
+                <h2>Meet Kasun &amp; Our Surf Team</h2>
+                <p>Local Hiriketiya instructors dedicated to patient, friendly, and safe coaching for all levels.</p>
+            </div>
+
+            <!-- Instructors Grid -->
+            <div class="instructors-grid" id="instructorsContainer">
+                <!-- Instructor 1: Kasun -->
+                <article class="instructor-card">
+                    <div class="instructor-img-wrapper">
+                        <img src="images/instructor-1.jpg" alt="Kasun — Founder & Head Surf Instructor" class="instructor-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>Kasun</span>
+                        </div>
+                    </div>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">Kasun</h3>
+                        <div class="instructor-role">Founder &amp; Head Surf Instructor</div>
+                        <p class="instructor-bio">Founder of Hiri Surf School and a local Hiriketiya surf instructor, focused on friendly, safe and enjoyable surf lessons for beginners, families and surfers of different levels.</p>
+                        <div class="instructor-badges">
+                            <span class="instructor-badge">Founder &amp; Head Instructor</span>
+                            <span class="instructor-badge">Local Surf Coach</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Instructor 2: 15+ Local Surf Instructors -->
+                <article class="instructor-card">
+                    <div class="instructor-img-wrapper">
+                        <img src="images/20702.jpg.jpeg" alt="15+ Local Surf Instructors" class="instructor-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="img-fallback" style="display: none; height: 100%;">
+                            <span>15+ Local Surf Instructors</span>
+                        </div>
+                    </div>
+                    <div class="instructor-info">
+                        <h3 class="instructor-name">15+ Local Surf Instructors</h3>
+                        <div class="instructor-role">Friendly Local Coaching Team</div>
+                        <p class="instructor-bio">A friendly team of local instructors providing patient, safety-focused coaching for beginners, kids, couples and surfers of all levels.</p>
+                        <div class="instructor-badges">
+                            <span class="instructor-badge">Local Instructors</span>
+                            <span class="instructor-badge">Patient &amp; Friendly</span>
+                            <span class="instructor-badge">All Levels</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Hiriketiya Surf Gallery Section (HD Slider Carousel) --- -->
+    <section class="photo-gallery section-padding" id="gallery" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Life at Hiri Surf School</h2>
+                <p>Capturing raw surfing action, happy beach faces, and tropical Sri Lankan island vibes.</p>
+            </div>
+            
+            <!-- Dynamic Large Sliding Gallery Carousel -->
+            <div class="gallery-slider-wrapper">
+                <div class="gallery-slider-track" id="galleryContainer">
+                    <div class="gallery-slide">
+                        <img src="images/69527.jpg.jpeg" alt="Surf Gallery Image 1" loading="lazy">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/69528.jpg.jpeg" alt="Surf Gallery Image 2" loading="lazy">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/69535.jpg.jpeg" alt="Surf Gallery Image 3" loading="lazy">
+                    </div>
+                </div>
+                <!-- Navigation Controls -->
+                <button type="button" class="gallery-slider-btn gallery-prev" id="galleryPrevBtn" aria-label="Previous Slide">❮</button>
+                <button type="button" class="gallery-slider-btn gallery-next" id="galleryNextBtn" aria-label="Next Slide">❯</button>
+                <!-- Dots Indicator -->
+                <div class="gallery-dots" id="galleryDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surf Safety and lineup etiquette moved to surf-guide.html -->
+
+    <!-- --- Student Reviews / Testimonials Section --- -->
+    <section class="reviews section-padding" id="reviews">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Verified Customer Reviews</h2>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
+                    <a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(244, 208, 63, 0.4); padding: 8px 20px; border-radius: 30px; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.18)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#4285F4"><path d="M12.24 10.285V13.4h6.887c-.648 2.41-2.519 4.13-5.136 4.13A5.72 5.72 0 0 1 8.2 11.8a5.72 5.72 0 0 1 5.79-5.73c1.479 0 2.82.5 3.87 1.48l2.45-2.45A9.15 9.15 0 0 0 13.99 2C8.923 2 4.8 6.13 4.8 11.2s4.123 9.2 9.19 9.2c5.3 0 8.81-3.73 8.81-8.96 0-.61-.05-1.07-.16-1.52H12.24z"/></svg>
+                        <span style="color: #f4d03f; font-weight: 700;">Google: 5.0 ★ (350+ Reviews) ➔</span>
+                    </a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(52, 211, 153, 0.4); padding: 8px 20px; border-radius: 30px; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.18)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                        <span style="font-size: 1.1rem; line-height: 1;">🦉</span>
+                        <span style="color: #4ade80; font-weight: 700;">TripAdvisor: 5.0 ★ Verified ➔</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <div class="reviews-slider" id="reviewsSlider">
+                    <!-- Dynamic Genuine Customer Reviews Loaded Live via Firebase Firestore -->
+                </div>
+
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <button class="slider-btn" id="prevBtn" aria-label="Previous review">←</button>
+                    <button class="slider-btn" id="nextBtn" aria-label="Next review">→</button>
+                </div>
+                <div class="slider-dots" id="sliderDots"></div>
+
+                <!-- Single Clean Review Action Button -->
+                <div style="display: flex; justify-content: center; align-items: center; margin-top: var(--spacing-lg);">
+                    <button type="button" class="btn btn-primary" id="openReviewModalBtn" style="border-radius: 30px; font-size: 1rem; padding: 14px 32px; box-shadow: 0 4px 18px rgba(244, 211, 94, 0.45);">✍️ Write a Review</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        </div>
+    </section>
+
+    <!-- --- FAQ Section (Step 11) --- -->
+    <section class="faq-section section-padding" id="faq" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know before paddling out with us at Hiriketiya Beach.</p>
+            </div>
+            
+            <div class="faq-grid" id="faqsContainer">
+                <!-- FAQ 1 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">🏄‍♂️ Is Hiri Surf School suitable for complete beginners?</h3>
+                    <p class="faq-answer">Yes. We welcome complete beginners and provide patient, step-by-step instruction on beach theory, safety, and in-water popping up.</p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">🎒 What should I bring to the lesson?</h3>
+                    <p class="faq-answer">Bring swimwear, a towel, sunscreen, and drinking water. We will provide all necessary surf equipment for the lesson (surfboard, leash, and rashguard).</p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">🌅 What time is best for surfing?</h3>
+                    <p class="faq-answer">Morning sessions are often a great choice because conditions can be cleaner and the beach can be less crowded. Our instructors can recommend the best time according to current conditions.</p>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">🏊‍♂️ Do I need to know how to swim?</h3>
+                    <p class="faq-answer">Please tell us about your swimming ability when booking. For beginners, we stay in waist-deep water where you can easily stand. Our instructors explain all safety rules before entering the water.</p>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">👥 Can couples or friends book together?</h3>
+                    <p class="faq-answer">Yes. Semi-private lessons are a great option for two people who want to learn together with a dedicated instructor.</p>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">🎯 Can I book a private lesson?</h3>
+                    <p class="faq-answer">Yes. Private lessons provide 1-on-1 dedicated attention from a senior instructor for maximum wave count and fast progress.</p>
+                </div>
+                <!-- FAQ 7 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">📱 How do I book a lesson?</h3>
+                    <p class="faq-answer">Choose your preferred lesson, date, and time through the booking form below or contact us directly on WhatsApp (+94 76 932 7173).</p>
+                </div>
+                <!-- FAQ 8 -->
+                <div class="faq-card">
+                    <h3 class="faq-question">🌊 What happens if the surf conditions are not suitable?</h3>
+                    <p class="faq-answer">Safety comes first. Our instructors assess the conditions daily and will advise you about the safest option or reschedule your session.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Location / Map Section --- -->
+    <section class="location-section section-padding" id="location" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our Location in Hiriketiya</h2>
+                <p>We are located right on the sands of Hiriketiya Beach, Sri Lanka. Find us easily using the map below.</p>
+            </div>
+            
+            <div class="grid-cols-2" style="gap: var(--spacing-lg); align-items: center; margin-top: var(--spacing-lg);">
+                <div class="location-details" style="background: var(--color-bg-light); padding: var(--spacing-md); border-radius: var(--border-radius-md); border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">How to Find Us</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.6; margin-bottom: var(--spacing-md);">Look for the Hiri Surf School sign near the western corner of the bay, right where the sand meets the palm trees. Our team is always on the beach wearing our official rashguards.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.5rem;">📍</span>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--color-primary);">Meeting Point</h4>
+                                <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);"><a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5" target="_blank" style="color: var(--color-primary-light); text-decoration: underline;">Love Hiri Surf School, Hiriketiya, Sri Lanka</a></p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.5rem;">📞</span>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--color-primary);">WhatsApp Contact</h4>
+                                <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);"><a href="https://wa.me/94769327173" target="_blank" class="dyn-wa-link" style="color: var(--color-primary-light); text-decoration: underline;"><span class="dyn-wa-text">+94 76 932 7173</span></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container" style="height: 350px; border-radius: var(--border-radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid rgba(0,0,0,0.05);">
+                    <iframe src="https://maps.google.com/maps?q=5.9634,80.7031&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Booking & Contact Form Section --- -->
+    <section class="booking-section section-padding" id="booking" style="background-color: var(--color-bg-light);">
+        <div class="container">
+            <div class="section-header text-center" style="margin-bottom: var(--spacing-lg);">
+                <h2>Book Your Surf Lesson in Hiriketiya</h2>
+                <p>Ready to catch your first wave? Submit the form below to book directly via WhatsApp with Kasun & Team.</p>
+            </div>
+            <div class="grid-cols-2 booking-grid">
+                
+                <!-- Left Column: Details & Live Calculator -->
+                <div class="booking-info">
+                    <h3>Secure Your Surf Session</h3>
+                    <p>Submitting the form below constructs a booking request message. Click submit to open WhatsApp and message Kasun directly, or check our email fallback details.</p>
+                    
+                    <div class="booking-details-card">
+                        <div class="booking-details-row">
+                            <div class="booking-icon">📍</div>
+                            <div class="booking-details-text">
+                                <h4>Meeting Location</h4>
+                                <p><a href="https://maps.google.com/maps?z=16&amp;q=love%2Bhiri%2Bsurf%2Bschool" target="_blank" id="dynMeetingLocationLink" style="text-decoration: underline; color: var(--color-primary-light);"><span id="dynMeetingLocationText">Love Hiri Surf School, Hiriketiya, Sri Lanka</span></a></p>
+                            </div>
+                        </div>
+                        <div class="booking-details-row">
+                            <div class="booking-icon">💬</div>
+                            <div class="booking-details-text">
+                                <h4>Mobile / WhatsApp</h4>
+                                <p><a href="https://wa.me/94769327173" target="_blank" class="dyn-wa-link" style="text-decoration: underline; font-weight: bold; color: #25d366;"><span class="dyn-wa-text">+94 76 932 7173 (Direct WhatsApp Link)</span></a></p>
+                            </div>
+                        </div>
+                        <div class="booking-details-row">
+                            <div class="booking-icon">📧</div>
+                            <div class="booking-details-text">
+                                <h4>Email Address</h4>
+                                <p><a href="mailto:hirisurfschool@gmail.com" class="dyn-email-link" style="text-decoration: underline; color: var(--color-primary-light);"><span class="dyn-email-text">hirisurfschool@gmail.com</span></a></p>
+                            </div>
+                        </div>
+                        <div class="booking-details-row">
+                            <div class="booking-icon">🌐</div>
+                            <div class="booking-details-text">
+                                <h4>Follow Our Surf Journey</h4>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                    📘 Facebook: <a href="https://www.facebook.com/hirisurfschool/" target="_blank" style="text-decoration: underline; color: #60a5fa; font-weight: 600;">@hirisurfschool</a><br>
+                                    📸 Instagram: <a href="https://www.instagram.com/hiriketiya_hiri_surf_school/" target="_blank" style="text-decoration: underline; color: #4ade80; font-weight: 600;">@hiriketiya_hiri_surf_school</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Booking Price Estimator -->
+                    <div class="live-calculator">
+                        <h4 class="live-calc-header">Live Quote Calculator</h4>
+                        <div class="live-calc-row">
+                            <span>Package:</span>
+                            <span id="calcPackageName">Group Surf Lesson</span>
+                        </div>
+                        <div class="live-calc-row">
+                            <span>Rate:</span>
+                            <span id="calcRate">5,000 LKR</span>
+                        </div>
+                        <div class="live-calc-row">
+                            <span>Guests:</span>
+                            <span id="calcQty">1 Guest</span>
+                        </div>
+                        <div class="live-calc-row">
+                            <span>Subtotal:</span>
+                            <span id="calcSubtotal">5,000 LKR</span>
+                        </div>
+                        <div class="live-calc-row">
+                            <span>Group Discount (4+):</span>
+                            <span id="calcDiscount" style="color: #68d391;">0 LKR</span>
+                        </div>
+                        <div class="live-calc-total">
+                            <span>Total Price:</span>
+                            <span id="calcTotal">5,000 LKR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Booking Form -->
+                <div class="booking-card" style="background-color: #ffffff;">
+                    <form id="bookingForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="form-control" placeholder="John Doe" required>
+                            <span class="error-msg">Name must be at least 3 characters.</span>
+                        </div>
+
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="email" id="emailAddress" class="form-control" placeholder="john@example.com" required>
+                                <span class="error-msg">Please enter a valid email address.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">WhatsApp Phone Number</label>
+                                <input type="tel" id="phoneNumber" class="form-control" placeholder="+1 234 567 890" required>
+                                <span class="error-msg">Enter a valid phone number (min 8 digits).</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="bookingDate">Preferred Date</label>
+                                <input type="date" id="bookingDate" class="form-control" required>
+                                <span class="error-msg">Please select a valid future date.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="groupSize">Group Size</label>
+                                <input type="number" id="groupSize" class="form-control" min="1" max="12" value="1" required>
+                                <span class="error-msg">Group size must be between 1 and 12.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="surfPackage">Surf Package / Level</label>
+                            <select id="surfPackage" class="form-control">
+                                <option value="group" selected>Group Surf Lesson - 5,000 LKR</option>
+                                <option value="semi-private">Semi-Private Lesson - 6,000 LKR</option>
+                                <option value="private">Private Surf Lesson - 8,000 LKR</option>
+                                <option value="kids">Kids Surf Lesson - 6,000 LKR</option>
+                                <option value="oneday">1-Day Surf Course - 13,000 LKR</option>
+                                <option value="threeday">3-Day Surf Package - 21,000 LKR</option>
+                                <option value="fiveday">5-Day Surf Package - 30,000 LKR</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialNotes">Special Inquiries / Swimming Ability</label>
+                            <textarea id="specialNotes" class="form-control" placeholder="Let us know your swimming ability, preferred timing, or any questions for Kasun & team..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary booking-btn">BOOK YOUR SURF LESSON 🏄‍♂️</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Step 12: Final Call to Action Section --- -->
+    <section class="final-cta section-padding" style="background: linear-gradient(135deg, #031b33 0%, #072e54 100%); color: #ffffff; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; margin-bottom: 12px; color: #ffffff;">Ready to catch your first wave in Hiriketiya?</h2>
+            <p style="font-size: 1.1rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 24px auto;">Join Kasun &amp; the team for an unforgettable surf session on Sri Lanka's beautiful, beginner-friendly beach bay.</p>
+            <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                <a href="#booking" class="btn btn-primary" style="padding: 14px 32px; font-size: 1.05rem;">BOOK YOUR SURF LESSON 🏄‍♂️</a>
+                <a href="https://wa.me/94769327173" target="_blank" class="btn btn-secondary" style="padding: 14px 32px; font-size: 1.05rem;">Book on WhatsApp 💬</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Toast Notifications (Successful submission alert) --- -->
+    <div class="toast-msg" id="toast">
+        <span class="toast-icon">🤙</span>
+        <span class="toast-text">Opening WhatsApp to confirm your booking with Kasun...</span>
+    </div>
+
+    <!-- --- Footer --- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid-cols-4 footer-grid">
+                
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <h4>🌊 HiriSurf</h4>
+                    <p id="dynFooterBrandText">Hiriketiya Beach, Sri Lanka <svg class="flag-lk" viewBox="0 0 900 600" style="display: inline-block; vertical-align: middle; height: 14px; width: 21px; margin-left: 6px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);"><rect width="900" height="600" fill="#F7C948"/><rect x="30" y="30" width="168" height="540" fill="#EB7424"/><rect x="198" y="30" width="168" height="540" fill="#2D6B52"/><rect x="366" y="30" width="504" height="540" fill="#8D1B3D"/><circle cx="400" cy="65" r="15" fill="#F7C948"/><circle cx="835" cy="65" r="15" fill="#F7C948"/><circle cx="400" cy="535" r="15" fill="#F7C948"/><circle cx="835" cy="535" r="15" fill="#F7C948"/><path d="M520,380 L520,240 L660,240 L660,380 Z M610,240 L610,160 M610,160 L660,180" stroke="#F7C948" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> — Your local surf school for beginner, private, and semi-private surf lessons led by Kasun &amp; team.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/94769327173" target="_blank" class="social-btn dyn-wa-link" aria-label="WhatsApp" title="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.389 9.806-9.788.002-2.614-1.013-5.072-2.859-6.92C16.376 2.05 13.91 1.037 11.3 1.037c-5.41 0-9.81 4.403-9.813 9.802-.001 1.496.398 2.956 1.147 4.254L1.64 20.362l5.007-1.208zm11.233-5.263c-.303-.151-1.793-.884-2.071-.985-.278-.101-.48-.151-.68.151-.2.3-.775.985-.95 1.185-.175.2-.35.225-.653.075-1.205-.602-2.143-1.085-3.007-2.58-.23-.398.23-.37.659-1.226.101-.2.05-.375-.025-.526-.075-.151-.68-1.637-.93-2.24-.244-.587-.492-.507-.68-.517-.174-.01-.375-.012-.576-.012-.201 0-.53.075-.808.375-.278.3-.95.93-.95 2.27 0 1.34.975 2.637 1.109 2.82.135.18 1.92 2.932 4.652 4.113.65.28 1.157.447 1.553.573.653.208 1.248.179 1.718.109.524-.078 1.793-.734 2.046-1.443.253-.71.253-1.317.177-1.443-.076-.126-.278-.201-.581-.352z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/hirisurfschool/" target="_blank" class="social-btn" aria-label="Facebook" title="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/hiriketiya_hiri_surf_school/" target="_blank" class="social-btn" aria-label="Instagram" title="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html" target="_blank" class="social-btn" aria-label="TripAdvisor" title="TripAdvisor">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.5 10.5 0 0 0 12 1.5zm6.5 11a3.5 3.5 0 0 1-3.5 3.5c-.86 0-1.63-.31-2.24-.82a4.4 4.4 0 0 0 .74-2.43 4.5 4.5 0 0 0-9 0 4.4 4.4 0 0 0 .74 2.43c-.61.51-1.38.82-2.24.82a3.5 3.5 0 0 1 0-7 3.5 3.5 0 0 1 5.92 2.3A4.47 4.47 0 0 0 12 11.5a4.47 4.47 0 0 0 3.32-.8 3.5 3.5 0 0 1 5.92 2.3 3.5 3.5 0 0 1-2.74 3.5zm-12.5 1.5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zm12 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z"/></svg>
+                        </a>
+                        <a href="mailto:hirisurfschool@gmail.com" class="social-btn dyn-email-link" aria-label="Email" title="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#lessons">Surf Lessons</a></li>
+                        <li><a href="#spots">Wave Spots</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#reviews">Student Reviews</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Hours -->
+                <div class="footer-col">
+                    <h3>Swell Sessions</h3>
+                    <p id="dynFooterHours">Lessons run daily during daylight:<br>
+                       🌅 <strong>6:00 AM - 6:00 PM</strong><br>
+                       (Best morning &amp; sunset surf sessions)
+                    </p>
+                </div>
+
+                <!-- Col 4: Hiriketiya Location -->
+                <div class="footer-col">
+                    <h3>Hiriketiya Beach Location</h3>
+                    <p style="font-size: 0.95rem; color: #cbd5e1; margin-bottom: 12px;">
+                        📍 <strong>Hiri Surf School</strong><br>
+                        Hiriketiya Beach, Dikwella, Sri Lanka
+                    </p>
+                    <a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac" target="_blank" class="btn btn-outline" style="padding: 8px 14px; font-size: 0.85rem; border-color: rgba(255,255,255,0.3); color: #fff;">📍 Google Maps Directions</a>
+                </div>
+
+            </div>
+
+            <!-- Copyright and legal -->
+            <div class="copyright">
+                <p class="copyright-text">&copy; 2026 Hiri Surf School, Hiriketiya Beach, Sri Lanka. WhatsApp: <a href="https://wa.me/94769327173" target="_blank" class="dyn-wa-link" style="text-decoration: underline;"><span class="dyn-wa-text">+94 76 932 7173</span></a> | Email: <a href="mailto:hirisurfschool@gmail.com" class="dyn-email-link" style="text-decoration: underline;"><span class="dyn-email-text">hirisurfschool@gmail.com</span></a></p>
+                <p class="design-credit-inline">Designed by <a href="https://www.facebook.com/profile.php?id=100082101311247" target="_blank" style="color: #f4d03f; font-weight: 700; text-decoration: none;">Infinite Design</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- User Review Submission Modal --- -->
+    <div class="user-review-modal" id="userReviewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 27, 51, 0.85); backdrop-filter: blur(8px); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
+        <div class="user-review-card" style="max-width: 500px; width: 100%; background: #031b33; color: #ffffff; border: 2px solid #f4d03f; border-radius: 16px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3 style="color: #f4d03f; font-size: 1.5rem; font-family: var(--font-heading); margin: 0;">✍️ Write a Review</h3>
+                <button type="button" id="closeReviewModalBtn" style="background: none; border: none; color: #ffffff; font-size: 1.8rem; cursor: pointer;">&times;</button>
+            </div>
+            <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 20px;">Share your surfing experience at Hiri Surf School, Hiriketiya Beach!</p>
+            <form id="userReviewForm">
+                <!-- Google Login Block -->
+                <div id="googleAuthContainer" style="margin-bottom: 16px; display: none;">
+                    <div id="googleLoggedOut" style="display: flex; flex-direction: column; gap: 12px; align-items: center; background: #071626; border: 1px dashed rgba(244, 208, 63, 0.4); padding: 16px; border-radius: 8px; text-align: center;">
+                        <span style="font-size: 0.8rem; color: #cbd5e1;">Sign in with Google to automatically use your profile photo:</span>
+                        <button type="button" id="googleLoginBtn" style="background: #ffffff; color: #1e293b; border: none; font-family: Roboto, sans-serif; font-weight: 500; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; display: flex; align-items: center; gap: 8px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.25);">
+                            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.909c1.702-1.567 2.683-3.874 2.683-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.909-2.258c-.806.54-1.837.86-3.047.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.93 5.48 18 9 18z" fill="#34A853"/><path d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.173 0 7.549 0 9s.347 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.32 0 2.505.453 3.44 1.354l2.58-2.58C13.463.804 11.427 0 9 0 5.48 0 2.438 2.07 1.057 5.061l3.007 2.332c.708-2.127 2.692-3.813 4.936-3.813z" fill="#EA4335"/></svg>
+                            Sign in with Google
+                        </button>
+                        
+                        <div style="width: 100%; border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0; position: relative;">
+                            <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #071626; padding: 0 10px; font-size: 0.75rem; color: #64748b;">OR</span>
+                        </div>
+                        
+                        <span style="font-size: 0.8rem; color: #cbd5e1;">Or sign in via Email Link:</span>
+                        <div style="display: flex; gap: 8px; width: 100%;">
+                            <input type="email" id="authEmailInput" placeholder="your.email@example.com" style="flex: 1; background: #1e293b; color: #ffffff; border: 1px solid #475569; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem;">
+                            <button type="button" id="authSendEmailLinkBtn" style="background: #38bdf8; color: #031b33; font-weight: bold; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer;">Send Link</button>
+                        </div>
+                        <div id="authEmailStatusMsg" style="font-size: 0.75rem; color: #4ade80; display: none;"></div>
+                    </div>
+                    <div id="googleLoggedIn" style="display: none; align-items: center; justify-content: space-between; background: #071626; border: 1px solid rgba(16, 185, 129, 0.4); padding: 8px 12px; border-radius: 8px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img id="googleUserPhoto" src="" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #10b981;">
+                            <div>
+                                <div style="font-size: 0.85rem; font-weight: bold; color: #ffffff;" id="googleUserName">Name</div>
+                                <span style="font-size: 0.7rem; color: #94a3b8;" id="googleUserEmail">email@gmail.com</span>
+                            </div>
+                        </div>
+                        <button type="button" id="googleLogoutBtn" style="background: transparent; color: #ef4444; border: 1px solid #ef4444; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; cursor: pointer;">Sign Out</button>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Your Full Name</label>
+                    <input type="text" id="revName" class="form-control" placeholder="e.g. David Marshall" required style="background: #1e293b; color: #ffffff; border: 1px solid #475569;">
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Country / Surfing Level</label>
+                    <input type="text" id="revMeta" class="form-control" placeholder="e.g. Beginner Surfer • United Kingdom" required style="background: #1e293b; color: #ffffff; border: 1px solid #475569;">
+                </div>
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Rating (1 to 5 Stars)</label>
+                    <select id="revRating" class="form-control" style="background: #1e293b; color: #ffffff; border: 1px solid #475569;">
+                        <option value="★★★★★" selected>★★★★★ (5 Stars - Excellent!)</option>
+                        <option value="★★★★☆">★★★★☆ (4 Stars - Very Good)</option>
+                        <option value="★★★☆☆">★★★☆☆ (3 Stars - Good)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="avatarManualContainer" style="margin-bottom: 14px;">
+                    <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Profile Photo (Optional)</label>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-top: 6px;">
+                        <input type="file" id="revPhotoUpload" accept="image/*" style="display: none;">
+                        <button type="button" onclick="document.getElementById('revPhotoUpload').click()" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; border-color: #38bdf8; color: #38bdf8; white-space: nowrap;">📤 Choose Photo</button>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Or pick icon:</span>
+                        <div style="display: flex; gap: 6px;" id="defaultAvatars">
+                            <button type="button" class="avatar-btn active" data-avatar="🌊" style="width: 32px; height: 32px; border-radius: 50%; background: #1e293b; border: 2px solid #f4d03f; color: #fff; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">🌊</button>
+                            <button type="button" class="avatar-btn" data-avatar="🏄‍♂️" style="width: 32px; height: 32px; border-radius: 50%; background: #1e293b; border: 2px solid transparent; color: #fff; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">🏄‍♂️</button>
+                            <button type="button" class="avatar-btn" data-avatar="🏄‍♀️" style="width: 32px; height: 32px; border-radius: 50%; background: #1e293b; border: 2px solid transparent; color: #fff; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">🏄‍♀️</button>
+                            <button type="button" class="avatar-btn" data-avatar="🌴" style="width: 32px; height: 32px; border-radius: 50%; background: #1e293b; border: 2px solid transparent; color: #fff; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">🌴</button>
+                        </div>
+                        <img id="avatarPreview" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #f4d03f; display: none;">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Your Review</label>
+                    <textarea id="revText" class="form-control" placeholder="Tell us about your lesson, coaches, and waves..." required style="background: #1e293b; color: #ffffff; border: 1px solid #475569; height: 90px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700;">SUBMIT REVIEW 🌟</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- --- Review Submission Success Modal --- -->
+    <div class="user-review-modal" id="reviewSuccessModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 27, 51, 0.85); backdrop-filter: blur(8px); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
+        <div class="user-review-card" style="max-width: 480px; width: 100%; background: #031b33; color: #ffffff; border: 2px solid #4ade80; border-radius: 16px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); text-align: center; position: relative;">
+            <button type="button" id="closeSuccessModalBtn" style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: #ffffff; font-size: 1.8rem; cursor: pointer;">&times;</button>
+            <div style="font-size: 3rem; margin-bottom: 12px;">🌟</div>
+            <h3 style="color: #4ade80; font-size: 1.5rem; font-family: var(--font-heading); margin-bottom: 8px;">Review Posted Successfully!</h3>
+            <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 20px;">Your review is now live on our website slider. Double your support by posting it to Google too!</p>
+            
+            <div style="background: #1e293b; padding: 14px; border-radius: 8px; margin-bottom: 16px; text-align: left; border: 1px solid #334155;">
+                <p id="successReviewText" style="font-size: 0.88rem; color: #e2e8f0; margin: 0; font-style: italic; max-height: 80px; overflow-y: auto;"></p>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button type="button" id="copyReviewBtn" class="btn btn-outline" style="border-color: #38bdf8; color: #38bdf8; width: 100%; font-weight: 600;">📋 Copy Review Text</button>
+                <a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac" target="_blank" id="postToGoogleBtn" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700; background: #4ade80; color: #031b33;">💙 Post on Google Reviews ➔</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Fixed Mobile Booking & WhatsApp Bar (Step 8) -->
+    <div class="mobile-sticky-bar">
+        <div class="mobile-sticky-inner">
+            <a href="#booking" class="mobile-sticky-btn mobile-sticky-book">Book Now 🏄‍♂️</a>
+            <a href="https://wa.me/94769327173" target="_blank" class="mobile-sticky-btn mobile-sticky-wa">Book on WhatsApp 💬</a>
+        </div>
+    </div>
+    <!-- Firebase Compat SDKs (defer = non-blocking, loads after HTML parses) -->
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+    <script defer src="firebase-init.js"></script>
+    <!-- Frontend Scripts -->
+    <script defer src="app.js"></script>
+</body>
+</html>
