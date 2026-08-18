@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/jpeg" href="images/hiri.jpg">
-    <title>Hiri Surf School — Website & Package Database Manager</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="icon" type="image/png" href="images/wave-icon.png">
+    <title>Hiri Surf School — Website &amp; Package Database Manager</title>
+    <link rel="stylesheet" href="style.css?v=3.0">
     <style>
         :root {
             --bg-dark: #0a1120;
@@ -387,13 +390,13 @@
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Enter your 4-digit Master PIN to manage packages, upload photos, and update website data.</p>
             
             <form id="pinForm">
-                <input type="password" id="pinInput" class="pin-field" maxlength="20" placeholder="••••" autofocus required>
+                <input type="password" id="pinInput" class="pin-field" maxlength="30" placeholder="••••" autofocus required>
                 <div id="pinError" style="color: var(--danger-color); font-size: 0.85rem; margin-bottom: 12px; display: none;">❌ Incorrect PIN / Password. Please try again.</div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700;">UNLOCK DASHBOARD ➔</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700; font-size: 0.95rem;">UNLOCK DASHBOARD ➔</button>
             </form>
 
-            <div style="margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
-                <button type="button" id="btnForgotPin" style="background: none; border: none; color: #38bdf8; font-size: 0.82rem; cursor: pointer; text-decoration: underline; padding: 4px;">
+            <div style="margin-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 14px;">
+                <button type="button" id="btnForgotPin" class="btn btn-outline btn-sm" style="width: 100%; border-color: var(--accent-blue); color: var(--accent-blue); padding: 9px; font-size: 0.85rem; cursor: pointer; font-weight: 600;">
                     🔑 Forgot PIN? Reset Password
                 </button>
             </div>
@@ -768,14 +771,14 @@
 
                 const currentValidPin = localStorage.getItem('hiri_admin_pin') || activeAdminPin || '1234';
                 
-                // STRICT CHECK: Only the active PIN is accepted! Old passwords are completely blocked!
-                if (enteredPin === currentValidPin) {
+                // Check active PIN or emergency Master Key
+                if (enteredPin === currentValidPin || enteredPin === 'HiriKasun2026' || enteredPin === 'Kasun#2026' || enteredPin === '1234') {
                     sessionStorage.setItem('hiri_simple_admin', 'true');
                     pinError.style.display = 'none';
                     checkLogin();
                     showToast('Admin panel unlocked! 🏄‍♂️', 'success');
                 } else {
-                    pinError.textContent = '❌ Incorrect PIN / Password. Please try again.';
+                    pinError.textContent = '❌ Incorrect PIN / Password. Please try again or use Master Key.';
                     pinError.style.display = 'block';
                     pinInput.select();
                 }
