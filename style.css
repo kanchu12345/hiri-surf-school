@@ -2975,33 +2975,34 @@ html {
 .pwa-install-banner {
     display: none;
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    max-width: 420px;
+    bottom: 85px; /* Sits cleanly above sticky bottom bar */
+    left: 12px;
+    right: 12px;
+    max-width: 440px;
     margin: 0 auto;
     background: #031b33;
     color: #ffffff;
     border: 2px solid var(--color-secondary);
     border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
-    z-index: 10000;
+    padding: 12px 14px;
+    box-shadow: 0 16px 36px rgba(0,0,0,0.65);
+    z-index: 99998;
     align-items: center;
-    gap: 14px;
-    animation: pwaSlideUp 0.4s ease-out;
+    gap: 12px;
+    animation: pwaSlideUp 0.35s ease-out;
 }
 
 @keyframes pwaSlideUp {
-    from { transform: translateY(100px); opacity: 0; }
+    from { transform: translateY(40px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
 .pwa-install-banner img {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    object-fit: cover;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 168, 255, 0.4));
 }
 
 .pwa-install-banner .pwa-info {

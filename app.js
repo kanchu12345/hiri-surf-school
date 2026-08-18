@@ -2226,10 +2226,10 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.className = 'pwa-install-banner';
             banner.id = 'pwaInstallBanner';
             banner.innerHTML = `
-                <img src="images/hiri.jpg" alt="Hiri Surf Icon">
+                <img src="images/wave-logo.png" alt="Hiri Surf Icon">
                 <div class="pwa-info">
                     <h4 class="pwa-title">Install Hiri Surf App</h4>
-                    <p class="pwa-sub">Instant offline wave forecast & 1-tap bookings</p>
+                    <p class="pwa-sub">1-Tap Bookings &amp; Offline Waves Report</p>
                 </div>
                 <div class="pwa-actions">
                     <button class="pwa-install-btn" id="pwaInstallAction">Install</button>
