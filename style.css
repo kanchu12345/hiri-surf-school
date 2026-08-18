@@ -305,10 +305,35 @@ img {
 }
 
 .logo-wave {
-    margin-right: 4px;
-    font-size: 1.5rem;
+    margin-right: 6px;
+    font-size: 1.65rem;
     line-height: 1;
     display: inline-block;
+    vertical-align: middle;
+    transform-origin: bottom center;
+    animation: surfWaveRoll 2.6s infinite ease-in-out;
+    filter: drop-shadow(0 2px 6px rgba(0, 168, 255, 0.45));
+    transition: filter 0.3s ease;
+}
+
+.logo:hover .logo-wave {
+    animation: surfWaveRoll 1.2s infinite ease-in-out;
+    filter: drop-shadow(0 4px 10px rgba(244, 208, 63, 0.8));
+}
+
+@keyframes surfWaveRoll {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateY(-4px) rotate(-8deg) scale(1.08);
+    }
+    50% {
+        transform: translateY(1px) rotate(4deg) scale(1.02);
+    }
+    75% {
+        transform: translateY(-2px) rotate(-4deg) scale(1.06);
+    }
 }
 
 /* Navigation Links */
