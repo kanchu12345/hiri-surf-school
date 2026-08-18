@@ -1342,24 +1342,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const cancelReviewBtn = document.getElementById('cancelReviewBtn');
+    const closeSuccessBottomBtn = document.getElementById('closeSuccessBottomBtn');
+
+    const openModal = (modal) => {
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    const closeModal = (modal) => {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
+
     if (openReviewModalBtn && userReviewModal) {
         openReviewModalBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            userReviewModal.style.display = 'flex';
+            openModal(userReviewModal);
         });
     }
 
     if (closeReviewModalBtn && userReviewModal) {
-        closeReviewModalBtn.addEventListener('click', () => {
-            userReviewModal.style.display = 'none';
-        });
+        closeReviewModalBtn.addEventListener('click', () => closeModal(userReviewModal));
+    }
+
+    if (cancelReviewBtn && userReviewModal) {
+        cancelReviewBtn.addEventListener('click', () => closeModal(userReviewModal));
     }
 
     if (closeSuccessModalBtn && reviewSuccessModal) {
-        closeSuccessModalBtn.addEventListener('click', () => {
-            reviewSuccessModal.style.display = 'none';
+        closeSuccessModalBtn.addEventListener('click', () => closeModal(reviewSuccessModal));
+    }
+
+    if (closeSuccessBottomBtn && reviewSuccessModal) {
+        closeSuccessBottomBtn.addEventListener('click', () => closeModal(reviewSuccessModal));
+    }
+
+    // Close on backdrop tap / click outside the card
+    if (userReviewModal) {
+        userReviewModal.addEventListener('click', (e) => {
+            if (e.target === userReviewModal) {
+                closeModal(userReviewModal);
+            }
         });
     }
+
+    if (reviewSuccessModal) {
+        reviewSuccessModal.addEventListener('click', (e) => {
+            if (e.target === reviewSuccessModal) {
+                closeModal(reviewSuccessModal);
+            }
+        });
+    }
+
+    // Close on ESC key
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal(userReviewModal);
+            closeModal(reviewSuccessModal);
+        }
+    });
 
     // Handle review text clipboard copy
     if (copyReviewBtn && successReviewText) {

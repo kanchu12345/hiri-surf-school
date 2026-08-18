@@ -954,28 +954,33 @@
     </footer>
 
     <!-- --- User Review Submission Modal --- -->
-    <div class="user-review-modal" id="userReviewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 27, 51, 0.85); backdrop-filter: blur(8px); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
-        <div class="user-review-card" style="max-width: 500px; width: 100%; background: #031b33; color: #ffffff; border: 2px solid #f4d03f; border-radius: 16px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <h3 style="color: #f4d03f; font-size: 1.5rem; font-family: var(--font-heading); margin: 0;">✍️ Write a Review</h3>
-                <button type="button" id="closeReviewModalBtn" style="background: none; border: none; color: #ffffff; font-size: 1.8rem; cursor: pointer;">&times;</button>
+    <div class="user-review-modal" id="userReviewModal">
+        <div class="user-review-card">
+            <div class="modal-header-row">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.4rem;">✍️</span>
+                    <h3 style="color: var(--color-secondary); font-size: 1.3rem; font-family: var(--font-heading); margin: 0;">Write a Review</h3>
+                </div>
+                <button type="button" id="closeReviewModalBtn" class="modal-close-icon" aria-label="Close modal" title="Close (or press ESC)">&times;</button>
             </div>
-            <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 20px;">Share your surfing experience at Hiri Surf School, Hiriketiya Beach!</p>
+            
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 16px;">Share your surfing experience at Hiri Surf School, Hiriketiya Beach!</p>
+            
             <form id="userReviewForm">
                 <!-- Google Login Block -->
                 <div id="googleAuthContainer" style="margin-bottom: 16px; display: none;">
-                    <div id="googleLoggedOut" style="display: flex; flex-direction: column; gap: 12px; align-items: center; background: #071626; border: 1px dashed rgba(244, 208, 63, 0.4); padding: 16px; border-radius: 8px; text-align: center;">
+                    <div id="googleLoggedOut" style="display: flex; flex-direction: column; gap: 10px; align-items: center; background: #071626; border: 1px dashed rgba(244, 208, 63, 0.4); padding: 14px; border-radius: 10px; text-align: center;">
                         <span style="font-size: 0.8rem; color: #cbd5e1;">Sign in with Google to automatically use your profile photo:</span>
                         <button type="button" id="googleLoginBtn" style="background: #ffffff; color: #1e293b; border: none; font-family: Roboto, sans-serif; font-weight: 500; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; display: flex; align-items: center; gap: 8px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.25);">
                             <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.909c1.702-1.567 2.683-3.874 2.683-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.909-2.258c-.806.54-1.837.86-3.047.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.93 5.48 18 9 18z" fill="#34A853"/><path d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.173 0 7.549 0 9s.347 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.32 0 2.505.453 3.44 1.354l2.58-2.58C13.463.804 11.427 0 9 0 5.48 0 2.438 2.07 1.057 5.061l3.007 2.332c.708-2.127 2.692-3.813 4.936-3.813z" fill="#EA4335"/></svg>
                             Sign in with Google
                         </button>
                         
-                        <div style="width: 100%; border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0; position: relative;">
-                            <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #071626; padding: 0 10px; font-size: 0.75rem; color: #64748b;">OR</span>
+                        <div style="width: 100%; border-top: 1px solid rgba(255,255,255,0.1); margin: 4px 0; position: relative;">
+                            <span style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: #071626; padding: 0 10px; font-size: 0.72rem; color: #64748b;">OR</span>
                         </div>
                         
-                        <span style="font-size: 0.8rem; color: #cbd5e1;">Or sign in via Email Link:</span>
+                        <span style="font-size: 0.78rem; color: #cbd5e1;">Or sign in via Email Link:</span>
                         <div style="display: flex; gap: 8px; width: 100%;">
                             <input type="email" id="authEmailInput" placeholder="your.email@example.com" style="flex: 1; background: #1e293b; color: #ffffff; border: 1px solid #475569; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem;">
                             <button type="button" id="authSendEmailLinkBtn" style="background: #38bdf8; color: #031b33; font-weight: bold; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer;">Send Link</button>
@@ -994,27 +999,27 @@
                     </div>
                 </div>
 
-                <div class="form-group" style="margin-bottom: 14px;">
+                <div class="form-group" style="margin-bottom: 12px;">
                     <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Your Full Name</label>
-                    <input type="text" id="revName" class="form-control" placeholder="e.g. David Marshall" required style="background: #1e293b; color: #ffffff; border: 1px solid #475569;">
+                    <input type="text" id="revName" class="form-control" placeholder="e.g. David Marshall" required style="background: #1e293b; color: #ffffff; border: 1px solid #475569; width: 100%; box-sizing: border-box;">
                 </div>
-                <div class="form-group" style="margin-bottom: 14px;">
+                <div class="form-group" style="margin-bottom: 12px;">
                     <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Country / Surfing Level</label>
-                    <input type="text" id="revMeta" class="form-control" placeholder="e.g. Beginner Surfer • United Kingdom" required style="background: #1e293b; color: #ffffff; border: 1px solid #475569;">
+                    <input type="text" id="revMeta" class="form-control" placeholder="e.g. Beginner Surfer • United Kingdom" required style="background: #1e293b; color: #ffffff; border: 1px solid #475569; width: 100%; box-sizing: border-box;">
                 </div>
-                <div class="form-group" style="margin-bottom: 14px;">
+                <div class="form-group" style="margin-bottom: 12px;">
                     <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Rating (1 to 5 Stars)</label>
-                    <select id="revRating" class="form-control" style="background: #1e293b; color: #ffffff; border: 1px solid #475569;">
+                    <select id="revRating" class="form-control" style="background: #1e293b; color: #ffffff; border: 1px solid #475569; width: 100%; box-sizing: border-box;">
                         <option value="★★★★★" selected>★★★★★ (5 Stars - Excellent!)</option>
                         <option value="★★★★☆">★★★★☆ (4 Stars - Very Good)</option>
                         <option value="★★★☆☆">★★★☆☆ (3 Stars - Good)</option>
                     </select>
                 </div>
-                <div class="form-group" id="avatarManualContainer" style="margin-bottom: 14px;">
+                <div class="form-group" id="avatarManualContainer" style="margin-bottom: 12px;">
                     <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Profile Photo (Optional)</label>
-                    <div style="display: flex; align-items: center; gap: 12px; margin-top: 6px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px; flex-wrap: wrap;">
                         <input type="file" id="revPhotoUpload" accept="image/*" style="display: none;">
-                        <button type="button" onclick="document.getElementById('revPhotoUpload').click()" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; border-color: #38bdf8; color: #38bdf8; white-space: nowrap;">📤 Choose Photo</button>
+                        <button type="button" onclick="document.getElementById('revPhotoUpload').click()" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem; border-color: #38bdf8; color: #38bdf8; white-space: nowrap;">📤 Choose Photo</button>
                         <span style="color: #94a3b8; font-size: 0.8rem;">Or pick icon:</span>
                         <div style="display: flex; gap: 6px;" id="defaultAvatars">
                             <button type="button" class="avatar-btn active" data-avatar="🌊" style="width: 32px; height: 32px; border-radius: 50%; background: #1e293b; border: 2px solid #f4d03f; color: #fff; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">🌊</button>
@@ -1025,30 +1030,36 @@
                         <img id="avatarPreview" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #f4d03f; display: none;">
                     </div>
                 </div>
-                <div class="form-group" style="margin-bottom: 20px;">
+                <div class="form-group" style="margin-bottom: 16px;">
                     <label style="color: #cbd5e1; font-size: 0.85rem; display: block; margin-bottom: 4px;">Your Review</label>
-                    <textarea id="revText" class="form-control" placeholder="Tell us about your lesson, coaches, and waves..." required style="background: #1e293b; color: #ffffff; border: 1px solid #475569; height: 90px;"></textarea>
+                    <textarea id="revText" class="form-control" placeholder="Tell us about your lesson, coaches, and waves..." required style="background: #1e293b; color: #ffffff; border: 1px solid #475569; min-height: 80px; width: 100%; box-sizing: border-box;"></textarea>
                 </div>
+                
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700;">SUBMIT REVIEW 🌟</button>
+                <button type="button" id="cancelReviewBtn" class="modal-cancel-btn">✕ Cancel &amp; Return to Website</button>
             </form>
         </div>
     </div>
 
     <!-- --- Review Submission Success Modal --- -->
-    <div class="user-review-modal" id="reviewSuccessModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 27, 51, 0.85); backdrop-filter: blur(8px); z-index: 99999; justify-content: center; align-items: center; padding: 20px;">
-        <div class="user-review-card" style="max-width: 480px; width: 100%; background: #031b33; color: #ffffff; border: 2px solid #4ade80; border-radius: 16px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); text-align: center; position: relative;">
-            <button type="button" id="closeSuccessModalBtn" style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: #ffffff; font-size: 1.8rem; cursor: pointer;">&times;</button>
-            <div style="font-size: 3rem; margin-bottom: 12px;">🌟</div>
-            <h3 style="color: #4ade80; font-size: 1.5rem; font-family: var(--font-heading); margin-bottom: 8px;">Review Posted Successfully!</h3>
-            <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 20px;">Your review is now live on our website slider. Double your support by posting it to Google too!</p>
+    <div class="user-review-modal" id="reviewSuccessModal">
+        <div class="user-review-card" style="text-align: center; border-color: #4ade80;">
+            <div class="modal-header-row" style="border-bottom: none; margin-bottom: 0;">
+                <div></div>
+                <button type="button" id="closeSuccessModalBtn" class="modal-close-icon" aria-label="Close">&times;</button>
+            </div>
+            <div style="font-size: 3rem; margin-bottom: 8px;">🌟</div>
+            <h3 style="color: #4ade80; font-size: 1.4rem; font-family: var(--font-heading); margin-bottom: 8px;">Review Posted Successfully!</h3>
+            <p style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 16px;">Your review is submitted! Boost our local coaches by copying your review to Google Reviews too:</p>
             
-            <div style="background: #1e293b; padding: 14px; border-radius: 8px; margin-bottom: 16px; text-align: left; border: 1px solid #334155;">
-                <p id="successReviewText" style="font-size: 0.88rem; color: #e2e8f0; margin: 0; font-style: italic; max-height: 80px; overflow-y: auto;"></p>
+            <div style="background: #1e293b; padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: left; border: 1px solid #334155;">
+                <p id="successReviewText" style="font-size: 0.85rem; color: #e2e8f0; margin: 0; font-style: italic; max-height: 80px; overflow-y: auto;"></p>
             </div>
             
             <div style="display: flex; flex-direction: column; gap: 10px;">
                 <button type="button" id="copyReviewBtn" class="btn btn-outline" style="border-color: #38bdf8; color: #38bdf8; width: 100%; font-weight: 600;">📋 Copy Review Text</button>
                 <a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac" target="_blank" id="postToGoogleBtn" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700; background: #4ade80; color: #031b33;">💙 Post on Google Reviews ➔</a>
+                <button type="button" id="closeSuccessBottomBtn" class="modal-cancel-btn">✕ Done &amp; Close</button>
             </div>
         </div>
     </div>
