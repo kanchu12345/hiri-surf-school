@@ -24,8 +24,61 @@
     <meta property="og:description" content="Local spot knowledge, guided trips, and live weather telemetry from Hiriketiya Bay.">
     <meta property="og:image" content="images/20702.jpg.jpeg">
 
+    <!-- Geo & Local SEO Meta Tags -->
+    <meta name="geo.region" content="LK-3">
+    <meta name="geo.placename" content="Hiriketiya Beach, Dikwella, Southern Province">
+    <meta name="geo.position" content="5.963430;80.703120">
+    <meta name="ICBM" content="5.963430, 80.703120">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css?v=2.1">
+
+    <!-- Structured Data (JSON-LD) for Guide & Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://hirisurfschool.com/surf-guide.html#guide",
+          "headline": "Hiriketiya Surf Spot Guide & Live Swell Forecast",
+          "description": "Comprehensive guide to surfing in Hiriketiya Bay, Sri Lanka. Detailed breakdown of Beach Sandbar and Left Reef Point, wave conditions, tides, and guided surf adventures.",
+          "image": "https://hirisurfschool.com/images/20713.jpg.jpeg",
+          "author": {
+            "@type": "Organization",
+            "name": "Hiri Surf School",
+            "url": "https://hirisurfschool.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hiri Surf School",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hirisurfschool.com/images/wave-icon.png"
+            }
+          },
+          "mainEntityOfPage": "https://hirisurfschool.com/surf-guide.html"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://hirisurfschool.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Surf Spot Guide & Swell Forecast",
+              "item": "https://hirisurfschool.com/surf-guide.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 

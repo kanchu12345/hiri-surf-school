@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage / Main Surf School Booking & Lessons Hub -->
+    <url>
+        <loc>https://hirisurfschool.com/</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/20702.jpg.jpeg</image:loc>
+            <image:title>Beginner Surf Lessons at Hiriketiya Beach with Hiri Surf School</image:title>
+            <image:caption>Professional surf lessons for beginners and travelers at Hiriketiya Bay, Sri Lanka led by Kasun &amp; Team.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/69528.jpg.jpeg</image:loc>
+            <image:title>Hiriketiya Beach Surfing Lessons Sri Lanka</image:title>
+            <image:caption>Surfing in horseshoe shaped bay at Hiriketiya with gentle beginner waves.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/69546.jpg.jpeg</image:loc>
+            <image:title>Private Surf Coaching Hiriketiya</image:title>
+            <image:caption>1-on-1 personalized surf coaching and pop-up technique instruction.</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Hiriketiya Surf Spot Guide, Guiding & Live Swell Forecasts -->
+    <url>
+        <loc>https://hirisurfschool.com/surf-guide.html</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/20713.jpg.jpeg</image:loc>
+            <image:title>Hiriketiya Reef Point and Beach Sandbar Surf Guide</image:title>
+            <image:caption>Complete breakdown of Hiriketiya Bay surf spots, tide charts, and wave mechanics.</image:caption>
+        </image:image>
+    </url>
+
+</urlset>

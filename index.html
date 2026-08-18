@@ -39,52 +39,159 @@
     <meta name="twitter:description" content="Learn to surf at Hiriketiya Beach with Hiri Surf School. Professional beginner, private &amp; group lessons, 5.0 Google rating. Book directly on WhatsApp!">
     <meta name="twitter:image" content="images/20702.jpg.jpeg">
 
+    <!-- Geo & Local SEO Meta Tags -->
+    <meta name="geo.region" content="LK-3">
+    <meta name="geo.placename" content="Hiriketiya Beach, Dikwella, Southern Province">
+    <meta name="geo.position" content="5.963430;80.703120">
+    <meta name="ICBM" content="5.963430, 80.703120">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css?v=2.1">
 
-    <!-- Structured Data / LocalBusiness Schema (JSON-LD) for Rich Google Snippets -->
+    <!-- Structured Data / Schema.org JSON-LD (@graph) for Google Rich Snippets & FAQ Search Results -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["LocalBusiness", "SportsActivityLocation"],
-      "name": "Hiri Surf School",
-      "image": "images/20702.jpg.jpeg",
-      "url": "https://hirisurfschool.com/",
-      "telephone": "+94769327173",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Hiriketiya Beach",
-        "addressLocality": "Dikwella",
-        "addressRegion": "Southern Province",
-        "postalCode": "81200",
-        "addressCountry": "LK"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 5.963430,
-        "longitude": 80.703120
-      },
-      "hasMap": "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "06:00",
-        "closes": "18:00"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "350"
-      }
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "SportsActivityLocation", "TouristAttraction"],
+          "@id": "https://hirisurfschool.com/#school",
+          "name": "Hiri Surf School",
+          "alternateName": ["Hiriketiya Surf School", "Love Hiri Surf School", "HiriSurf"],
+          "description": "Top-rated surf school at Hiriketiya Beach, Sri Lanka. Safe, fun, and professional surf lessons led by Kasun and ISA-certified local coaches. Beginner surf lessons, private coaching, semi-private lessons, and surfboard rentals.",
+          "image": [
+            "https://hirisurfschool.com/images/20702.jpg.jpeg",
+            "https://hirisurfschool.com/images/69528.jpg.jpeg",
+            "https://hirisurfschool.com/images/69546.jpg.jpeg"
+          ],
+          "logo": "https://hirisurfschool.com/images/wave-icon.png",
+          "url": "https://hirisurfschool.com/",
+          "telephone": "+94769327173",
+          "email": "hirisurfschool@gmail.com",
+          "priceRange": "$$",
+          "currenciesAccepted": "USD, LKR, EUR, GBP, AUD",
+          "paymentAccepted": "Cash, WhatsApp Booking",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hiriketiya Beach",
+            "addressLocality": "Dikwella",
+            "addressRegion": "Southern Province",
+            "postalCode": "81200",
+            "addressCountry": "LK"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 5.963430,
+            "longitude": 80.703120
+          },
+          "hasMap": "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
+          "sameAs": [
+            "https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html",
+            "https://www.facebook.com/hirisurfschool/",
+            "https://www.instagram.com/hiriketiya_hiri_surf_school/",
+            "https://maps.app.goo.gl/WQGCeh4apHywDrrx5"
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "06:00",
+              "closes": "18:30"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5.0",
+            "worstRating": "1.0",
+            "reviewCount": "350"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Hiri Surf School Lessons & Packages",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Beginner Surf Lesson (1.5 Hours)",
+                  "description": "Includes surfboard, rashguard, beach theory safety, and in-water wave riding coaching."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Private 1-on-1 Surf Coaching",
+                  "description": "Dedicated senior surf coach for rapid progression, paddle technique, and wave selection."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Semi-Private Couples / Friends Surf Lesson",
+                  "description": "Learn together with 1 dedicated coach for 2 surfers."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "3-Day & 5-Day Intensive Surf Progress Package",
+                  "description": "Multi-session course taking you from complete beginner to trimming green waves independently."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://hirisurfschool.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is Hiri Surf School suitable for complete beginners?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We welcome complete beginners and provide patient, step-by-step instruction on beach theory, ocean safety, and in-water popping up."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What should I bring to the surf lesson?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bring swimwear, a towel, sunscreen, and drinking water. We provide all necessary surf equipment for the lesson including surfboard, leash, and rashguard."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What time is best for surfing in Hiriketiya?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Morning sessions (6:30 AM – 9:30 AM) and sunset sessions (4:00 PM – 6:00 PM) are best because winds are lighter, waves are cleaner, and the beach is less crowded."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to know how to swim to take a beginner surf lesson?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For beginners, we stay in waist-deep water where you can easily stand on the soft sandbar. Please inform your instructor of your swimming ability before entering the water."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I book a surf lesson at Hiri Surf School?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can book directly via WhatsApp at +94 76 932 7173 or use the online booking form on our website."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 </head>

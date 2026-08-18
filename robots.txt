@@ -1,0 +1,7 @@
+# Robots.txt for Hiri Surf School (https://hirisurfschool.com)
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+# XML Sitemap
+Sitemap: https://hirisurfschool.com/sitemap.xml
