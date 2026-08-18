@@ -459,7 +459,7 @@
                 🖼️ Gallery &amp; Photos Manager (<span id="galleryCountBadge">92</span>)
             </button>
             <button type="button" class="tab-btn" data-tab="tab-content">
-                📝 Website Content &amp; Contact
+                📝 Website Content, Coaches &amp; Contact
             </button>
             <button type="button" class="tab-btn" data-tab="tab-settings">
                 ⚙️ Discounts &amp; PIN Passcode
@@ -565,20 +565,71 @@
                 </div>
             </div>
 
-            <!-- Instructors Bios -->
+            <!-- Instructors & Photos Manager -->
             <div class="editor-card">
                 <div class="card-head">
-                    <h2 class="card-title">🏄‍♂️ 3. Surf Instructors Team Bio</h2>
+                    <h2 class="card-title">🏄‍♂️ 3. Surf Instructors &amp; Coach Photos</h2>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">Update head coach photo (Kasun), team photo, and coaching biographies shown on the website.</p>
+
+                <!-- Instructor 1: Kasun -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h3 style="margin: 0; font-size: 1.05rem; color: var(--accent-gold);">👤 1. Kasun — Founder &amp; Head Coach</h3>
+                        <span class="instructor-badge" style="background: rgba(245,158,11,0.15); color: var(--accent-gold); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem;">Card 1</span>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label class="form-label">Kasun's Photo (Upload / File / URL)</label>
+                        <div class="image-uploader-box">
+                            <input type="text" class="form-input" id="txtKasunImg" value="images/instructor-1.jpg" style="flex: 1;" placeholder="Photo URL / uploaded file path">
+                            <input type="file" id="fileKasunImg" accept="image/*" style="display: none;" onchange="handleImageFile(this, '#txtKasunImg', '#prevKasunImg', '#prevKasunWrap')">
+                            <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('fileKasunImg').click()" style="color: var(--accent-blue); border-color: var(--accent-blue); cursor: pointer;">
+                                📁 Upload Photo
+                            </button>
+                            <button type="button" class="btn-delete btn-sm" onclick="removeInstructorPhoto('kasun')" style="padding: 8px 12px; font-weight: 700; cursor: pointer;">
+                                🗑️ Delete
+                            </button>
+                        </div>
+                        <div id="prevKasunWrap" style="position: relative; margin-top: 10px; display: block;">
+                            <img id="prevKasunImg" src="images/instructor-1.jpg" class="preview-img" style="margin-top: 0; max-height: 180px; object-fit: cover; border-radius: 8px;" onerror="this.parentElement.style.display='none'">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Kasun Bio Description</label>
+                        <textarea class="form-textarea" id="txtKasunBio" rows="2">Founder of Hiri Surf School and a local Hiriketiya surf instructor, focused on friendly, safe and enjoyable surf lessons for beginners, families and surfers of different levels.</textarea>
+                    </div>
                 </div>
 
-                <div class="form-group" style="margin-bottom: 16px;">
-                    <label class="form-label">Kasun (Founder &amp; Head Coach) Bio</label>
-                    <textarea class="form-textarea" id="txtKasunBio" rows="2">Founder of Hiri Surf School and a local Hiriketiya surf instructor, focused on friendly, safe and enjoyable surf lessons for beginners, families and surfers of different levels.</textarea>
-                </div>
+                <!-- Instructor 2: 15+ Local Surf Instructors -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h3 style="margin: 0; font-size: 1.05rem; color: var(--accent-blue);">👥 2. 15+ Local Surf Instructors (Team)</h3>
+                        <span class="instructor-badge" style="background: rgba(56,189,248,0.15); color: var(--accent-blue); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem;">Card 2</span>
+                    </div>
 
-                <div class="form-group">
-                    <label class="form-label">15+ Local Coaching Team Bio</label>
-                    <textarea class="form-textarea" id="txtTeamBio" rows="2">A friendly team of local instructors providing patient, safety-focused coaching for beginners, kids, couples and surfers of all levels.</textarea>
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label class="form-label">Team Photo (Upload / File / URL)</label>
+                        <div class="image-uploader-box">
+                            <input type="text" class="form-input" id="txtTeamImg" value="images/20702.jpg.jpeg" style="flex: 1;" placeholder="Photo URL / uploaded file path">
+                            <input type="file" id="fileTeamImg" accept="image/*" style="display: none;" onchange="handleImageFile(this, '#txtTeamImg', '#prevTeamImg', '#prevTeamWrap')">
+                            <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('fileTeamImg').click()" style="color: var(--accent-blue); border-color: var(--accent-blue); cursor: pointer;">
+                                📁 Upload Photo
+                            </button>
+                            <button type="button" class="btn-delete btn-sm" onclick="removeInstructorPhoto('team')" style="padding: 8px 12px; font-weight: 700; cursor: pointer;">
+                                🗑️ Delete
+                            </button>
+                        </div>
+                        <div id="prevTeamWrap" style="position: relative; margin-top: 10px; display: block;">
+                            <img id="prevTeamImg" src="images/20702.jpg.jpeg" class="preview-img" style="margin-top: 0; max-height: 180px; object-fit: cover; border-radius: 8px;" onerror="this.parentElement.style.display='none'">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Team Coaching Bio Description</label>
+                        <textarea class="form-textarea" id="txtTeamBio" rows="2">A friendly team of local instructors providing patient, safety-focused coaching for beginners, kids, couples and surfers of all levels.</textarea>
+                    </div>
                 </div>
             </div>
 
@@ -1146,6 +1197,25 @@
                 }
             };
 
+            window.removeInstructorPhoto = (type) => {
+                if (type === 'kasun') {
+                    const txt = document.getElementById('txtKasunImg');
+                    const prev = document.getElementById('prevKasunImg');
+                    const wrap = document.getElementById('prevKasunWrap');
+                    if (txt) txt.value = '';
+                    if (prev) prev.src = '';
+                    if (wrap) wrap.style.display = 'none';
+                } else if (type === 'team') {
+                    const txt = document.getElementById('txtTeamImg');
+                    const prev = document.getElementById('prevTeamImg');
+                    const wrap = document.getElementById('prevTeamWrap');
+                    if (txt) txt.value = '';
+                    if (prev) prev.src = '';
+                    if (wrap) wrap.style.display = 'none';
+                }
+                showToast('Coach photo removed! Click Save to publish.', 'success');
+            };
+
             window.handleImageFile = async (input, textTargetSel, imgPreviewSel, prevWrapSel) => {
                 if (input.files && input.files[0]) {
                     const compressedBase64 = await compressImageFile(input.files[0], 1000, 0.72);
@@ -1183,6 +1253,33 @@
                         const g = JSON.parse(localGal);
                         if (Array.isArray(g) && g.length > 0) {
                             currentGallery = g;
+                        }
+                    }
+                } catch(e) {}
+
+                try {
+                    const localInst = localStorage.getItem('hiri_instructors');
+                    if (localInst) {
+                        const inst = JSON.parse(localInst);
+                        if (Array.isArray(inst)) {
+                            if (inst[0]) {
+                                if (inst[0].bio) document.getElementById('txtKasunBio').value = inst[0].bio;
+                                if (inst[0].img) {
+                                    document.getElementById('txtKasunImg').value = inst[0].img;
+                                    const prev = document.getElementById('prevKasunImg');
+                                    const wrap = document.getElementById('prevKasunWrap');
+                                    if (prev) { prev.src = inst[0].img; if (wrap) wrap.style.display = 'block'; }
+                                }
+                            }
+                            if (inst[1]) {
+                                if (inst[1].bio) document.getElementById('txtTeamBio').value = inst[1].bio;
+                                if (inst[1].img) {
+                                    document.getElementById('txtTeamImg').value = inst[1].img;
+                                    const prev = document.getElementById('prevTeamImg');
+                                    const wrap = document.getElementById('prevTeamWrap');
+                                    if (prev) { prev.src = inst[1].img; if (wrap) wrap.style.display = 'block'; }
+                                }
+                            }
                         }
                     }
                 } catch(e) {}
@@ -1244,8 +1341,24 @@
                 db.collection('siteData').doc('instructors').get().then(doc => {
                     if (doc.exists && doc.data() && doc.data().data && Array.isArray(doc.data().data)) {
                         const inst = doc.data().data;
-                        if (inst[0] && inst[0].bio) document.getElementById('txtKasunBio').value = inst[0].bio;
-                        if (inst[1] && inst[1].bio) document.getElementById('txtTeamBio').value = inst[1].bio;
+                        if (inst[0]) {
+                            if (inst[0].bio) document.getElementById('txtKasunBio').value = inst[0].bio;
+                            if (inst[0].img) {
+                                document.getElementById('txtKasunImg').value = inst[0].img;
+                                const prev = document.getElementById('prevKasunImg');
+                                const wrap = document.getElementById('prevKasunWrap');
+                                if (prev) { prev.src = inst[0].img; if (wrap) wrap.style.display = 'block'; }
+                            }
+                        }
+                        if (inst[1]) {
+                            if (inst[1].bio) document.getElementById('txtTeamBio').value = inst[1].bio;
+                            if (inst[1].img) {
+                                document.getElementById('txtTeamImg').value = inst[1].img;
+                                const prev = document.getElementById('prevTeamImg');
+                                const wrap = document.getElementById('prevTeamWrap');
+                                if (prev) { prev.src = inst[1].img; if (wrap) wrap.style.display = 'block'; }
+                            }
+                        }
                     }
                 }).catch(err => console.warn('Cloud instructors read:', err));
 
@@ -1302,17 +1415,17 @@
                             id: 1,
                             name: "Kasun",
                             role: "Founder & Head Surf Instructor",
-                            bio: document.getElementById('txtKasunBio')?.value.trim() || 'Founder of Hiri Surf School and local surf instructor.',
+                            bio: document.getElementById('txtKasunBio')?.value.trim() || 'Founder of Hiri Surf School and a local Hiriketiya surf instructor, focused on friendly, safe and enjoyable surf lessons for beginners, families and surfers of different levels.',
                             badges: "Founder & Head Instructor, Local Surf Coach",
-                            img: "images/instructor-1.jpg"
+                            img: document.getElementById('txtKasunImg')?.value.trim() || "images/instructor-1.jpg"
                         },
                         {
                             id: 2,
                             name: "15+ Local Surf Instructors",
                             role: "Friendly Local Coaching Team",
-                            bio: document.getElementById('txtTeamBio')?.value.trim() || 'A friendly team of local instructors.',
+                            bio: document.getElementById('txtTeamBio')?.value.trim() || 'A friendly team of local instructors providing patient, safety-focused coaching for beginners, kids, couples and surfers of all levels.',
                             badges: "Local Instructors, Patient & Friendly, All Levels",
-                            img: "images/20702.jpg.jpeg"
+                            img: document.getElementById('txtTeamImg')?.value.trim() || "images/20702.jpg.jpeg"
                         }
                     ];
 
