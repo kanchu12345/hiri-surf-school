@@ -2519,6 +2519,62 @@ body {
     animation: gentleWaveMove1 32s linear infinite;
 }
 
+/* Subtle Non-Intrusive Surfer Silhouette Shadow Animation */
+.surfer-shadow-track {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    z-index: 3;
+    overflow: hidden;
+    opacity: 0.25;
+}
+
+.surfer-shadow-figure {
+    position: absolute;
+    bottom: 5px;
+    left: -120px;
+    width: 85px;
+    height: 65px;
+    color: #031b33;
+    filter: drop-shadow(0 4px 8px rgba(0, 168, 255, 0.45));
+    animation: surferRideCruise 18s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, left;
+}
+
+@keyframes surferRideCruise {
+    0% {
+        left: -120px;
+        transform: translateY(0px) rotate(0deg) scale(0.9);
+        opacity: 0;
+    }
+    4% {
+        opacity: 1;
+    }
+    20% {
+        transform: translateY(-20px) rotate(-10deg) scale(1.02);
+    }
+    38% {
+        transform: translateY(6px) rotate(8deg) scale(0.96);
+    }
+    58% {
+        transform: translateY(-16px) rotate(-8deg) scale(1.04);
+    }
+    78% {
+        transform: translateY(4px) rotate(6deg) scale(0.98);
+    }
+    96% {
+        opacity: 1;
+    }
+    100% {
+        left: calc(100% + 120px);
+        transform: translateY(-6px) rotate(-4deg) scale(0.9);
+        opacity: 0;
+    }
+}
+
 @keyframes gentleWaveMove1 {
     0% {
         transform: translate3d(0, 0, 0);
