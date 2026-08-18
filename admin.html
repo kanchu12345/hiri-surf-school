@@ -605,12 +605,21 @@
 
             <div class="editor-card">
                 <div class="card-head">
-                    <h2 class="card-title">🔐 Change Admin Master PIN</h2>
+                    <h2 class="card-title">🔐 Change Admin Master PIN / Password</h2>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Set a new PIN or custom password to protect your admin dashboard on all your devices.</p>
+
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label">New PIN / Password (min 4 characters)</label>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="password" class="form-input" id="txtNewPin" placeholder="e.g. 5678 or mySecretPass" style="flex: 1;">
+                        <button type="button" id="togglePinVisibilityBtn" class="btn btn-outline btn-sm" style="padding: 8px 14px; border-color: var(--border-color); color: var(--text-color); cursor: pointer;">👁️ Show</button>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">New PIN / Passcode (e.g. 1234)</label>
-                    <input type="password" class="form-input" id="txtNewPin" placeholder="Leave empty to keep current PIN">
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 10px;">
+                    <button type="button" id="btnUpdatePinOnly" class="btn btn-primary btn-sm" style="padding: 9px 18px; font-weight: 700; cursor: pointer;">Update PIN Now 🔑</button>
+                    <span id="pinUpdateStatus" style="font-size: 0.85rem; color: var(--success-color); display: none;">✅ PIN updated successfully!</span>
                 </div>
             </div>
 
@@ -709,6 +718,58 @@
                 sessionStorage.removeItem('hiri_simple_admin');
                 location.reload();
             });
+
+            // Toggle PIN input visibility
+            const togglePinVisibilityBtn = document.getElementById('togglePinVisibilityBtn');
+            const txtNewPin = document.getElementById('txtNewPin');
+            if (togglePinVisibilityBtn && txtNewPin) {
+                togglePinVisibilityBtn.addEventListener('click', () => {
+                    if (txtNewPin.type === 'password') {
+                        txtNewPin.type = 'text';
+                        togglePinVisibilityBtn.textContent = '🔒 Hide';
+                    } else {
+                        txtNewPin.type = 'password';
+                        togglePinVisibilityBtn.textContent = '👁️ Show';
+                    }
+                });
+            }
+
+            // Direct PIN update button
+            const btnUpdatePinOnly = document.getElementById('btnUpdatePinOnly');
+            const pinUpdateStatus = document.getElementById('pinUpdateStatus');
+            if (btnUpdatePinOnly && txtNewPin) {
+                btnUpdatePinOnly.addEventListener('click', async () => {
+                    const newPinVal = txtNewPin.value.trim();
+                    if (!newPinVal || newPinVal.length < 4) {
+                        alert('Please enter a PIN / Password with at least 4 characters.');
+                        txtNewPin.focus();
+                        return;
+                    }
+                    
+                    safeSetItem('hiri_admin_pin', newPinVal);
+                    safeSetItem('hiri_admin_passcode', newPinVal);
+                    
+                    // Cloud sync
+                    const db = window.db || (window.firebase && window.firebase.firestore ? window.firebase.firestore() : null);
+                    if (db) {
+                        try {
+                            await db.collection('siteData').doc('auth').set({
+                                pin: newPinVal,
+                                updatedAt: new Date().toISOString()
+                            }, { merge: true });
+                        } catch(err) {
+                            console.warn("Cloud auth sync note:", err);
+                        }
+                    }
+                    
+                    if (pinUpdateStatus) {
+                        pinUpdateStatus.style.display = 'inline';
+                        setTimeout(() => { pinUpdateStatus.style.display = 'none'; }, 4000);
+                    }
+                    showToast('Admin PIN updated successfully! 🔑', 'success');
+                    txtNewPin.value = '';
+                });
+            }
 
             // 2. Tab Navigation
             document.querySelectorAll('.tab-btn').forEach(btn => {
