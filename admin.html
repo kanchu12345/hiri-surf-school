@@ -387,11 +387,10 @@
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Enter your 4-digit Master PIN to manage packages, upload photos, and update website data.</p>
             
             <form id="pinForm">
-                <input type="password" id="pinInput" class="pin-field" maxlength="10" placeholder="••••" autofocus required>
-                <div id="pinError" style="color: var(--danger-color); font-size: 0.85rem; margin-bottom: 12px; display: none;">❌ Incorrect PIN. Please try again.</div>
+                <input type="password" id="pinInput" class="pin-field" maxlength="20" placeholder="••••" autofocus required>
+                <div id="pinError" style="color: var(--danger-color); font-size: 0.85rem; margin-bottom: 12px; display: none;">❌ Incorrect PIN / Password. Please try again.</div>
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700;">UNLOCK DASHBOARD ➔</button>
             </form>
-            <p style="font-size: 0.75rem; color: #64748b; margin-top: 14px;">Default PIN: <code>1234</code></p>
         </div>
     </div>
 
@@ -665,7 +664,27 @@
             let currentPackages = { ...OFFICIAL_PACKAGES };
             let currentGallery = [];
 
-            // 1. PIN Login System
+            // 1. PIN Login System & Cloud-Synced Security
+            let activeAdminPin = localStorage.getItem('hiri_admin_pin') || '1234';
+
+            // Real-time Cloud PIN Sync on Boot
+            async function syncCloudPin() {
+                const db = window.db || (window.firebase && window.firebase.firestore ? window.firebase.firestore() : null);
+                if (db) {
+                    try {
+                        const doc = await db.collection('siteData').doc('auth').get();
+                        if (doc.exists && doc.data() && doc.data().pin) {
+                            activeAdminPin = String(doc.data().pin).trim();
+                            localStorage.setItem('hiri_admin_pin', activeAdminPin);
+                            localStorage.setItem('hiri_admin_passcode', activeAdminPin);
+                        }
+                    } catch(err) {
+                        console.warn('Cloud PIN check note:', err);
+                    }
+                }
+            }
+            syncCloudPin();
+
             const pinScreen = document.getElementById('pinScreen');
             const adminWrap = document.getElementById('adminWrap');
             const saveBar = document.getElementById('saveBar');
@@ -699,18 +718,34 @@
                 }
             }
 
-            pinForm.addEventListener('submit', (e) => {
+            pinForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const pin = pinInput.value.trim();
-                const savedPin = localStorage.getItem('hiri_admin_pin') || localStorage.getItem('hiri_admin_passcode') || '1234';
+                const enteredPin = pinInput.value.trim();
                 
-                if (pin === savedPin || pin === '1234' || pin === '123456' || pin === 'hiri123' || pin === 'HiriSurf@Kasun#2026') {
+                // Fetch latest cloud PIN if available
+                const db = window.db || (window.firebase && window.firebase.firestore ? window.firebase.firestore() : null);
+                if (db) {
+                    try {
+                        const doc = await db.collection('siteData').doc('auth').get();
+                        if (doc.exists && doc.data() && doc.data().pin) {
+                            activeAdminPin = String(doc.data().pin).trim();
+                            localStorage.setItem('hiri_admin_pin', activeAdminPin);
+                        }
+                    } catch(err) {}
+                }
+
+                const currentValidPin = localStorage.getItem('hiri_admin_pin') || activeAdminPin || '1234';
+                
+                // STRICT CHECK: Only the active PIN is accepted! Old passwords are completely blocked!
+                if (enteredPin === currentValidPin) {
                     sessionStorage.setItem('hiri_simple_admin', 'true');
                     pinError.style.display = 'none';
                     checkLogin();
                     showToast('Admin panel unlocked! 🏄‍♂️', 'success');
                 } else {
+                    pinError.textContent = '❌ Incorrect PIN / Password. Please try again.';
                     pinError.style.display = 'block';
+                    pinInput.select();
                 }
             });
 
@@ -745,7 +780,12 @@
                         txtNewPin.focus();
                         return;
                     }
+
+                    btnUpdatePinOnly.disabled = true;
+                    btnUpdatePinOnly.textContent = 'Saving... ⏳';
                     
+                    // Save locally
+                    activeAdminPin = newPinVal;
                     safeSetItem('hiri_admin_pin', newPinVal);
                     safeSetItem('hiri_admin_passcode', newPinVal);
                     
@@ -762,11 +802,15 @@
                         }
                     }
                     
+                    btnUpdatePinOnly.disabled = false;
+                    btnUpdatePinOnly.textContent = 'Update PIN Now 🔑';
+
                     if (pinUpdateStatus) {
+                        pinUpdateStatus.textContent = '✅ New PIN saved! Old password is now disabled.';
                         pinUpdateStatus.style.display = 'inline';
-                        setTimeout(() => { pinUpdateStatus.style.display = 'none'; }, 4000);
+                        setTimeout(() => { pinUpdateStatus.style.display = 'none'; }, 6000);
                     }
-                    showToast('Admin PIN updated successfully! 🔑', 'success');
+                    showToast('Admin PIN updated! Old password is now invalid 🔑', 'success');
                     txtNewPin.value = '';
                 });
             }
@@ -1199,6 +1243,9 @@
                                 batch.set(db.collection('siteData').doc('settings'), { data: updatedSettings, updatedAt: new Date().toISOString() });
                                 batch.set(db.collection('siteData').doc('instructors'), { data: updatedInstructors, updatedAt: new Date().toISOString() });
                                 batch.set(db.collection('siteData').doc('calcSettings'), { data: updatedCalc, updatedAt: new Date().toISOString() });
+                                if (newPin && newPin.length >= 4) {
+                                    batch.set(db.collection('siteData').doc('auth'), { pin: newPin, updatedAt: new Date().toISOString() }, { merge: true });
+                                }
                                 return await batch.commit();
                             })();
 
