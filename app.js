@@ -2156,4 +2156,64 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSwellReport();
     // Refresh swell report every 15 minutes
     setInterval(updateSwellReport, 15 * 60 * 1000);
+
+    // --- 14. Progressive Web App (PWA) & Android App-Install Experience ---
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').then((reg) => {
+                console.log('🏄 Hiri Surf PWA Service Worker Registered:', reg.scope);
+            }).catch((err) => {
+                console.warn('Service Worker registration skipped:', err);
+            });
+        });
+    }
+
+    // Android "Add to Home Screen" install promotion
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Show lightweight custom install prompt banner on mobile devices
+        if (window.innerWidth <= 768 && !localStorage.getItem('hiri_pwa_dismissed')) {
+            const banner = document.createElement('div');
+            banner.className = 'pwa-install-banner';
+            banner.id = 'pwaInstallBanner';
+            banner.innerHTML = `
+                <img src="images/hiri.jpg" alt="Hiri Surf Icon">
+                <div class="pwa-info">
+                    <h4 class="pwa-title">Install Hiri Surf App</h4>
+                    <p class="pwa-sub">Instant offline wave forecast & 1-tap bookings</p>
+                </div>
+                <div class="pwa-actions">
+                    <button class="pwa-install-btn" id="pwaInstallAction">Install</button>
+                    <button class="pwa-close-btn" id="pwaDismissAction">✕</button>
+                </div>
+            `;
+            document.body.appendChild(banner);
+            banner.style.display = 'flex';
+
+            document.getElementById('pwaInstallAction')?.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log('PWA prompt user response:', outcome);
+                    deferredPrompt = null;
+                }
+                banner.remove();
+            });
+
+            document.getElementById('pwaDismissAction')?.addEventListener('click', () => {
+                banner.remove();
+                localStorage.setItem('hiri_pwa_dismissed', 'true');
+            });
+        }
+    });
+
+    window.addEventListener('appinstalled', () => {
+        console.log('🎉 Hiri Surf App successfully installed to device!');
+        const banner = document.getElementById('pwaInstallBanner');
+        if (banner) banner.remove();
+    });
 });
+

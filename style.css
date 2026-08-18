@@ -2880,3 +2880,157 @@ body {
     }
 }
 
+/* ==========================================================================
+   Android & Modern Mobile Optimization Layer (PWA / Touch / Performance)
+   ========================================================================== */
+
+/* 1. Safe Area Insets for Modern Android & iOS notches */
+body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 2. Fluid Touch Targets & Native Tap Highlight Suppression */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button, a, input, select, textarea {
+    touch-action: manipulation;
+}
+
+/* 3. Smooth Momentum Scrolling */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 4. Mobile Form Inputs: prevent iOS/Android 16px auto-zoom */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px !important;
+        min-height: 48px;
+    }
+    
+    /* Touch-friendly interactive buttons */
+    .btn, .social-btn, .nav-links a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Fixed mobile call & WhatsApp floating bar */
+    .mobile-sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(3, 27, 51, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+        display: flex;
+        gap: 10px;
+        z-index: 999;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-sticky-cta .btn {
+        flex: 1;
+        font-size: 0.9rem;
+        padding: 10px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+    }
+}
+
+/* 5. Android Install App Banner (PWA prompt) */
+.pwa-install-banner {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 420px;
+    margin: 0 auto;
+    background: #031b33;
+    color: #ffffff;
+    border: 2px solid var(--color-secondary);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    z-index: 10000;
+    align-items: center;
+    gap: 14px;
+    animation: pwaSlideUp 0.4s ease-out;
+}
+
+@keyframes pwaSlideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.pwa-install-banner img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.pwa-install-banner .pwa-info {
+    flex: 1;
+}
+
+.pwa-install-banner .pwa-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+
+.pwa-install-banner .pwa-sub {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin: 2px 0 0 0;
+}
+
+.pwa-install-banner .pwa-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.pwa-install-btn {
+    background: var(--color-secondary);
+    color: #031b33;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.pwa-close-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+

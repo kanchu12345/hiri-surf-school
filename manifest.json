@@ -1,0 +1,43 @@
+{
+  "name": "Hiri Surf School - Hiriketiya Beach",
+  "short_name": "Hiri Surf",
+  "description": "Learn to surf with Kasun & local instructors at Hiriketiya Beach, Sri Lanka. Beginner lessons, packages, and surfboard rentals.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#031b33",
+  "theme_color": "#031b33",
+  "categories": ["sports", "travel", "lifestyle"],
+  "icons": [
+    {
+      "src": "images/hiri.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/hiri.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Lesson",
+      "url": "./index.html#booking",
+      "description": "Book a surf lesson instantly"
+    },
+    {
+      "name": "Surf Guide & Swell",
+      "url": "./surf-guide.html",
+      "description": "Live waves, swell and spots report"
+    },
+    {
+      "name": "WhatsApp Chat",
+      "url": "https://wa.me/94769327173",
+      "description": "Chat directly on WhatsApp"
+    }
+  ]
+}
