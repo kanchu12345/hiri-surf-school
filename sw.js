@@ -1,21 +1,13 @@
-const CACHE_NAME = 'hiri-surf-v1';
+const CACHE_NAME = 'hiri-surf-v2.1';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './surf-guide.html',
-  './style.css',
-  './app.js',
-  './firebase-init.js',
+  './style.css?v=2.1',
+  './app.js?v=2.1',
   './manifest.json',
-  './gallery_list.json',
-  './images/hiri.jpg',
-  './images/20702.jpg.jpeg',
-  './images/69546.jpg.jpeg',
-  './images/69606.jpg.jpeg',
-  './images/69535.jpg.jpeg',
-  './images/20713.jpg.jpeg',
-  './images/20681.jpg.jpeg',
-  './images/69528.jpg.jpeg'
+  './images/wave-icon.png',
+  './images/favicon.png'
 ];
 
 // Install: Cache critical static assets
