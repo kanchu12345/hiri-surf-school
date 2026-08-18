@@ -285,7 +285,7 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 1.5rem;
@@ -293,6 +293,21 @@ img {
     color: #ffffff !important;
     margin-right: 1.5rem;
     flex-shrink: 0;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0, 168, 255, 0.45));
+    transition: transform 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo:hover .logo-img {
+    transform: rotate(-6deg) scale(1.1);
 }
 
 .logo span {
@@ -301,12 +316,6 @@ img {
 
 .navbar-scrolled .logo {
     color: #ffffff !important;
-}
-
-.logo-wave {
-    margin-right: 4px;
-    font-size: 1.6rem;
-    animation: wavePulse 4s infinite ease-in-out;
 }
 
 /* Navigation Links */
