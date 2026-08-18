@@ -2261,5 +2261,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const banner = document.getElementById('pwaInstallBanner');
         if (banner) banner.remove();
     });
+
+    // Smart Mobile Sticky Bar: Hidden on hero, slides in when reading content
+    const stickyBar = document.querySelector('.mobile-sticky-bar');
+    if (stickyBar) {
+        const handleStickyScroll = () => {
+            if (window.scrollY > 300) {
+                stickyBar.classList.add('visible');
+            } else {
+                stickyBar.classList.remove('visible');
+            }
+        };
+        window.addEventListener('scroll', handleStickyScroll, { passive: true });
+        handleStickyScroll();
+    }
 });
+
 

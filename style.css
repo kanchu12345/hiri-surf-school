@@ -2530,10 +2530,18 @@ body {
     width: 100%;
     background: rgba(3, 27, 51, 0.96);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 10px 16px;
-    z-index: 99999;
-    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.3);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    z-index: 9999;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.4);
+    transform: translateY(110%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+}
+
+.mobile-sticky-bar.visible {
+    transform: translateY(0);
 }
 
 .mobile-sticky-inner {
@@ -2546,9 +2554,9 @@ body {
 .mobile-sticky-btn {
     flex: 1;
     text-align: center;
-    padding: 12px 14px;
+    padding: 11px 14px;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     border-radius: 30px;
     text-decoration: none;
     display: flex;
@@ -2571,9 +2579,6 @@ body {
 @media (max-width: 768px) {
     .mobile-sticky-bar {
         display: block;
-    }
-    body {
-        padding-bottom: 65px;
     }
 }
 
