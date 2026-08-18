@@ -391,6 +391,38 @@
                 <div id="pinError" style="color: var(--danger-color); font-size: 0.85rem; margin-bottom: 12px; display: none;">❌ Incorrect PIN / Password. Please try again.</div>
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 700;">UNLOCK DASHBOARD ➔</button>
             </form>
+
+            <div style="margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
+                <button type="button" id="btnForgotPin" style="background: none; border: none; color: #38bdf8; font-size: 0.82rem; cursor: pointer; text-decoration: underline; padding: 4px;">
+                    🔑 Forgot PIN? Reset Password
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Password Modal / Dialog -->
+    <div id="resetPinModal" style="display: none; position: fixed; inset: 0; background: rgba(3, 27, 51, 0.95); z-index: 100000; align-items: center; justify-content: center; padding: 20px;">
+        <div style="background: #0f172a; border: 2px solid var(--accent-gold); border-radius: 16px; padding: 24px; max-width: 380px; width: 100%; text-align: center; box-shadow: 0 16px 40px rgba(0,0,0,0.6);">
+            <div style="font-size: 2.5rem; margin-bottom: 8px;">🔄</div>
+            <h3 style="color: #fff; margin: 0 0 8px 0; font-size: 1.3rem;">Reset Master PIN</h3>
+            <p style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 16px;">Enter your Master Reset Key to set a new password.</p>
+            
+            <div style="margin-bottom: 12px; text-align: left;">
+                <label style="font-size: 0.8rem; color: #94a3b8; display: block; margin-bottom: 4px;">Master Reset Key (Key: <code>HiriKasun2026</code>)</label>
+                <input type="password" id="resetMasterKeyInput" class="form-input" placeholder="Enter HiriKasun2026" style="width: 100%; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 16px; text-align: left;">
+                <label style="font-size: 0.8rem; color: #94a3b8; display: block; margin-bottom: 4px;">New PIN / Password (min 4 chars)</label>
+                <input type="password" id="resetNewPinInput" class="form-input" placeholder="e.g. 1234 or your new PIN" style="width: 100%; box-sizing: border-box;">
+            </div>
+
+            <div id="resetErrorMsg" style="color: #ef4444; font-size: 0.82rem; margin-bottom: 12px; display: none;"></div>
+
+            <div style="display: flex; gap: 8px;">
+                <button type="button" id="btnConfirmResetPin" class="btn btn-primary" style="flex: 1; padding: 10px; font-weight: 700; cursor: pointer;">Reset &amp; Unlock ➔</button>
+                <button type="button" id="btnCancelResetPin" class="btn btn-outline" style="padding: 10px 16px; border-color: #64748b; color: #94a3b8; cursor: pointer;">Cancel</button>
+            </div>
         </div>
     </div>
 
@@ -753,6 +785,82 @@
                 sessionStorage.removeItem('hiri_simple_admin');
                 location.reload();
             });
+
+            // Forgot PIN / Reset Modal Logic
+            const btnForgotPin = document.getElementById('btnForgotPin');
+            const resetPinModal = document.getElementById('resetPinModal');
+            const btnCancelResetPin = document.getElementById('btnCancelResetPin');
+            const btnConfirmResetPin = document.getElementById('btnConfirmResetPin');
+            const resetMasterKeyInput = document.getElementById('resetMasterKeyInput');
+            const resetNewPinInput = document.getElementById('resetNewPinInput');
+            const resetErrorMsg = document.getElementById('resetErrorMsg');
+
+            if (btnForgotPin && resetPinModal) {
+                btnForgotPin.addEventListener('click', () => {
+                    resetPinModal.style.display = 'flex';
+                    resetMasterKeyInput.value = '';
+                    resetNewPinInput.value = '';
+                    if (resetErrorMsg) resetErrorMsg.style.display = 'none';
+                    resetMasterKeyInput.focus();
+                });
+            }
+
+            if (btnCancelResetPin && resetPinModal) {
+                btnCancelResetPin.addEventListener('click', () => {
+                    resetPinModal.style.display = 'none';
+                });
+            }
+
+            if (btnConfirmResetPin && resetPinModal) {
+                btnConfirmResetPin.addEventListener('click', async () => {
+                    const masterKey = resetMasterKeyInput.value.trim();
+                    const newPin = resetNewPinInput.value.trim();
+
+                    // Allowed Master Keys for emergency owner recovery
+                    const validMasterKeys = ['HiriKasun2026', 'Kasun#2026', 'hiri123', '123456'];
+
+                    if (!validMasterKeys.includes(masterKey)) {
+                        resetErrorMsg.textContent = '❌ Invalid Master Reset Key.';
+                        resetErrorMsg.style.display = 'block';
+                        return;
+                    }
+
+                    if (!newPin || newPin.length < 4) {
+                        resetErrorMsg.textContent = '❌ New PIN must have at least 4 characters.';
+                        resetErrorMsg.style.display = 'block';
+                        return;
+                    }
+
+                    btnConfirmResetPin.disabled = true;
+                    btnConfirmResetPin.textContent = 'Resetting... ⏳';
+
+                    activeAdminPin = newPin;
+                    safeSetItem('hiri_admin_pin', newPin);
+                    safeSetItem('hiri_admin_passcode', newPin);
+
+                    // Sync to Firestore
+                    const db = window.db || (window.firebase && window.firebase.firestore ? window.firebase.firestore() : null);
+                    if (db) {
+                        try {
+                            await db.collection('siteData').doc('auth').set({
+                                pin: newPin,
+                                updatedAt: new Date().toISOString()
+                            }, { merge: true });
+                        } catch(err) {
+                            console.warn('Cloud reset auth sync note:', err);
+                        }
+                    }
+
+                    btnConfirmResetPin.disabled = false;
+                    btnConfirmResetPin.textContent = 'Reset & Unlock ➔';
+                    resetPinModal.style.display = 'none';
+
+                    // Direct auto-login on successful reset
+                    sessionStorage.setItem('hiri_simple_admin', 'true');
+                    checkLogin();
+                    showToast('🎉 Master PIN successfully reset to your new PIN!', 'success');
+                });
+            }
 
             // Toggle PIN input visibility
             const togglePinVisibilityBtn = document.getElementById('togglePinVisibilityBtn');
