@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactWa: "+94 76 932 7173",
         contactWaClean: "94769327173",
         contactEmail: "hirisurfschool@gmail.com",
-        meetingText: "Hiri Surf School, Hiriketiya Beach, Sri Lanka",
+        meetingText: "Hiriketiya Beach, Sri Lanka",
         meetingLink: "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
         landmarkText: "Look for the Hiri Surf School sign near the western corner of the bay, right where the sand meets the palm trees. Our team is always on the beach wearing our official rashguards.",
         bookingNote: "We recommend booking in advance to secure your preferred lesson time, especially during busy days.",
