@@ -2317,11 +2317,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (banner) banner.remove();
     });
 
-    // Smart Mobile Sticky Bar: Hidden on hero, slides in when reading content
+    // Smart Mobile Sticky Bar: Hidden on top of hero, slides in as soon as user browses
     const stickyBar = document.querySelector('.mobile-sticky-bar');
     if (stickyBar) {
         const handleStickyScroll = () => {
-            if (window.scrollY > 300) {
+            if (window.scrollY > 150) {
                 stickyBar.classList.add('visible');
             } else {
                 stickyBar.classList.remove('visible');
