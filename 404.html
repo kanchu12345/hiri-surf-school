@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiri Surf School | Redirecting to Hiriketiya Surf School...</title>
+    <link rel="icon" type="image/png" href="images/wave-icon.png">
+    <link rel="canonical" href="https://hirisurfschool.com/">
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="style.css?v=2.1">
+    <script>
+        // Smart 301-style Client Router for Legacy URLs
+        (function() {
+            const path = window.location.pathname.toLowerCase();
+            const search = window.location.search;
+            const hash = window.location.hash;
+
+            let targetUrl = 'index.html';
+
+            if (path.includes('book') || path.includes('reserve') || path.includes('inquiry')) {
+                targetUrl = 'index.html#booking';
+            } else if (path.includes('lesson') || path.includes('package') || path.includes('course') || path.includes('beginner') || path.includes('private')) {
+                targetUrl = 'lessons.html';
+            } else if (path.includes('location') || path.includes('find') || path.includes('direction') || path.includes('where') || path.includes('map')) {
+                targetUrl = 'location.html';
+            } else if (path.includes('contact') || path.includes('whatsapp') || path.includes('phone')) {
+                targetUrl = 'location.html';
+            } else if (path.includes('guide') || path.includes('spot') || path.includes('forecast') || path.includes('swell')) {
+                targetUrl = 'surf-guide.html';
+            } else if (path.includes('about') || path.includes('team') || path.includes('kasun') || path.includes('instructor')) {
+                targetUrl = 'index.html#about';
+            } else if (path.includes('review') || path.includes('testimonial') || path.includes('rating')) {
+                targetUrl = 'index.html#reviews';
+            } else if (path.includes('price') || path.includes('cost') || path.includes('rate')) {
+                targetUrl = 'lessons.html';
+            }
+
+            // Immediate redirect
+            window.location.replace(targetUrl);
+        })();
+    </script>
+</head>
+<body style="background-color: var(--color-primary-dark); color: #ffffff; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--font-body); padding: 20px;">
+    <div style="max-width: 500px; padding: 40px 24px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--color-secondary); border-radius: 16px; box-shadow: 0 16px 40px rgba(0,0,0,0.5);">
+        <div style="font-size: 3.5rem; margin-bottom: 12px;">🌊</div>
+        <h1 style="color: var(--color-secondary); font-size: 1.8rem; margin: 0 0 12px 0;">Catching the Wave...</h1>
+        <p style="color: #cbd5e1; font-size: 1rem; margin: 0 0 24px 0; line-height: 1.6;">Redirecting you to Hiri Surf School on Hiriketiya Beach, Sri Lanka...</p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="index.html" class="btn btn-primary" style="padding: 12px; font-weight: 700;">Go to Homepage ➔</a>
+            <a href="lessons.html" class="btn btn-outline" style="padding: 10px; border-color: #38bdf8; color: #38bdf8;">View Surf Lessons 🏄‍♂️</a>
+            <a href="https://wa.me/94769327173" class="btn btn-outline" style="padding: 10px; border-color: #25D366; color: #25D366;">WhatsApp Kasun 💬</a>
+        </div>
+    </div>
+</body>
+</html>

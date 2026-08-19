@@ -5,7 +5,7 @@
     <!-- Homepage / Main Surf School Booking & Lessons Hub -->
     <url>
         <loc>https://hirisurfschool.com/</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-08-19</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -25,17 +25,64 @@
         </image:image>
     </url>
 
+    <!-- Dedicated Surf Lessons Hub -->
+    <url>
+        <loc>https://hirisurfschool.com/lessons.html</loc>
+        <lastmod>2026-08-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/20702.jpg.jpeg</image:loc>
+            <image:title>Surf Lessons Hiriketiya Sri Lanka</image:title>
+            <image:caption>Private, Semi-Private, Kids, Family and Beginner Surf Coaching in Hiriketiya Beach.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/instructor-1.jpg</image:loc>
+            <image:title>Private Surf Coach Kasun Hiriketiya</image:title>
+            <image:caption>Kasun founder and head surf coach at Hiri Surf School.</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Beach Location & Directions Guide -->
+    <url>
+        <loc>https://hirisurfschool.com/location.html</loc>
+        <lastmod>2026-08-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/20702.jpg.jpeg</image:loc>
+            <image:title>Hiri Surf School Beach Location on Hiriketiya Bay</image:title>
+            <image:caption>Located at the western corner of Hiriketiya Beach where the sand meets the palm trees.</image:caption>
+        </image:image>
+    </url>
+
     <!-- Hiriketiya Surf Spot Guide, Guiding & Live Swell Forecasts -->
     <url>
         <loc>https://hirisurfschool.com/surf-guide.html</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-08-19</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.90</priority>
         <image:image>
             <image:loc>https://hirisurfschool.com/images/20713.jpg.jpeg</image:loc>
             <image:title>Hiriketiya Reef Point and Beach Sandbar Surf Guide</image:title>
             <image:caption>Complete breakdown of Hiriketiya Bay surf spots, tide charts, and wave mechanics.</image:caption>
         </image:image>
+    </url>
+
+    <!-- Booking Compatibility Endpoint -->
+    <url>
+        <loc>https://hirisurfschool.com/book-now.html</loc>
+        <lastmod>2026-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Contact Compatibility Endpoint -->
+    <url>
+        <loc>https://hirisurfschool.com/contact.html</loc>
+        <lastmod>2026-08-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
     </url>
 
 </urlset>
