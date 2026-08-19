@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         heroTitle: "Surf Lessons in <span>Hiriketiya, Sri Lanka</span>",
         heroSubtitle: "Safe, fun, and professional surf lessons led by Kasun & Team. Perfect for complete beginners, couples, kids, and all levels at Hiriketiya Beach.",
         heroBg: "images/20702.jpg.jpeg",
+        trustBadge1: "⭐ 5.0 Rated on Google (350+ Reviews)",
+        trustBadge2: "🏄‍♂️ 100% Board & Rashguard Included",
+        trustBadge3: "🛡️ Ocean Safety & CPR Certified",
+        trustBadge4: "📍 Direct Beach Location in Hiriketiya",
         aboutTag: "Welcome to Hiri Surf School",
         aboutTitle: "Learn to surf with local experienced coaches",
         aboutDesc: "Led by Kasun & Team with 7+ years of local surf coaching experience, we are a passionate local surf school on the sands of Hiriketiya Beach. We focus on safety, proper technique, and giving every customer a friendly and unforgettable experience.",
@@ -43,8 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
         contactWaClean: "94769327173",
         contactEmail: "hirisurfschool@gmail.com",
         meetingText: "Hiri Surf School, Hiriketiya Beach, Sri Lanka",
-        meetingLink: "https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac",
+        meetingLink: "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
+        landmarkText: "Look for the Hiri Surf School sign near the western corner of the bay, right where the sand meets the palm trees. Our team is always on the beach wearing our official rashguards.",
+        bookingNote: "We recommend booking in advance to secure your preferred lesson time, especially during busy days.",
+        socialFb: "https://www.facebook.com/hirisurfschool/",
+        socialInsta: "https://www.instagram.com/hiriketiya_hiri_surf_school/",
+        socialTripAdvisor: "https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html",
+        socialGoogle: "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
         footerHours: "Lessons run daily during daylight:<br>\n                       🌅 <strong>6:00 AM - 6:00 PM</strong><br>\n                       (Best morning & sunset surf sessions)",
+        footerBrand: "Top-rated surf school on Hiriketiya Beach, Sri Lanka. Safe, friendly, and patient surf coaching led by Kasun & ISA-certified local team.",
+        copyrightText: "© 2026 Hiri Surf School. All rights reserved. Hiriketiya Beach, Sri Lanka.",
         firebaseConfig: {
             apiKey: "AIzaSyAgWoQ_46LrTSbMXc-P25otiPUrR7TuRy0",
             authDomain: "surfing-7d050.firebaseapp.com",
@@ -1184,10 +1196,53 @@ document.addEventListener('DOMContentLoaded', () => {
             el.textContent = siteSettings.contactEmail;
         });
 
-        // Update brand description in footer
+        // Update all Social Media links
+        if (siteSettings.socialFb) {
+            document.querySelectorAll('.dyn-fb-link').forEach(el => el.href = siteSettings.socialFb);
+        }
+        if (siteSettings.socialInsta) {
+            document.querySelectorAll('.dyn-insta-link').forEach(el => el.href = siteSettings.socialInsta);
+        }
+        if (siteSettings.socialTripAdvisor) {
+            document.querySelectorAll('.dyn-tripadvisor-link').forEach(el => el.href = siteSettings.socialTripAdvisor);
+        }
+        if (siteSettings.socialGoogle || siteSettings.meetingLink) {
+            document.querySelectorAll('.dyn-google-link').forEach(el => el.href = siteSettings.socialGoogle || siteSettings.meetingLink);
+        }
+
+        // Update Beach Landmark Directions & Advance Booking Note
+        if (siteSettings.landmarkText) {
+            document.querySelectorAll('.dyn-landmark-text').forEach(el => el.textContent = siteSettings.landmarkText);
+        }
+        if (siteSettings.bookingNote) {
+            document.querySelectorAll('.dyn-booking-note').forEach(el => el.textContent = siteSettings.bookingNote);
+        }
+
+        // Update Trust Badges
+        if (siteSettings.trustBadge1) {
+            document.querySelectorAll('.dyn-trust-1').forEach(el => el.textContent = siteSettings.trustBadge1);
+        }
+        if (siteSettings.trustBadge2) {
+            document.querySelectorAll('.dyn-trust-2').forEach(el => el.textContent = siteSettings.trustBadge2);
+        }
+        if (siteSettings.trustBadge3) {
+            document.querySelectorAll('.dyn-trust-3').forEach(el => el.textContent = siteSettings.trustBadge3);
+        }
+        if (siteSettings.trustBadge4) {
+            document.querySelectorAll('.dyn-trust-4').forEach(el => el.textContent = siteSettings.trustBadge4);
+        }
+
+        // Update brand description & copyright in footer
+        if (siteSettings.footerBrand) {
+            document.querySelectorAll('.dyn-footer-desc').forEach(el => el.textContent = siteSettings.footerBrand);
+        }
+        if (siteSettings.copyrightText) {
+            document.querySelectorAll('.dyn-copyright').forEach(el => el.textContent = siteSettings.copyrightText);
+        }
+
         const dFooterBrand = document.getElementById('dynFooterBrandText');
         if (dFooterBrand) {
-            dFooterBrand.innerHTML = `${getTaglineHTML(siteSettings.heroTagline)} — Your local surf school for beginner, private, and semi-private surf lessons led by Kasun &amp; team.`;
+            dFooterBrand.innerHTML = `${getTaglineHTML(siteSettings.heroTagline)} — ${siteSettings.footerBrand || 'Your local surf school for beginner, private, and semi-private surf lessons led by Kasun & team.'}`;
         }
     };
 

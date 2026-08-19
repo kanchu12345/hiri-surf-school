@@ -633,10 +633,10 @@
                 </div>
             </div>
 
-            <!-- Contact & Location Info -->
+            <!-- Contact Info -->
             <div class="editor-card">
                 <div class="card-head">
-                    <h2 class="card-title">📍 4. Contact &amp; Beach Meeting Point</h2>
+                    <h2 class="card-title">📞 4. Contact Information</h2>
                 </div>
 
                 <div class="form-row">
@@ -650,22 +650,117 @@
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-col">
-                        <label class="form-label">Meeting Location Description</label>
-                        <input type="text" class="form-input" id="txtMeetingText" value="Hiri Surf School, Hiriketiya Beach, Sri Lanka">
-                    </div>
-                    <div class="form-col">
-                        <label class="form-label">Google Maps Directions URL</label>
-                        <input type="text" class="form-input" id="txtMeetingLink" value="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac">
-                    </div>
-                </div>
-
                 <div class="form-group">
                     <label class="form-label">Daily Operating Hours</label>
                     <textarea class="form-textarea" id="txtFooterHours" rows="2">🌅 6:00 AM - 6:00 PM (Daily daylight surf sessions)</textarea>
                 </div>
             </div>
+
+            <!-- Beach Meeting Point & Exact Landmark Directions -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">🏖️ 5. Beach Meeting Point &amp; Landmark Directions</h2>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">Meeting Point Name / Location</label>
+                        <input type="text" class="form-input" id="txtMeetingText" value="Hiri Surf School, Hiriketiya Beach, Sri Lanka">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">Google Maps Link</label>
+                        <input type="text" class="form-input" id="txtMeetingLink" value="https://maps.app.goo.gl/WQGCeh4apHywDrrx5">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label">Exact Beach Landmark Directions (Quote)</label>
+                    <textarea class="form-textarea" id="txtLandmarkText" rows="2">Look for the Hiri Surf School sign near the western corner of the bay, right where the sand meets the palm trees. Our team is always on the beach wearing our official rashguards.</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Advance Booking Recommendation Note</label>
+                    <textarea class="form-textarea" id="txtBookingNote" rows="2">We recommend booking in advance to secure your preferred lesson time, especially during busy days.</textarea>
+                </div>
+            </div>
+
+            <!-- Social Media & External Profile Links -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">🌐 6. Social Media &amp; Review Profiles</h2>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Update all social links shown in the header, footer, and contact sections across all pages.</p>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">📘 Facebook Page Link</label>
+                        <input type="text" class="form-input" id="txtSocialFb" value="https://www.facebook.com/hirisurfschool/">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">📸 Instagram Profile Link</label>
+                        <input type="text" class="form-input" id="txtSocialInsta" value="https://www.instagram.com/hiriketiya_hiri_surf_school/">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">🦉 TripAdvisor Reviews Link</label>
+                        <input type="text" class="form-input" id="txtSocialTripAdvisor" value="https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">⭐ Google Business / Review Link</label>
+                        <input type="text" class="form-input" id="txtSocialGoogle" value="https://maps.app.goo.gl/WQGCeh4apHywDrrx5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges & Highlights -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">⭐ 7. Trust Badges &amp; Feature Highlights</h2>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Update the 4 prominent trust badges shown under the hero banner.</p>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">Trust Badge 1</label>
+                        <input type="text" class="form-input" id="txtTrustBadge1" value="⭐ 5.0 Rated on Google (350+ Reviews)">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">Trust Badge 2</label>
+                        <input type="text" class="form-input" id="txtTrustBadge2" value="🏄‍♂️ 100% Board &amp; Rashguard Included">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="form-label">Trust Badge 3</label>
+                        <input type="text" class="form-input" id="txtTrustBadge3" value="🛡️ Ocean Safety &amp; CPR Certified">
+                    </div>
+                    <div class="form-col">
+                        <label class="form-label">Trust Badge 4</label>
+                        <input type="text" class="form-input" id="txtTrustBadge4" value="📍 Direct Beach Location in Hiriketiya">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Brand & Copyright -->
+            <div class="editor-card">
+                <div class="card-head">
+                    <h2 class="card-title">©️ 8. Footer Description &amp; Copyright</h2>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label">Footer Brand Story / Description</label>
+                    <textarea class="form-textarea" id="txtFooterBrand" rows="2">Top-rated surf school on Hiriketiya Beach, Sri Lanka. Safe, friendly, and patient surf coaching led by Kasun &amp; ISA-certified local team.</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Copyright Notice Text</label>
+                    <input type="text" class="form-input" id="txtCopyrightText" value="© 2026 Hiri Surf School. All rights reserved. Hiriketiya Beach, Sri Lanka.">
+                </div>
+            </div>
+
         </div>
 
         <!-- TAB 4: OFFERS & PIN SETTINGS -->
@@ -1315,6 +1410,44 @@
                     }
                 }).catch(err => console.warn('Cloud gallery read:', err));
 
+                // Load Settings from LocalStorage first for instant rendering
+                try {
+                    const localSet = localStorage.getItem('hiri_site_settings');
+                    if (localSet) {
+                        const s = JSON.parse(localSet);
+                        if (s && typeof s === 'object') {
+                            if (s.heroTagline) document.getElementById('txtHeroTagline').value = s.heroTagline;
+                            if (s.heroTitle) document.getElementById('txtHeroTitle').value = s.heroTitle;
+                            if (s.heroSubtitle) document.getElementById('txtHeroSubtitle').value = s.heroSubtitle;
+                            if (s.heroBg) {
+                                document.getElementById('txtHeroBg').value = s.heroBg;
+                                const prev = document.getElementById('prevHeroBg');
+                                if (prev) prev.src = s.heroBg;
+                            }
+                            if (s.aboutTag) document.getElementById('txtAboutTag').value = s.aboutTag;
+                            if (s.aboutTitle) document.getElementById('txtAboutTitle').value = s.aboutTitle;
+                            if (s.aboutDesc) document.getElementById('txtAboutDesc').value = s.aboutDesc;
+                            if (s.contactWa) document.getElementById('txtContactWa').value = s.contactWa;
+                            if (s.contactEmail) document.getElementById('txtContactEmail').value = s.contactEmail;
+                            if (s.meetingText) document.getElementById('txtMeetingText').value = s.meetingText;
+                            if (s.meetingLink) document.getElementById('txtMeetingLink').value = s.meetingLink;
+                            if (s.landmarkText) document.getElementById('txtLandmarkText').value = s.landmarkText;
+                            if (s.bookingNote) document.getElementById('txtBookingNote').value = s.bookingNote;
+                            if (s.socialFb) document.getElementById('txtSocialFb').value = s.socialFb;
+                            if (s.socialInsta) document.getElementById('txtSocialInsta').value = s.socialInsta;
+                            if (s.socialTripAdvisor) document.getElementById('txtSocialTripAdvisor').value = s.socialTripAdvisor;
+                            if (s.socialGoogle) document.getElementById('txtSocialGoogle').value = s.socialGoogle;
+                            if (s.trustBadge1) document.getElementById('txtTrustBadge1').value = s.trustBadge1;
+                            if (s.trustBadge2) document.getElementById('txtTrustBadge2').value = s.trustBadge2;
+                            if (s.trustBadge3) document.getElementById('txtTrustBadge3').value = s.trustBadge3;
+                            if (s.trustBadge4) document.getElementById('txtTrustBadge4').value = s.trustBadge4;
+                            if (s.footerHours) document.getElementById('txtFooterHours').value = s.footerHours;
+                            if (s.footerBrand) document.getElementById('txtFooterBrand').value = s.footerBrand;
+                            if (s.copyrightText) document.getElementById('txtCopyrightText').value = s.copyrightText;
+                        }
+                    }
+                } catch(e) {}
+
                 // Load Settings from Cloud
                 db.collection('siteData').doc('settings').get().then(doc => {
                     if (doc.exists && doc.data() && doc.data().data) {
@@ -1333,7 +1466,19 @@
                         if (s.contactEmail) document.getElementById('txtContactEmail').value = s.contactEmail;
                         if (s.meetingText) document.getElementById('txtMeetingText').value = s.meetingText;
                         if (s.meetingLink) document.getElementById('txtMeetingLink').value = s.meetingLink;
+                        if (s.landmarkText) document.getElementById('txtLandmarkText').value = s.landmarkText;
+                        if (s.bookingNote) document.getElementById('txtBookingNote').value = s.bookingNote;
+                        if (s.socialFb) document.getElementById('txtSocialFb').value = s.socialFb;
+                        if (s.socialInsta) document.getElementById('txtSocialInsta').value = s.socialInsta;
+                        if (s.socialTripAdvisor) document.getElementById('txtSocialTripAdvisor').value = s.socialTripAdvisor;
+                        if (s.socialGoogle) document.getElementById('txtSocialGoogle').value = s.socialGoogle;
+                        if (s.trustBadge1) document.getElementById('txtTrustBadge1').value = s.trustBadge1;
+                        if (s.trustBadge2) document.getElementById('txtTrustBadge2').value = s.trustBadge2;
+                        if (s.trustBadge3) document.getElementById('txtTrustBadge3').value = s.trustBadge3;
+                        if (s.trustBadge4) document.getElementById('txtTrustBadge4').value = s.trustBadge4;
                         if (s.footerHours) document.getElementById('txtFooterHours').value = s.footerHours;
+                        if (s.footerBrand) document.getElementById('txtFooterBrand').value = s.footerBrand;
+                        if (s.copyrightText) document.getElementById('txtCopyrightText').value = s.copyrightText;
                     }
                 }).catch(err => console.warn('Cloud settings read:', err));
 
@@ -1405,8 +1550,20 @@
                         contactWa: document.getElementById('txtContactWa')?.value.trim() || '+94 76 932 7173',
                         contactEmail: document.getElementById('txtContactEmail')?.value.trim() || 'hirisurfschool@gmail.com',
                         meetingText: document.getElementById('txtMeetingText')?.value.trim() || 'Hiri Surf School, Hiriketiya Beach, Sri Lanka',
-                        meetingLink: document.getElementById('txtMeetingLink')?.value.trim() || 'https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac',
-                        footerHours: document.getElementById('txtFooterHours')?.value.trim() || '🌅 6:00 AM - 6:00 PM (Daily daylight surf sessions)'
+                        meetingLink: document.getElementById('txtMeetingLink')?.value.trim() || 'https://maps.app.goo.gl/WQGCeh4apHywDrrx5',
+                        landmarkText: document.getElementById('txtLandmarkText')?.value.trim() || 'Look for the Hiri Surf School sign near the western corner of the bay, right where the sand meets the palm trees. Our team is always on the beach wearing our official rashguards.',
+                        bookingNote: document.getElementById('txtBookingNote')?.value.trim() || 'We recommend booking in advance to secure your preferred lesson time, especially during busy days.',
+                        socialFb: document.getElementById('txtSocialFb')?.value.trim() || 'https://www.facebook.com/hirisurfschool/',
+                        socialInsta: document.getElementById('txtSocialInsta')?.value.trim() || 'https://www.instagram.com/hiriketiya_hiri_surf_school/',
+                        socialTripAdvisor: document.getElementById('txtSocialTripAdvisor')?.value.trim() || 'https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html',
+                        socialGoogle: document.getElementById('txtSocialGoogle')?.value.trim() || 'https://maps.app.goo.gl/WQGCeh4apHywDrrx5',
+                        trustBadge1: document.getElementById('txtTrustBadge1')?.value.trim() || '⭐ 5.0 Rated on Google (350+ Reviews)',
+                        trustBadge2: document.getElementById('txtTrustBadge2')?.value.trim() || '🏄‍♂️ 100% Board & Rashguard Included',
+                        trustBadge3: document.getElementById('txtTrustBadge3')?.value.trim() || '🛡️ Ocean Safety & CPR Certified',
+                        trustBadge4: document.getElementById('txtTrustBadge4')?.value.trim() || '📍 Direct Beach Location in Hiriketiya',
+                        footerHours: document.getElementById('txtFooterHours')?.value.trim() || '🌅 6:00 AM - 6:00 PM (Daily daylight surf sessions)',
+                        footerBrand: document.getElementById('txtFooterBrand')?.value.trim() || 'Top-rated surf school on Hiriketiya Beach, Sri Lanka. Safe, friendly, and patient surf coaching led by Kasun & ISA-certified local team.',
+                        copyrightText: document.getElementById('txtCopyrightText')?.value.trim() || '© 2026 Hiri Surf School. All rights reserved. Hiriketiya Beach, Sri Lanka.'
                     };
 
                     // Gather Instructors

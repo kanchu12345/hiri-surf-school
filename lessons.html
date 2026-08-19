@@ -548,9 +548,9 @@
                         Top-rated surf school on Hiriketiya Beach, Sri Lanka. Safe, friendly, and patient surf coaching led by Kasun &amp; ISA-certified local team.
                     </p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/hirisurfschool/" target="_blank" rel="noopener" aria-label="Facebook">📘 Facebook</a>
-                        <a href="https://www.instagram.com/hiriketiya_hiri_surf_school/" target="_blank" rel="noopener" aria-label="Instagram">📸 Instagram</a>
-                        <a href="https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html" target="_blank" rel="noopener" aria-label="TripAdvisor">🦉 TripAdvisor</a>
+                        <a href="https://www.facebook.com/hirisurfschool/" target="_blank" rel="noopener" class="dyn-fb-link" aria-label="Facebook">📘 Facebook</a>
+                        <a href="https://www.instagram.com/hiriketiya_hiri_surf_school/" target="_blank" rel="noopener" class="dyn-insta-link" aria-label="Instagram">📸 Instagram</a>
+                        <a href="https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html" target="_blank" rel="noopener" class="dyn-tripadvisor-link" aria-label="TripAdvisor">🦉 TripAdvisor</a>
                     </div>
                 </div>
 
@@ -581,21 +581,21 @@
                 <div class="footer-col">
                     <h3 class="footer-title">Contact Kasun</h3>
                     <p>📍 Hiriketiya Beach, Dikwella, Southern Province, Sri Lanka</p>
-                    <p>📲 WhatsApp: <a href="https://wa.me/94769327173" style="color: var(--color-secondary); font-weight: 700;">+94 76 932 7173</a></p>
-                    <p>📧 Email: <a href="mailto:hirisurfschool@gmail.com" style="color: var(--color-secondary);">hirisurfschool@gmail.com</a></p>
-                    <p>⏰ Open Daily: 6:00 AM – 6:30 PM</p>
+                    <p>📲 WhatsApp: <a href="https://wa.me/94769327173" class="dyn-wa-link" style="color: var(--color-secondary); font-weight: 700;"><span class="dyn-wa-text">+94 76 932 7173</span></a></p>
+                    <p>📧 Email: <a href="mailto:hirisurfschool@gmail.com" class="dyn-email-link" style="color: var(--color-secondary);"><span class="dyn-email-text">hirisurfschool@gmail.com</span></a></p>
+                    <p>⏰ Open Daily: <span id="dynFooterHours">6:00 AM – 6:30 PM</span></p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Hiri Surf School. All rights reserved. Hiriketiya Beach, Sri Lanka.</p>
+                <p class="dyn-copyright">&copy; 2026 Hiri Surf School. All rights reserved. Hiriketiya Beach, Sri Lanka.</p>
             </div>
         </div>
     </footer>
 
     <!-- --- Mobile Sticky Bottom Bar --- -->
     <div class="mobile-sticky-bar" id="mobileStickyBar" style="display: flex;">
-        <a href="https://wa.me/94769327173?text=Hi%20Kasun!%20I%20want%20to%20book%20a%20surf%20lesson%20at%20Hiriketiya." target="_blank" class="sticky-btn-wa" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/94769327173?text=Hi%20Kasun!%20I%20want%20to%20book%20a%20surf%20lesson%20at%20Hiriketiya." target="_blank" class="sticky-btn-wa dyn-wa-link" aria-label="Chat on WhatsApp">
             💬 WhatsApp Kasun
         </a>
         <a href="#booking" class="sticky-btn-book">
@@ -605,7 +605,6 @@
 
     <!-- Scripts -->
     <script>
-        // Mobile Hamburger Toggle
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         if (hamburger && mobileMenu) {
@@ -621,5 +620,6 @@
             });
         }
     </script>
+    <script defer src="app.js?v=2.1"></script>
 </body>
 </html>
