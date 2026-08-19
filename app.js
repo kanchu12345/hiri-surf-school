@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Default site text/links configuration
     const DEFAULT_SETTINGS = {
         heroTagline: "Hiriketiya Beach, Sri Lanka 🇱🇰",
-        heroTitle: "Surf Lessons in <span>Hiriketiya, Sri Lanka</span>",
+        heroTitle: "Hiriketiya ❤️ Hiri Surf School Learn to Surf in <span>Sri Lanka</span> 🏄‍♂️🌴",
         heroSubtitle: "Safe, fun, and professional surf lessons led by Kasun & Team. Perfect for complete beginners, couples, kids, and all levels at Hiriketiya Beach.",
         heroBg: "images/20702.jpg.jpeg",
         trustBadge1: "⭐ 5.0 Rated on Google (350+ Reviews)",
