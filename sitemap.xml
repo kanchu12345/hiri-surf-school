@@ -25,24 +25,6 @@
         </image:image>
     </url>
 
-    <!-- Dedicated Surf Lessons Hub -->
-    <url>
-        <loc>https://hirisurfschool.com/lessons.html</loc>
-        <lastmod>2026-08-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-        <image:image>
-            <image:loc>https://hirisurfschool.com/images/20702.jpg.jpeg</image:loc>
-            <image:title>Surf Lessons Hiriketiya Sri Lanka</image:title>
-            <image:caption>Private, Semi-Private, Kids, Family and Beginner Surf Coaching in Hiriketiya Beach.</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://hirisurfschool.com/images/instructor-1.jpg</image:loc>
-            <image:title>Private Surf Coach Kasun Hiriketiya</image:title>
-            <image:caption>Kasun founder and head surf coach at Hiri Surf School.</image:caption>
-        </image:image>
-    </url>
-
     <!-- Beach Location & Directions Guide -->
     <url>
         <loc>https://hirisurfschool.com/location.html</loc>
