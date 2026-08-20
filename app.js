@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         contactWaClean: "94769327173",
         contactEmail: "hirisurfschool@gmail.com",
         meetingText: "Hiriketiya Beach, Sri Lanka",
-        meetingLink: "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
+        meetingLink: "https://www.google.com/maps/place/Hiriketiya+%E2%9D%A4%EF%B8%8FHiri+Surf+School+Sri+Lanka+-+Your+Best+Surf+School+In+Sri+Lanka/@5.9624251,80.7070013,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae1378e05cca8b7:0xa53b5578f39e3e84!8m2!3d5.9624251!4d80.7070013!16s%2Fg%2F11h52qpf89",
         landmarkText: "Look for the Hiri Surf School sign near the western corner of the bay, right where the sand meets the palm trees. Our team is always on the beach wearing our official rashguards.",
         bookingNote: "We recommend booking in advance to secure your preferred lesson time, especially during busy days.",
         socialFb: "https://www.facebook.com/hirisurfschool/",
         socialInsta: "https://www.instagram.com/hiriketiya_hiri_surf_school/",
         socialTripAdvisor: "https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html",
-        socialGoogle: "https://maps.app.goo.gl/WQGCeh4apHywDrrx5",
+        socialGoogle: "https://www.google.com/maps/place/Hiriketiya+%E2%9D%A4%EF%B8%8FHiri+Surf+School+Sri+Lanka+-+Your+Best+Surf+School+In+Sri+Lanka/@5.9624251,80.7070013,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae1378e05cca8b7:0xa53b5578f39e3e84!8m2!3d5.9624251!4d80.7070013!16s%2Fg%2F11h52qpf89",
         footerHours: "Lessons run daily during daylight:<br>\n                       🌅 <strong>6:00 AM - 6:00 PM</strong><br>\n                       (Best morning & sunset surf sessions)",
         footerBrand: "Top-rated surf school on Hiriketiya Beach, Sri Lanka. Safe, friendly, and patient surf coaching led by Kasun & ISA-certified local team.",
         copyrightText: "© 2026 Hiri Surf School. All rights reserved. Hiriketiya Beach, Sri Lanka.",
@@ -537,28 +537,54 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    // --- 2. Mobile Menu Toggle ---
+    // --- 2. Mobile Menu Toggle Controller (Drawer / Sheet) ---
     const toggleMobileMenu = () => {
-        const isOpen = mobileMenu.classList.contains('open');
+        if (!mobileMenu) return;
+        const isOpen = mobileMenu.classList.contains('open') || mobileMenu.classList.contains('active');
         if (isOpen) {
             mobileMenu.classList.remove('open');
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
             document.body.style.overflow = '';
-            hamburger.querySelectorAll('span')[0].style.transform = 'none';
-            hamburger.querySelectorAll('span')[1].style.opacity = '1';
-            hamburger.querySelectorAll('span')[2].style.transform = 'none';
+            if (hamburger) {
+                hamburger.setAttribute('aria-expanded', 'false');
+                const spans = hamburger.querySelectorAll('span');
+                if (spans.length >= 3) {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
         } else {
             mobileMenu.classList.add('open');
+            mobileMenu.classList.add('active');
+            document.body.classList.add('menu-open');
             document.body.style.overflow = 'hidden';
-            hamburger.querySelectorAll('span')[0].style.transform = 'translateY(9px) rotate(45deg)';
-            hamburger.querySelectorAll('span')[1].style.opacity = '0';
-            hamburger.querySelectorAll('span')[2].style.transform = 'translateY(-9px) rotate(-45deg)';
+            if (hamburger) {
+                hamburger.setAttribute('aria-expanded', 'true');
+                const spans = hamburger.querySelectorAll('span');
+                if (spans.length >= 3) {
+                    spans[0].style.transform = 'translateY(9px) rotate(45deg)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'translateY(-9px) rotate(-45deg)';
+                }
+            }
         }
     };
-    hamburger.addEventListener('click', toggleMobileMenu);
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
     
-    mobileLinks.forEach(link => {
+    // Close button inside menu
+    const closeBtn = document.getElementById('mobileMenuClose');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Auto-close on link click
+    document.querySelectorAll('.mobile-menu-overlay a').forEach(link => {
         link.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('open')) {
+            if (mobileMenu && (mobileMenu.classList.contains('open') || mobileMenu.classList.contains('active'))) {
                 toggleMobileMenu();
             }
         });
@@ -1292,7 +1318,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             Our students love learning to surf with Kasun & Team at Hiriketiya Beach. Read our verified Google Reviews or share your own experience!
                         </p>
                         <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                            <a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5?g_st=ac" target="_blank" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.9rem;">⭐ Read Google Reviews (5.0 ★)</a>
+                            <a href="https://www.google.com/maps/place/Hiriketiya+%E2%9D%A4%EF%B8%8FHiri+Surf+School+Sri+Lanka+-+Your+Best+Surf+School+In+Sri+Lanka/@5.9624251,80.7070013,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae1378e05cca8b7:0xa53b5578f39e3e84!8m2!3d5.9624251!4d80.7070013!16s%2Fg%2F11h52qpf89" target="_blank" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.9rem;">⭐ Read Google Reviews (5.0 ★)</a>
                             <button type="button" class="btn btn-outline" onclick="document.getElementById('openReviewModalBtn')?.click()" style="border-color: #38bdf8; color: #38bdf8; padding: 10px 22px; font-size: 0.9rem;">✍️ Write a Review</button>
                         </div>
                     </div>

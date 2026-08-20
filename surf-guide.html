@@ -27,8 +27,8 @@
     <!-- Geo & Local SEO Meta Tags -->
     <meta name="geo.region" content="LK-3">
     <meta name="geo.placename" content="Hiriketiya Beach, Dikwella, Southern Province">
-    <meta name="geo.position" content="5.963430;80.703120">
-    <meta name="ICBM" content="5.963430, 80.703120">
+    <meta name="geo.position" content="5.962425;80.707001">
+    <meta name="ICBM" content="5.962425, 80.707001">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css?v=2.3">
@@ -82,18 +82,132 @@
 </head>
 <body>
 
-    <!-- --- Mobile Menu Overlay --- -->
+    <!-- --- Mobile Menu Overlay (Modern Android & iOS App Drawer) --- -->
     <div class="mobile-menu-overlay" id="mobileMenu">
-        <div class="mobile-menu-links">
-            <a href="index.html">Home ➔</a>
-            <a href="index.html#lessons">Surf Lessons &amp; Prices 🏄‍♂️</a>
-            <a href="location.html">📍 How to Find Us</a>
-            <a href="#spots">Wave Spots</a>
-            <a href="#guiding">Surf Guiding</a>
-            <a href="#schedule">Daily Routine</a>
-            <a href="#surf-report">Live Surf Report</a>
-            <a href="#safety">Safety Rules</a>
-            <a href="index.html#booking" class="btn btn-primary">Book Lessons</a>
+        <div class="mobile-menu-container">
+            <!-- Header with Brand & Close Button -->
+            <div class="mobile-menu-header">
+                <a href="index.html" class="mobile-menu-brand">
+                    <span class="brand-logo-icon">🌊</span>
+                    <div>
+                        <span class="brand-text-title">Hiri<span>Surf</span></span>
+                        <span class="brand-text-subtitle">Hiriketiya Beach</span>
+                    </div>
+                </a>
+                <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+            </div>
+
+            <!-- Navigation Links as Modern Cards -->
+            <nav class="mobile-menu-links" aria-label="Mobile Navigation">
+                <a href="index.html#home" class="mobile-menu-link-card">
+                    <div class="mobile-menu-link-left">
+                        <div class="mobile-menu-link-icon">🏠</div>
+                        <div class="mobile-menu-link-info">
+                            <span class="link-title">Home</span>
+                            <span class="link-subtitle">Back to main page</span>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-link-right">
+                        <span class="mobile-menu-arrow">›</span>
+                    </div>
+                </a>
+
+                <a href="index.html#lessons" class="mobile-menu-link-card">
+                    <div class="mobile-menu-link-left">
+                        <div class="mobile-menu-link-icon">🏄‍♂️</div>
+                        <div class="mobile-menu-link-info">
+                            <span class="link-title">Surf Lessons &amp; Prices</span>
+                            <span class="link-subtitle">Beginner, Private &amp; Rental</span>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-link-right">
+                        <span class="mobile-menu-badge">From $13</span>
+                        <span class="mobile-menu-arrow">›</span>
+                    </div>
+                </a>
+
+                <a href="location.html" class="mobile-menu-link-card">
+                    <div class="mobile-menu-link-left">
+                        <div class="mobile-menu-link-icon">📍</div>
+                        <div class="mobile-menu-link-info">
+                            <span class="link-title">How to Find Us</span>
+                            <span class="link-subtitle">Direct on Hiriketiya Beach</span>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-link-right">
+                        <span class="mobile-menu-arrow">›</span>
+                    </div>
+                </a>
+
+                <a href="#spots" class="mobile-menu-link-card">
+                    <div class="mobile-menu-link-left">
+                        <div class="mobile-menu-link-icon">🌊</div>
+                        <div class="mobile-menu-link-info">
+                            <span class="link-title">Wave Spots</span>
+                            <span class="link-subtitle">Beach Break &amp; Left Point</span>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-link-right">
+                        <span class="mobile-menu-arrow">›</span>
+                    </div>
+                </a>
+
+                <a href="#schedule" class="mobile-menu-link-card">
+                    <div class="mobile-menu-link-left">
+                        <div class="mobile-menu-link-icon">🗓️</div>
+                        <div class="mobile-menu-link-info">
+                            <span class="link-title">Flexible Surf Times</span>
+                            <span class="link-subtitle">Morning, Midday &amp; Sunset</span>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-link-right">
+                        <span class="mobile-menu-arrow">›</span>
+                    </div>
+                </a>
+
+                <a href="#surf-report" class="mobile-menu-link-card">
+                    <div class="mobile-menu-link-left">
+                        <div class="mobile-menu-link-icon">📊</div>
+                        <div class="mobile-menu-link-info">
+                            <span class="link-title">Live Surf Report</span>
+                            <span class="link-subtitle">Swell &amp; Wind telemetry</span>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-link-right">
+                        <span class="mobile-menu-badge badge-guide">Live API</span>
+                        <span class="mobile-menu-arrow">›</span>
+                    </div>
+                </a>
+
+                <a href="#safety" class="mobile-menu-link-card">
+                    <div class="mobile-menu-link-left">
+                        <div class="mobile-menu-link-icon">🛡️</div>
+                        <div class="mobile-menu-link-info">
+                            <span class="link-title">Water Safety Rules</span>
+                            <span class="link-subtitle">Bay etiquette &amp; rips</span>
+                        </div>
+                    </div>
+                    <div class="mobile-menu-link-right">
+                        <span class="mobile-menu-arrow">›</span>
+                    </div>
+                </a>
+            </nav>
+
+            <!-- Quick Action CTA Buttons -->
+            <div class="mobile-menu-actions">
+                <a href="index.html#booking" class="mobile-menu-cta-book">
+                    🏄‍♂️ Book Surf Lesson
+                </a>
+                <a href="https://wa.me/94769327173?text=Hi%20Kasun!%20I%20have%20questions%20about%20surf%20guiding%20at%20Hiriketiya." target="_blank" class="mobile-menu-cta-wa dyn-wa-link">
+                    💬 WhatsApp Kasun (<span class="dyn-wa-text">+94 76 932 7173</span>)
+                </a>
+                <div class="mobile-menu-socials">
+                    <a href="https://www.instagram.com/hiriketiya_hiri_surf_school/" target="_blank" class="mobile-menu-social-link dyn-insta-link" aria-label="Instagram">📸</a>
+                    <a href="https://www.facebook.com/hirisurfschool/" target="_blank" class="mobile-menu-social-link dyn-fb-link" aria-label="Facebook">📘</a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html" target="_blank" class="mobile-menu-social-link dyn-trip-link" aria-label="TripAdvisor">🦉</a>
+                    <a href="https://www.google.com/maps/place/Hiriketiya+%E2%9D%A4%EF%B8%8FHiri+Surf+School+Sri+Lanka+-+Your+Best+Surf+School+In+Sri+Lanka/@5.9624251,80.7070013,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae1378e05cca8b7:0xa53b5578f39e3e84!8m2!3d5.9624251!4d80.7070013!16s%2Fg%2F11h52qpf89" target="_blank" class="mobile-menu-social-link dyn-google-link" aria-label="Google Maps">📍</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -118,7 +232,7 @@
                         <a href="surf-guide.html#spots">🌊 Surf Spot Guide</a>
                         <a href="surf-guide.html#guiding">🗺️ Guided Surf Trips</a>
                         <a href="surf-guide.html#basic-guides">📖 Beginner Techniques</a>
-                        <a href="surf-guide.html#schedule">🗓️ Daily Surf Routine</a>
+                        <a href="surf-guide.html#schedule">🗓️ Flexible Surf Times</a>
                         <a href="surf-guide.html#surf-report">📊 Live Swell Forecast</a>
                         <a href="surf-guide.html#safety">🛡️ Water Safety Rules</a>
                         <a href="surf-guide.html#inquiry">✉️ Send an Inquiry</a>
@@ -402,58 +516,53 @@
         </div>
     </section>
 
-    <!-- --- Typical Daily Surf Routine Section --- -->
+    <!-- --- Flexible Surf Lessons Throughout the Day Section --- -->
     <section class="daily-schedule section-padding" id="schedule" style="background-color: #ffffff;">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>Typical Daily Surf Routine</h2>
-                <p>Surf conditions change daily with the tide, wind, and swell. Below is a typical schedule, but we customize lesson times every day to ensure you get the best possible waves.</p>
+            <div class="section-header text-center" style="max-width: 800px; margin: 0 auto 30px auto;">
+                <span class="tag" style="background: rgba(14, 165, 233, 0.1); color: var(--color-primary); font-weight: 700; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 12px;">Flexible Schedule</span>
+                <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--color-primary-dark); margin-bottom: 16px;">Flexible Surf Lessons Throughout the Day 🌊</h2>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: #475569; margin-bottom: 24px;">
+                    Surf conditions in Hiriketiya change with the tide, wind and swell. We offer flexible lesson times throughout the day and recommend the best session based on the conditions, your surfing level and instructor availability.
+                </p>
             </div>
             
-            <div class="schedule-container">
-                <!-- Routine 1 -->
-                <div class="schedule-item">
-                    <div class="schedule-time">06:30 AM</div>
-                    <div class="schedule-details">
-                        <h4>🌅 Early Morning Session</h4>
-                        <p>Often has lighter wind and cleaner wave conditions. Ideal for intermediate surf coaching and catching early sessions before the lineup gets busy.</p>
-                    </div>
+            <!-- Time Slots Highlight Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: 860px; margin: 0 auto 28px auto;">
+                <div style="background: var(--color-bg-light); border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                    <div style="font-size: 2rem; margin-bottom: 8px;">🌅</div>
+                    <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 4px; font-weight: 700;">Morning</h3>
+                    <span style="font-size: 0.85rem; color: #64748b; font-weight: 500;">Clean &amp; glassy waves</span>
                 </div>
-
-                <!-- Routine 2 -->
-                <div class="schedule-item">
-                    <div class="schedule-time">08:30 AM</div>
-                    <div class="schedule-details">
-                        <h4>🏄 Morning Surf Lessons</h4>
-                        <p>Beach safety briefing, paddling form practice, and pop-up mechanics. Coaches help students catch waves over the soft sandbar area.</p>
-                    </div>
+                <div style="background: var(--color-bg-light); border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                    <div style="font-size: 2rem; margin-bottom: 8px;">☀️</div>
+                    <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 4px; font-weight: 700;">Midday</h3>
+                    <span style="font-size: 0.85rem; color: #64748b; font-weight: 500;">Warm tropical surf</span>
                 </div>
-
-                <!-- Routine 3 -->
-                <div class="schedule-item">
-                    <div class="schedule-time">11:30 AM</div>
-                    <div class="schedule-details">
-                        <h4>☀️ Midday Practice &amp; Rentals</h4>
-                        <p>Perfect for practicing what you've learned. Grab a board from our rental range and enjoy the tropical bay at your own pace.</p>
-                    </div>
+                <div style="background: var(--color-bg-light); border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                    <div style="font-size: 2rem; margin-bottom: 8px;">🏄‍♂️</div>
+                    <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 4px; font-weight: 700;">Afternoon</h3>
+                    <span style="font-size: 0.85rem; color: #64748b; font-weight: 500;">Wave coaching &amp; practice</span>
                 </div>
-
-                <!-- Routine 4 -->
-                <div class="schedule-item">
-                    <div class="schedule-time">02:30 PM</div>
-                    <div class="schedule-details">
-                        <h4>📹 Afternoon Surf Coaching</h4>
-                        <p>A focused surf lesson followed by constructive feedback. We analyze your stance, paddling, and board control to help you improve.</p>
-                    </div>
+                <div style="background: var(--color-bg-light); border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                    <div style="font-size: 2rem; margin-bottom: 8px;">🌇</div>
+                    <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 4px; font-weight: 700;">Sunset</h3>
+                    <span style="font-size: 0.85rem; color: #64748b; font-weight: 500;">Golden hour sessions</span>
                 </div>
+            </div>
 
-                <!-- Routine 5 -->
-                <div class="schedule-item">
-                    <div class="schedule-time">04:30 PM</div>
-                    <div class="schedule-details">
-                        <h4>🌇 Golden Hour Sunset Surf</h4>
-                        <p>A relaxing surf session as the day winds down. Enjoy paddling out with your coach as the sun sets over Hiriketiya Bay.</p>
-                    </div>
+            <!-- Note & Call to Action -->
+            <div style="max-width: 760px; margin: 0 auto; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 14px; padding: 20px 24px; text-align: center;">
+                <p style="color: #166534; font-size: 1.05rem; font-weight: 600; margin: 0 0 16px 0; line-height: 1.6;">
+                    Have a preferred time? Just let us know when you book, and we'll do our best to arrange it.
+                </p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html#booking" class="btn btn-primary btn-sm" style="font-weight: 700;">
+                        📅 Book a Lesson
+                    </a>
+                    <a href="https://wa.me/94769327173?text=Hi%20Kasun!%20I%20want%20to%20ask%20about%20surf%20lesson%20times." target="_blank" class="btn btn-secondary btn-sm dyn-wa-link" style="background: #25D366; color: #fff; border: none; font-weight: 700;">
+                        💬 WhatsApp Kasun
+                    </a>
                 </div>
             </div>
         </div>
@@ -726,7 +835,7 @@
                         📍 <strong>Hiri Surf School</strong><br>
                         Hiriketiya Beach, Dikwella, Sri Lanka
                     </p>
-                    <a href="https://maps.app.goo.gl/WQGCeh4apHywDrrx5" target="_blank" class="btn btn-outline dyn-google-link" style="padding: 8px 14px; font-size: 0.85rem; border-color: rgba(255,255,255,0.3); color: #fff;">📍 Google Maps Directions</a>
+                    <a href="https://www.google.com/maps/place/Hiriketiya+%E2%9D%A4%EF%B8%8FHiri+Surf+School+Sri+Lanka+-+Your+Best+Surf+School+In+Sri+Lanka/@5.9624251,80.7070013,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae1378e05cca8b7:0xa53b5578f39e3e84!8m2!3d5.9624251!4d80.7070013!16s%2Fg%2F11h52qpf89" target="_blank" class="btn btn-outline dyn-google-link" style="padding: 8px 14px; font-size: 0.85rem; border-color: rgba(255,255,255,0.3); color: #fff;">📍 Google Maps Directions</a>
                 </div>
 
             </div>
