@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trustBadge3: "🛡️ Ocean Safety & CPR Certified",
         trustBadge4: "📍 Direct Beach Location in Hiriketiya",
         aboutTag: "Welcome to Hiri Surf School",
-        aboutTitle: "Learn to surf with local experienced coaches",
+        aboutTitle: "Learn to surf with experienced local instructors in Hiriketiya.",
         aboutDesc: "Led by Kasun & Team with 7+ years of local surf coaching experience, we are a passionate local surf school on the sands of Hiriketiya Beach. We focus on safety, proper technique, and giving every customer a friendly and unforgettable experience.",
         contactWa: "+94 76 932 7173",
         contactWaClean: "94769327173",
