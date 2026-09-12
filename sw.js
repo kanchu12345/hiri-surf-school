@@ -1,11 +1,11 @@
-const CACHE_NAME = 'hiri-surf-v3.0';
+const CACHE_NAME = 'hiri-surf-v3.1';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './location.html',
   './surf-guide.html',
-  './style.css?v=3.0',
-  './app.js?v=3.0',
+  './style.css?v=3.1',
+  './app.js?v=3.1',
   './manifest.json',
   './images/wave-icon.png',
   './images/favicon.png'

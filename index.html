@@ -47,7 +47,7 @@
     <meta name="ICBM" content="5.962425, 80.707001">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3.0">
+    <link rel="stylesheet" href="style.css?v=3.1">
 
     <!-- Structured Data / Schema.org JSON-LD (@graph) for Google Rich Snippets & FAQ Search Results -->
     <script type="application/ld+json">
@@ -846,17 +846,11 @@
                 </div>
             </div>
 
-            <div class="slider-container">
-                <div class="reviews-slider" id="reviewsSlider">
-                    <!-- Dynamic Genuine Customer Reviews Loaded Live via Firebase Firestore -->
-                </div>
-
-                <!-- Slider Navigation -->
-                <div class="slider-nav">
-                    <button class="slider-btn" id="prevBtn" aria-label="Previous review">←</button>
-                    <button class="slider-btn" id="nextBtn" aria-label="Next review">→</button>
-                </div>
-                <div class="slider-dots" id="sliderDots"></div>
+            <!-- Elfsight Google Reviews Widget -->
+            <div class="elfsight-reviews-wrapper" style="margin-top: 30px; min-height: 160px;">
+                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-bdc8d5ce-571e-4866-80a0-788f2319bec9" data-elfsight-app-lazy></div>
             </div>
         </div>
     </section>
@@ -1268,6 +1262,6 @@
     <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
     <script defer src="firebase-init.js"></script>
     <!-- JavaScript Bundle -->
-    <script defer src="app.js?v=3.0"></script>
+    <script defer src="app.js?v=3.1"></script>
 </body>
 </html>
