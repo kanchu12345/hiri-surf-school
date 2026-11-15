@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Default site text/links configuration
     const DEFAULT_SETTINGS = {
         heroTagline: "Hiriketiya Beach, Sri Lanka 🇱🇰",
-        heroTitle: "Hiriketiya ❤️ Hiri Surf School Learn to Surf in <span>Sri Lanka</span> 🏄‍♂️🌴",
-        heroSubtitle: "Safe, fun, and professional surf lessons led by Kasun & Team. Perfect for complete beginners, couples, kids, and all levels at Hiriketiya Beach.",
+        heroTitle: "Surf Lessons Hiriketiya — Best Surf School in <span>Sri Lanka</span> 🏄‍♂️🌴",
+        heroSubtitle: "Safe, fun, and beginner-friendly surf lessons led by Kasun & experienced local Sri Lankan instructors. Perfect for beginners, couples, kids, and families at Hiriketiya Beach.",
         heroBg: "images/20702.jpg.jpeg",
         trustBadge1: "⭐ 5.0 Rated on Google (350+ Reviews)",
         trustBadge2: "🏄‍♂️ 100% Board & Rashguard Included",
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         socialTripAdvisor: "https://www.tripadvisor.com/Attraction_Review-g644046-d15081533-Reviews-Hiriketiya_Love_Hiri_Surf_School-Dikwella_Southern_Province.html",
         socialGoogle: "https://www.google.com/maps/place/Hiriketiya+%E2%9D%A4%EF%B8%8FHiri+Surf+School+Sri+Lanka+-+Your+Best+Surf+School+In+Sri+Lanka/@5.9624251,80.7070013,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae1378e05cca8b7:0xa53b5578f39e3e84!8m2!3d5.9624251!4d80.7070013!16s%2Fg%2F11h52qpf89",
         footerHours: "Lessons run daily during daylight:<br>\n                       🌅 <strong>6:00 AM - 6:00 PM</strong><br>\n                       (Best morning & sunset surf sessions)",
-        footerBrand: "Top-rated surf school on Hiriketiya Beach, Sri Lanka. Safe, friendly, and patient surf coaching led by Kasun & ISA-certified local team.",
+        footerBrand: "Top-rated surf school on Hiriketiya Beach, Sri Lanka. Safe, friendly, and patient surf coaching led by Kasun & experienced local Sri Lankan coaching team.",
         copyrightText: "© 2026 Hiri Surf School. All rights reserved. Hiriketiya Beach, Sri Lanka.",
         firebaseConfig: {
             apiKey: "AIzaSyAgWoQ_46LrTSbMXc-P25otiPUrR7TuRy0",
@@ -426,13 +426,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Default FAQs Database
     const DEFAULT_FAQS = [
-        { id: 1, question: "🏊‍♂️ Do I need to be a strong swimmer?", answer: "No, you don't need to be a professional swimmer. For beginner lessons, we stay in waist-deep water where you can easily stand. Our instructors stay right next to you at all times." },
-        { id: 2, question: "🎒 What should I bring to the lesson?", answer: "Just bring your swimwear, a towel, and reef-safe sunscreen. We provide all the surf gear, including surfboards, high-quality leashes, and UV rashguards." },
-        { id: 3, question: "📅 When is the best season to surf?", answer: "The peak season in Hiriketiya is from December to April, offering warm weather and great surfing weather. However, because of the bay's horseshoe shape, it gets surfable waves all year round!" },
-        { id: 4, question: "🧒 Can kids join the surf lessons?", answer: "Absolutely! Surfing is fun for all ages. We offer specialized kids lessons (ages 5-12) with gentle one-on-one attention to ensure they stay 100% safe and comfortable." }
+        { id: 1, question: "🏄‍♂️ Is Hiri Surf School suitable for complete beginners?", answer: "Yes, absolutely! Hiriketiya Beach has a gentle sandy bottom with rolling white waves that make it Sri Lanka's top spot for beginner surf lessons. Our patient local coaches provide step-by-step instruction on beach theory, paddling, and popping up." },
+        { id: 2, question: "🎒 What should I bring to my surf lesson?", answer: "Just bring swimwear, a beach towel, and reef-safe sunscreen! We provide all equipment: beginner soft-top surfboards, safety leashes, and UV rashguards at no extra cost." },
+        { id: 3, question: "🌅 What is the best time of day for surf lessons in Hiriketiya?", answer: "Early morning (6:30 AM – 9:30 AM) and late afternoon (4:00 PM – 6:00 PM) are best. These times feature lighter offshore winds, cleaner peeling waves, and cooler tropical temperatures." },
+        { id: 4, question: "🏊‍♂️ Do I need to be a strong swimmer to take beginner surf lessons?", answer: "No advanced swimming skills are required for beginner lessons. We stay in waist-deep water where you can easily stand on the soft sandbar, and your instructor stays right beside you at all times." },
+        { id: 5, question: "👥 Can couples or friends take semi-private surf lessons together?", answer: "Yes! Semi-private lessons (6,000 LKR per person) are specially designed for couples or two friends who want to learn together with 1 dedicated private coach." },
+        { id: 6, question: "🎯 What are the benefits of 1-on-1 private surf coaching?", answer: "Private lessons (8,000 LKR) give you 100% undivided attention from a senior local coach. You get individualized technique correction, maximum wave count, and faster progression." },
+        { id: 7, question: "🧒 Do you offer kids and family surf lessons in Sri Lanka?", answer: "Yes! We love teaching kids (ages 5-12) and families. Kids lessons (6,000 LKR) are conducted in shallow waist-deep water with soft safety surfboards and dedicated 1-on-1 coach supervision." },
+        { id: 8, question: "📱 How do I book a surf lesson at Hiri Surf School?", answer: "Booking is quick and instant! Message us directly on WhatsApp at +94 76 932 7173 or submit the booking form on this website to confirm your session." }
     ];
     let faqsData = JSON.parse(localStorage.getItem('hiri_faqs'));
-    if (!Array.isArray(faqsData) || faqsData.length === 0 || !faqsData[0]?.question || (faqsData[2] && faqsData[2].answer && faqsData[2].answer.includes("offshore wind"))) {
+    if (!Array.isArray(faqsData) || faqsData.length < 8 || !faqsData[0]?.question) {
         faqsData = DEFAULT_FAQS;
         localStorage.setItem('hiri_faqs', JSON.stringify(DEFAULT_FAQS));
     }
@@ -1643,7 +1647,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         container.innerHTML = galleryData.map((item, i) => `
             <div class="gallery-slide" style="min-width: 100%; flex-shrink: 0; width: 100%; height: 100%; position: relative;">
-                <img src="${item.img}" alt="Surf Gallery Image ${i + 1}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="${item.img}" alt="Surf lessons in Hiriketiya Beach Sri Lanka - Hiri Surf School moment ${i + 1}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="img-fallback" style="display: none; height: 100%;"><span>Surf Gallery Image ${i + 1}</span></div>
             </div>
         `).join('');

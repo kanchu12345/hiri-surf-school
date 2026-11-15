@@ -5,56 +5,77 @@
     <!-- Homepage / Main Surf School Booking & Lessons Hub -->
     <url>
         <loc>https://hirisurfschool.com/</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://hirisurfschool.com/images/20702.jpg.jpeg</image:loc>
-            <image:title>Beginner Surf Lessons at Hiriketiya Beach with Hiri Surf School</image:title>
-            <image:caption>Professional surf lessons for beginners and travelers at Hiriketiya Bay, Sri Lanka led by Kasun &amp; Team.</image:caption>
+            <image:title>Surf Lessons Hiriketiya with Best Surf School Sri Lanka - Hiri Surf</image:title>
+            <image:caption>Safe, beginner-friendly surf lessons at Hiriketiya Beach, Sri Lanka led by Kasun &amp; experienced local instructors.</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://hirisurfschool.com/images/69528.jpg.jpeg</image:loc>
-            <image:title>Hiriketiya Beach Surfing Lessons Sri Lanka</image:title>
-            <image:caption>Surfing in horseshoe shaped bay at Hiriketiya with gentle beginner waves.</image:caption>
+            <image:title>Beginner Surf Lessons Sri Lanka at Hiriketiya Beach</image:title>
+            <image:caption>Surfing in the warm, horseshoe-shaped bay at Hiriketiya with gentle rolling waves.</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://hirisurfschool.com/images/69546.jpg.jpeg</image:loc>
-            <image:title>Private Surf Coaching Hiriketiya</image:title>
-            <image:caption>1-on-1 personalized surf coaching and pop-up technique instruction.</image:caption>
+            <image:title>Private Surf Lessons Hiriketiya - 1-on-1 Surf Coaching</image:title>
+            <image:caption>Personalized 1-on-1 surf coaching, pop-up technique, and wave selection at Hiriketiya Beach.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://hirisurfschool.com/images/20713.jpg.jpeg</image:loc>
+            <image:title>Kids Surf Lessons Sri Lanka &amp; Family Surf Lessons Hiriketiya</image:title>
+            <image:caption>Safe, gentle 1-on-1 surf lessons in waist-deep water for kids and families with patient local surf instructors.</image:caption>
         </image:image>
     </url>
 
     <!-- Beach Location & Directions Guide -->
     <url>
         <loc>https://hirisurfschool.com/location.html</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
         <image:image>
             <image:loc>https://hirisurfschool.com/images/20702.jpg.jpeg</image:loc>
             <image:title>Hiri Surf School Beach Location on Hiriketiya Bay</image:title>
-            <image:caption>Located at the western corner of Hiriketiya Beach where the sand meets the palm trees.</image:caption>
+            <image:caption>Located directly on the beachfront at Hiriketiya Beach, Dikwella, Sri Lanka.</image:caption>
         </image:image>
     </url>
 
     <!-- Hiriketiya Surf Spot Guide, Guiding & Live Swell Forecasts -->
     <url>
         <loc>https://hirisurfschool.com/surf-guide.html</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
         <image:image>
             <image:loc>https://hirisurfschool.com/images/20713.jpg.jpeg</image:loc>
             <image:title>Hiriketiya Reef Point and Beach Sandbar Surf Guide</image:title>
-            <image:caption>Complete breakdown of Hiriketiya Bay surf spots, tide charts, and wave mechanics.</image:caption>
+            <image:caption>Complete guide to Hiriketiya surf spots, tides, swell forecast, and surf etiquette in Sri Lanka.</image:caption>
         </image:image>
+    </url>
+
+    <!-- Surf Lesson Pricing & Packages -->
+    <url>
+        <loc>https://hirisurfschool.com/pricing.html</loc>
+        <lastmod>2026-11-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- About Kasun & Local Surf Instructors -->
+    <url>
+        <loc>https://hirisurfschool.com/about.html</loc>
+        <lastmod>2026-11-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
     </url>
 
     <!-- Booking Compatibility Endpoint -->
     <url>
         <loc>https://hirisurfschool.com/book-now.html</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
@@ -62,7 +83,7 @@
     <!-- Contact Compatibility Endpoint -->
     <url>
         <loc>https://hirisurfschool.com/contact.html</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-11-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
